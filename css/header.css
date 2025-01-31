@@ -244,7 +244,7 @@ header {
 
 #search {
   position: fixed;
-  top: 3.5vw;
+  top: 5.5%;
   right: 3vw;
   z-index: 101;
   display: flex;
@@ -358,7 +358,6 @@ header {
     }
   }
   #search {
-    top: 4.4vw;
     right: 3vw;
   }
   #search.open {
