@@ -65,11 +65,11 @@ document.addEventListener("DOMContentLoaded", function() {
 			const searchBox = document.querySelector('#search .box');
 
 				searchBox.addEventListener('click', () => {
-					search.classList.toggle('open');
+					search.classList.add('open');
 				});
 
 				document.addEventListener('click', (event) => {
-					if (!event.target.closest('#search')) {
+					if (!event.target.closest('#search') || event.target.closest('#search .del')) {
 						search.classList.remove('open');
 					} 
 				});
