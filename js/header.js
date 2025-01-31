@@ -88,16 +88,6 @@ document.addEventListener("DOMContentLoaded", function() {
 			});
 		*/
 
-			/* 스크롤 이벤트 */
-			//const header = document.querySelector('header');
-			//
-			//	window.addEventListener('scroll', () => {
-			//		if (window.scrollY > 70) {
-			//			header.classList.add('scrolled');
-			//		} else {
-			//			header.classList.remove('scrolled');
-			//		}
-			//	});
 		}) // end of then
 		.catch(error => {
 			console.error('Error loading header:', error);

@@ -48,7 +48,7 @@ header{
         cursor: pointer;
       }
     }  // depth_01
-  }   // gnb
+  }  // gnb
 }  // header_bg
 
 
@@ -73,7 +73,7 @@ header{
   animation: slide_bg 0.4s; animation-fill-mode: both;
   transition: all 0.4s ease-in-out;
 
-  .area{height: 86%;margin-top: 36px;
+  .area{height: 86%; margin-top: 36px;
     &.a{width: 24%; padding-left: 2%;
       li{height: 84.5vh; border: 1px solid #000;}
       img{width: 100%; height: auto;}  // 이미지 사이즈 : 455*800(= 84.5vh)
@@ -102,12 +102,12 @@ header{
     li:hover a{color: #222;}
   }
   #del{
-    position: absolute; top: 14%; right: 3.4vw; z-index: 101;
+    position: absolute; top: 7vw; right: 3.8vw; z-index: 101;
     display: flex; justify-content: center; align-items: center;
-    width: 30px; height: 30px;
+    width: 4vh; height: 4vh;
     border: 2px solid #000;
-    i{width: 24px; height: 3px; background: #000;
-      position: absolute; top: 45%; left: 10%;} 
+    i{width: 22px; height: 3px; background: #000;
+      position: absolute; top: 45%;} 
     i:nth-child(1){transform: rotate(45deg);}
     i:nth-child(2){transform: rotate(-45deg);}
   }
@@ -126,25 +126,86 @@ header{
 
 
 #search{
-  position: fixed; top: 4.5%; right: 3vw; z-index: 101;
+  position: fixed; top: 3.5vw; right: 3vw; z-index: 101;
   display: flex; justify-content: center; align-items: center;
   &.open input{display: block; width: auto; height: 2em;}
   .box{width: fit-content; height: fit-content; padding: 0.3vh 0.6vh;
     display: flex; justify-content: center; align-items: center;
-    background: #141414;
-    border: 4px solid $color-02; border-radius: 50px;}
+    background: #141414; border-radius: 50px;}
   input{
     width: 0; display: none; padding-left: 0.5em;
     color: #fff; font-size: 1em;
     background: transparent; border: none; outline: 0;}
-  i{color: #fff; text-align: center; cursor: pointer;}
-  i img{width: 2.2em; height: auto;}
+  i.icon{width: 2vw; height: 2vw; padding: 0.2vw 0.2vw;
+    color: #fff; text-align: center; cursor: pointer;
+    background: url("../img/search.png") no-repeat center;
+    background-size: 90% auto;}
+  div.del{display: none; opacity: 0;}
+  div.bg{display: none;}
 }
 
-/*
-.bg{width: 100%; height: 100%; background: $color-04;
-  position: fixed; top: -100%; left: 0; z-index: -1;
-  background: #fff; 
-  transition: all 0.4s ease-in-out;}
-.depth_02.active ~ .bg{top: 0;}
-*/
+
+
+
+// ipad pro(1024px) 이하 반응형 (수정 및 추가 사항만 적었어용)
+@media all and (max-width:1024px){
+
+  #header_bg{
+    #logo{transform: scale(0.8);}
+    #gnb{width: 70%; height: 40px;
+      .depth_01{width: 42%;
+        li{font-size: 1.4vw;}
+      }
+    }
+  }
+
+  #depth_02{
+    #del{top: 8.5vw; right: 3vw; width: 3vw; height: 3vw;}
+
+  .sub{
+    li{width: calc((100% / 4) - 1.2%); height: fit-content;
+    margin-right: 1.2%;}
+    li:nth-child(4n){margin-right: 0;}
+    li:nth-child(1n + 5){margin-top: 1em;}
+    a{font-size: 1.5vw;}
+  } // sub
+} // depth_02
+
+  #depth_02.active{flex-direction: column; justify-content: flex-start;
+    padding-top: 1.6vh;
+    .area.a{width: 88%; height: 14vh; margin-top: 26px;
+      li{height: 100%;}
+    }
+    .area.b{width: 96%; height: 60vh;}
+  }
+
+  @keyframes slider_search{
+    from{height: 0; top: -4.4vw; right: 0;}
+    to{height: 12%; top: 0; right: 0;}
+  }
+  
+  #search{top: 4.4vw; right: 3vw;
+    &.open{width: 100%; height: 15vh;
+      top: 0; right: 0;
+      background: $color-04; box-shadow: 0 2px 4px #22222244;
+      animation: slider_search 0.4s; animation-fill-mode: both;
+      transition: all 0.4s ease-in-out;
+      .box{width: 80%; border: none; background: transparent; position: relative;}
+      input{width: 78vh; display: block; padding-left: 0;
+        color: #222; font-size: 1.4; border-bottom: 2px solid #222;}
+      i.icon{width: 3.4vh; height: 3.4vh; margin-left: 2vw;
+        color: #fff; text-align: center; cursor: pointer;
+        background: url("../img/search-black.png") no-repeat center;
+        background-size: 90% auto;}
+      div.del{
+        display: flex; justify-content: center; align-items: center;
+        position: absolute; top: min(8vh, 9.5vh); right: -4vw;
+        width: 3.4vw; height: 3vw;
+        background: $color-04; opacity: 1;
+        transition-delay: 0.4s;
+        i{width: 100%; height: 100%;
+          background: url(../img/up.png) no-repeat center; background-size: 90% auto;}
+      } // del
+    } // open
+  }
+}
