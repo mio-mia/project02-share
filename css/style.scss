@@ -1,4 +1,4 @@
-* {margin: 0; padding: 0;}
+* {margin: 0; padding: 0; box-sizing: border-box;	outline: none;}
 
 a {text-decoration: none;}
 
@@ -7,7 +7,7 @@ $font_Godo_B: "Godo_B";
 
 .inner {
   width: 100%; height: 100vh;
-  background: url(../images/background1.jpg) no-repeat; background-size: cover;
+  background: url(../images/background1_1.jpg) no-repeat; background-size: cover;
   display: flex; justify-content: center; align-items: center;
   .wrap {
     max-width: 1559px; max-height: 876px;
@@ -91,8 +91,9 @@ $font_Godo_B: "Godo_B";
       position: absolute; top: 15%; left: 7%; z-index: 30; line-height: 1.5;
       opacity: 0; visibility: hidden; transition-delay: .1s;
       #custom_title {
-        font-size: 40px; font-weight: bold; color: #333; font-weight: bold;
+        font-size: 2.5rem; font-weight: bold; color: #333; font-weight: bold;
         span {color: #0078ff;}
+        // 폰트 40 픽셀
       }
       #custom_text {
         font-size: 1.88rem; padding-top: 1em;
@@ -327,7 +328,7 @@ $font_Godo_B: "Godo_B";
       font-family: 'Noto Sans KR';}
     .swiper-slide {border-radius: 15px; text-align: center;
       background: #F4F1EA; display: flex; align-items: center; padding: 3% 8%;}
-    .swiper-slide img {display: block; width: 40%; object-fit: cover;}
+    .swiper-slide img {display: block; width: 40%; object-fit: cover; margin-right: .8em;}
     .swiper-slide ul {
       width: 100%; display: flex; flex-direction: column; align-items: center;
     }
@@ -335,9 +336,13 @@ $font_Godo_B: "Godo_B";
       font-size: 1.56rem; font-weight: bold; line-height: 1.2;
       // 폰트 25 픽셀
     }
-    .swiper-slide #sub_text {
-      font-size: 1.25rem; font-weight: 500; margin: 2em 0 4em; color: #333; line-height: 1.2;
+    .swiper-slide #sub_text1 {
+      font-size: 1.25rem; font-weight: 500; margin: 1em 0 2em; color: #333; line-height: 1.2;
       // 폰트 20 픽셀
+    }
+    .swiper-slide #sub_text2 {
+      font-size: 1rem; font-weight: 300; color: #333; margin-bottom: 2.6em; line-height: 1.2;
+      // 폰트 16 픽셀
     }
     .swiper-slide #sub_link a {
       font-size: 1.25rem; padding: .38em 1.6em .5em; background: #0078ff; color: #fff;
@@ -346,9 +351,8 @@ $font_Godo_B: "Godo_B";
       // 폰트 20 픽셀
       &:hover {background: #fff; border-color: #0078ff; color: #0078ff;}
     }
-    .swiper {margin-left: auto; margin-right: auto;}
     .button {color: #333 !important; border-radius: 5px;}
-    .button:hover {box-shadow: 0 0 4px #000000aa;}
+    .button:hover {color: #0078ff !important;}
   }
 }
 
@@ -384,7 +388,10 @@ $font_Godo_B: "Godo_B";
   .inner .wrap .swiper .swiper-slide #sub_title {font-size: 1rem;}
   .inner .wrap .swiper .swiper-slide #sub_text {font-size: .8rem;}
   .inner .wrap .swiper .swiper-slide #sub_link a {font-size: .8rem; padding: .38em 1.4em .5em;}
-  .inner .wrap .swiper .swiper-slide img {padding-left: 1em;}
+  .inner .wrap .swiper .swiper-slide img {padding-left: 1em; margin-right: .2em;}
+  .inner .wrap .custom_card #custom_title {font-size: 1.88rem;}
+  .inner .wrap .custom_card #custom_text {font-size: 1.56rem;}
+  .inner .wrap .custom_card #custom_link a {font-size: 1.2rem; padding: .34em 1.4em .42em;}
 }
 
 @media (max-height: 880px){
