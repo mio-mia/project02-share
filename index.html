@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Intro</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="images/favicon.png">
+  <link rel="stylesheet" href="css/reset.css">
+  <style>
+    @font-face {
+        font-family: 'GmarketSansMedium';
+        src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    :root {font-family: 'Noto Sans KR','GmarketSansMedium';}
+    .clearfix::after {content:""; display: block; clear: both;}
+
+    body {background: #F4F1EA;}
+
+    .inner {width: 100%; height: 100%; text-align: center; position: relative;}
+    .intro_logo {margin: 14% 0 2.4% 0;}
+    .intro_logo img {width: 15%;}
+    .search_area {width: 40%; height: 10%; border: 1px solid #999999aa;
+      border-radius: 25px; margin: 0 auto 1.2%; font-size: 20px; padding: .7% 1%;
+      line-height: 1.2; box-shadow: 0 3px 3px rgba(235, 235, 235, .5);}
+    .search_area #typing {float: left;}
+    .search_area #cursor {
+      float: left;
+      animation-name: blink;
+      animation-duration: .8s;
+      animation-iteration-count: infinite;
+    }
+    @keyframes blink {
+      0% {color: #fff;}
+      50% {color: #000;}
+      100% {color: #fff;}
+    }
+    .search_area img {width: 3%; float: right; padding-top: .2%;}
+    .intro_keywords {margin-left: -1%; font-family: 'Noto Sans KR';}
+    .intro_keywords p {display: inline-block; padding: .5% .6%; background-color: #99999933;
+      border-radius: 5px;}
+    .intro_keywords p:first-child {margin-right: .5%;}
+    .enter {margin: 3% 0 0 -1%;}
+    .enter a {text-decoration: none; font-family: 'GmarketSansMedium'; border-radius: 10px;
+      font-weight: bold; font-size: 35px; color: #fff; padding: .7% 2.2% .4%; background-color: #0078ff;
+      border: 1px solid transparent; transition: all .2s ease-in-out;}
+    .enter a:hover {background-color: #fff; color: #0078ff; border-color: #0078ff;}
+  </style>
+</head>
+<body>
+  <div class="inner">
+    <div class="intro_logo">
+      <img src="images/logo.png" alt="인트로화면 로고">
+    </div><!--end:.intro_logo-->
+    <div class="search_area clearfix">
+      <span id="typing"></span><span id="cursor">_</span>
+      <img src="images/search_icon.png" alt="인트로화면 검색 아이콘">
+    </div><!--end:.sear_area-->
+    <div class="intro_keywords">
+      <p>맞춤형카드추천</p>
+      <p>인기카드 TOP10</p>
+    </div><!--intrp_keywords-->
+    <div class="enter clearfix"> 
+        <a id="enter_button" href="main.html"><span id="enter_text">Enter!</span></a>
+    </div><!--end:.enter-->
+  </div><!--end:.inner-->
+
+  <script>
+    var text = "당신의 소비 패턴에 맞는 최적의 카드를 추천해 드립니다.";
+    var cnt = 0;
+    var speed = 60; //글자가 찍히는 속도
+    var timer1 = null;
+    
+    function goFn(){
+        document.getElementById('typing').innerHTML = text.substring(0, cnt);
+        cnt++;
+        timer1 = setTimeout('goFn()', speed);
+    
+        if(text.length < cnt){
+            // 아래 주석으로 처리된 부분을 지우면 한번만 실행됩니다.
+            clearTimeout(timer1)
+            cnt = 0;
+        }
+    }
+    
+    goFn();
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+
+.hidden{width: 0; height: 0; font-size: 0; padding: 0; margin: 0; border: 0; outline: 0;}
+a{color: inherit; text-decoration: none;}
+
+$bg_set: 16%;  // width값도 맞춰서 조정해줘야됨
+$font_Gmarket_Light: "GmarketSans_300";
+$font_Gmarket_Medium: "GmarketSans_500";
+$font_Gmarket_Bold: "GmarketSans_700";
+$font_Godo_M: "Godo_M";
+$font_Godo_B: "Godo_B";
+$font_ko_content: "Noto Sans KR";
+$font_eng: "Reddit Sans Condensed";
+$color-01: #C33130;   // 크림슨
+$color-02: #F4F1EA;   // 베이지
+$color-03: #0078ff;   // 파랑
+$color-04: #FFFCFC;   // 화이트(완전 화이트는 x)
+$color-05: #0E3A3E;   // 다크그린
+
+
+
+footer{
+  width: 100%; height: 20vh; padding: 5vh 0; background: #dadada;
+  font-family: $font_Gmarket_Medium; color: #4b4b4b;
+  .inner{ width: 68%; padding: 0 $bg_set;
+    display: flex; justify-content: space-between; flex-direction: row;
+    .left{width: 50%; height: 20vh;
+      h2{width: 100%; height: fit-content;
+        margin-bottom: 3vh;
+        img{width: 160px;}
+      } // h2
+      .info{
+        li{display: flex; flex-direction: row; flex-wrap: nowrap;
+          font-size: 0.6vw; margin: 0.6em 0;
+          font-family: $font_Gmarket_Medium; letter-spacing: 1.4;}
+        p{display: block;}
+        li .tab{margin-left: 3%;}
+      } // info
+    }
+    .right{ width: 50%; height: 20vh;
+      .map{width: 100%; height: fit-content;
+        display: flex; justify-content: flex-end; margin-bottom: 3vh;}
+      li{font-size: 1vw; text-align: center;
+        font-family: $font_eng; font-weight: bold;
+        margin-left: 5%;}
+      li:hover{text-decoration: underline; cursor: pointer;}
+    }
+  } // inner
+}

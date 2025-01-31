@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SPOT! - 맞춤 카드 추천</title>
+
+  <!-- 파비콘 -->
+
+
+  <!-- font -->
+  <!-- 한문 title : G마켓 산스 / 고도체 (눈누) --><link rel="stylesheet" href="../css/font.css">
+  <!-- 한문 content : Noto Sans Ko(구글 / 하단 링크에 같이 있음) -->
+  <!-- 영문 : Reddit Sans Condensed(구글) --> <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Reddit+Sans+Condensed:wght@200..900&display=swap" rel="stylesheet">
+
+  <!-- icon -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+
+  <!-- css -->
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/re.css">
+</head>
+<body>
+  <header id="header-container">
+    <script src="../js/header.js"></script>
+  </header>
+  <main>
+    <div class="inner">
+      <h2>맞춤 카드 추천</h2>
+      <div class="content">
+        <div class="search">
+          <div class="dep-01">
+            <h3 class="title">카드 종류 선택<span>필수</span></h3>
+            <ul>
+              <li class="card-btn"><h3 id="cradit"><i class="xi-check-min"></i>신용카드</h3></li>
+              <li class="card-btn"><h3 id="check"><i class="xi-check-min"></i>체크카드</h3></li>
+            </ul>
+          </div>
+          <div class="dep-02">
+            <h3 class="title">카드 혜택 선택</h3>
+            <div class="select">
+              <ul class="sub left">
+                <li class="custom-btn" style="background: #FFD4D9;">통신<span>📞</span></li>
+                <li class="custom-btn" style="background: #FFEDD4;">쇼핑<span>🛍️</span></li>
+              </ul>
+              <div class="sub right">
+                <ul>
+                  <li class="custom-btn a" style="background: #E5FFDC;">마트·편의점<span>🛒</span></li>
+                  <li class="custom-btn a" style="background: #E0DEFF;">교통<span>🚌</span></li>
+                  <li class="custom-btn a" style="background: #F5F5F5;">배달앱/<br>간편결제<span>🏍️</span></li>
+                  <li class="custom-btn a" style="background: #FBFFDF;">구독·스트리밍<span>📺</span></li>
+                </ul>
+                <ul>
+                  <li class="custom-btn b" style="background: #FBFFC5;">여행·해외결제<span>🧳</span></li>
+                  <li class="custom-btn b" style="background: #FFE5F7;">항공 마일리지/<br>라운지<span>✈️</span></li>
+                  <li class="custom-btn b" style="background: #E8FBFF;">주유/<br>차량정비<span>⛽️</span></li>
+                  <li class="custom-btn b" style="background: #F3FFEE;">무실적/<br>모든 가맹점<span>🏪</span></li>
+                </ul>
+                <ul>
+                  <li class="custom-btn c" style="background: #DDE4FF;">공과금<span>🧾</span></li>
+                  <li class="custom-btn c" style="background: #BBFFC3;">병원/<br>약국 <span>🏥</span></li>
+                  <li class="custom-btn c" style="background: #FFE5E0;">증권사<span>💸</span></li>
+                  <li class="custom-btn c" style="background: #D6FFED;">제휴<span>💳</span></li>
+                </ul>
+              </div> <!-- sub right -->
+            </div>
+          </div> <!-- dep-02 -->
+        </div>
+        <div class="search_btn">
+          <p>n개의 카드를<br>찾았습니다!</p>
+          <span>검색된 카드 보기</span>
+        </div>
+      </div> <!-- content -->
+    </div> <!-- inner -->
+  </main>
+  <footer id="footer-container">
+    <script src="../js/footer.js"></script>
+  </footer>
+
+  <!-- 스크립트 -->
+  <script src="js/EzenScrollClass.js"></script>
+  <script src="../js/re.js"></script>
+</body>
+</html>

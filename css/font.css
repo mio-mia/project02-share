@@ -1,0 +1,34 @@
+
+
+/* G마켓 산스 (눈누 / title용) */
+
+@font-face {
+  font-family: 'GmarketSans_300';
+  src: url('../font/GmarketSans/GmarketSansLight.woff') format('woff');
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'GmarketSans_500';
+  src: url('../font/GmarketSans/GmarketSansMedium.woff') format('woff');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'GmarketSans_700';
+  src: url('../font/GmarketSans/GmarketSansBold.woff') format('woff');
+  font-weight: 700;
+}
+
+
+/* 고도체 (눈누 / title용) */
+
+@font-face {
+  font-family: 'Godo_M';
+  src: url('../font/GodoFont/GodoM.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Godo_B';
+  src: url('../font/GodoFont/GodoB.woff') format('woff');
+}

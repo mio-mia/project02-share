@@ -1,0 +1,89 @@
+
+body{background: #F4F1EA;}
+
+.hidden{width: 0; height: 0; font-size: 0; padding: 0; margin: 0; border: 0; outline: 0;}
+a{color: inherit; text-decoration: none;}
+
+$bg_set: 16%;  // width값도 맞춰서 조정해줘야됨
+$font_Gmarket_Light: "GmarketSans_300";
+$font_Gmarket_Medium: "GmarketSans_500";
+$font_Gmarket_Bold: "GmarketSans_700";
+$font_Godo_M: "Godo_M";
+$font_Godo_B: "Godo_B";
+$font_ko_content: "Noto Sans KR";
+$font_eng: "Reddit Sans Condensed";
+$color-01: #C33130;   // 크림슨
+$color-02: #F4F1EA;   // 베이지
+$color-03: #0078ff;   // 파랑
+$color-04: #FFFCFC;   // 화이트(완전 화이트는 x)
+$color-05: #0E3A3E;   // 다크그린
+
+
+
+main{width: 68%; height: fit-content; margin: 10.5% $bg_set 6vw;}
+.card{
+  h2{font-size: 2em; font-family: $font_ko_content; font-weight: bold;}
+  .top-3{
+    ul{width: 100%; height: fit-content;
+      display: flex; justify-content: space-between; align-items: center;}
+    li{width: 30%; height: 28vw; margin-top: 30px; 
+      background: $color-04; border-radius: 20px;}
+    a{
+      width: 100%; height: 100%; overflow: hidden;
+      display: flex; justify-content: center; align-items: center;
+      flex-direction: column;
+      font-family: $font_ko_content;
+      position: relative;
+      p{position: absolute; top: 30px; left: 30px; font-size: 1.8vw; font-weight: bold;}
+      .photo{width: 100%; height: 66%; margin-top: 2vw;
+        display: inline-flex; justify-content: center; align-items: center;}
+      img{width: 50%; height: auto;}
+      h4{width: 90%;
+        padding: 0 5%; line-height: 1.4em; margin-bottom: 0.6vw;
+        font-size: 1.2vw; text-align: center;
+        word-break: break-all;}
+      .tag span{width: fit-content; margin: 0 3px 0; font-size: 0.9vw;
+        text-align: center; color: #222;}
+    } // a
+  } // top-3
+  .list{
+    width: 100%; height: auto; margin-top: 40px;
+    li{width: 100%; height: 10vw; margin-bottom: 20px;
+      background-color: $color-04; border-radius: 20px;}
+    a{
+      width: 100%; height: 100%; overflow: hidden;
+      display: flex; justify-content: flex-start; align-items: center;
+      font-family: $font_ko_content;
+      .number{display: block; width: 1.8em; margin-left: 0.6em;
+        text-align: center; font-size: 1.8em;}
+      .photo{width: 20%; height: 100%;
+        display: inline-flex; justify-content: center; align-items: center;}
+      img{width: auto; height: 80%;}
+      .box{width: fit-content; height: fit-content;
+        display: flex; align-items: flex-start; flex-direction: column;}
+      h4{font-size: 1.6vw; line-height: 2vw;}
+      .text{display: flex; flex-direction: row;
+        font-size: 1vw; color: #4b4b4b; margin: 1vw 0 0.6vw;}
+      .tag span{width: fit-content; margin: 0 3px 0; font-size: 0.9vw;
+        text-align: center; color: #151515;}
+    }
+  } // list
+}
+
+// 누운 카드들 값 조정(class="lie-영문")
+#credit{
+.lie-A img{width: 46% !important; height: auto !important;}
+}
+
+#check{
+.lie-a img{width: 70% !important; height: auto !important;}
+.lie-b img{width: 46% !important; height: auto !important;}
+}
+
+
+
+@media (max-width: 1024px) {
+  main{
+   .inner{margin-top: 15vw;}
+  }
+}
