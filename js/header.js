@@ -88,6 +88,13 @@ document.addEventListener("DOMContentLoaded", function() {
 			});
 		*/
 
+		/* ham 클릭 시, sub가 나오는 event class 추가 */
+		const hamOpen = document.querySelector('#ham');
+		
+			hamOpen.onclick = function() {
+				hamOpen.classList.toggle('active');
+			};
+
 		}) // end of then
 		.catch(error => {
 			console.error('Error loading header:', error);

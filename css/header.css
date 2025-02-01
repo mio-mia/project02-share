@@ -80,6 +80,10 @@ header {
   cursor: pointer;
 }
 
+#ham {
+  display: none;
+}
+
 /* 애니메이션 프레임(.depth_02 드롭다운) */
 @keyframes slide_bg {
   from {
@@ -289,9 +293,19 @@ header {
 #search div.del {
   display: none;
   opacity: 0;
+  position: absolute;
+  top: 8vh;
+  right: -4vw;
+  width: 3.4vw;
+  height: 3vw;
+  background: #FFFCFC;
+  transition-delay: 0.4s;
 }
-#search div.bg {
-  display: none;
+#search div.del i {
+  width: 100%;
+  height: 100%;
+  background: url(../img/up.png) no-repeat center;
+  background-size: 90% auto;
 }
 
 @media all and (max-width: 1024px) {
@@ -395,20 +409,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    top: 8vh;
-    right: -4vw;
-    width: 3.4vw;
-    height: 3vw;
-    background: #FFFCFC;
     opacity: 1;
-    transition-delay: 0.4s;
-  }
-  #search.open div.del i {
-    width: 100%;
-    height: 100%;
-    background: url(../img/up.png) no-repeat center;
-    background-size: 90% auto;
   }
 }
 @media all and (max-width: 768px) {
@@ -424,5 +425,69 @@ header {
   }
   #search {
     top: 8%;
+  }
+}
+@media all and (max-width: 450px) {
+  #header_bg {
+    height: 70px;
+    background: #141414;
+  }
+  #header_bg #logo {
+    height: fit-content;
+    margin-top: 20px;
+    transform: scale(1.6);
+  }
+  #header_bg #gnb .depth_01 {
+    display: none;
+  }
+  #ham {
+    position: fixed;
+    top: 4.2%;
+    right: 5%;
+    z-index: 110;
+    width: 25px;
+    height: 25px;
+    display: block;
+  }
+  #ham i {
+    position: absolute;
+    left: 2.5px;
+    width: 20px;
+    height: 2px;
+    background: #fff;
+    transition: all 0.4s ease-in-out;
+  }
+  #ham i:nth-child(1) {
+    top: 25%;
+  }
+  #ham i:nth-child(2) {
+    top: 50%;
+  }
+  #ham i:nth-child(3) {
+    top: 75%;
+  }
+  #ham.active i {
+    top: 50%;
+  }
+  #ham.active i:nth-child(1) {
+    transform: rotate(45deg);
+  }
+  #ham.active i:nth-child(2) {
+    display: none;
+  }
+  #ham.active i:nth-child(3) {
+    transform: rotate(-45deg);
+  }
+  #ham.active ~ #depth_02 {
+    left: 100%;
+  }
+  #depth_02 {
+    display: block;
+  }
+  #depth_02 #del {
+    display: none;
+  }
+  #search {
+    display: none;
   }
 }

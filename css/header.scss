@@ -26,7 +26,7 @@ header{
   display: flex; justify-content: center; align-items: center;
   #logo{
     width: 14vw; height: 100px;
-    position: fixed; z-index: 100; // top: 2%; left: calc(43%);
+    position: fixed; z-index: 100;
     display: flex; justify-content: center; align-items: center;
     h1{width: fit-content;}
     img{width: 11vw;}
@@ -51,6 +51,8 @@ header{
   }  // gnb
 }  // header_bg
 
+#ham{ display: none;
+}
 
 /* 애니메이션 프레임(.depth_02 드롭다운) */
 @keyframes slide_bg{
@@ -140,8 +142,13 @@ header{
     color: #fff; text-align: center; cursor: pointer;
     background: url("../img/search.png") no-repeat center;
     background-size: 90% auto;}
-  div.del{display: none; opacity: 0;}
-  div.bg{display: none;}
+  div.del{display: none; opacity: 0;
+    position: absolute; top: min(8vh, 9.5vh); right: -4vw;
+    width: 3.4vw; height: 3vw;
+    background: $color-04; transition-delay: 0.4s;
+    i{width: 100%; height: 100%;
+      background: url(../img/up.png) no-repeat center; background-size: 90% auto;}
+  } // del}
 }
 
 
@@ -198,15 +205,7 @@ header{
         color: #fff; text-align: center; cursor: pointer;
         background: url("../img/search-black.png") no-repeat center;
         background-size: 90% auto;}
-      div.del{
-        display: flex; justify-content: center; align-items: center;
-        position: absolute; top: min(8vh, 9.5vh); right: -4vw;
-        width: 3.4vw; height: 3vw;
-        background: $color-04; opacity: 1;
-        transition-delay: 0.4s;
-        i{width: 100%; height: 100%;
-          background: url(../img/up.png) no-repeat center; background-size: 90% auto;}
-      } // del
+      div.del{display: flex; justify-content: center; align-items: center; opacity: 1;}
     } // open
   }
 }  // @media
@@ -218,15 +217,10 @@ header{
 
   #depth_02{
     #del{top: clamp(10vw, 13%, 15vw); right: calc(4.5% - 1.5vw);}
+    .sub li:nth-child(1n + 5){margin-top: 0.6em;}
+  } // depth_02
 
-    .sub{
-      li:nth-child(1n + 5){margin-top: 0.6em;}
-    }
-  }
-
-  #depth_02.active{
-    .area.b{height: 70vh;}
-  }
+  #depth_02.active .area.b{height: 70vh;}
 
   #search{top: 8%;}
 }
@@ -234,3 +228,37 @@ header{
 
 
 // iphone 14 pro Max(450px) 이하 반응형
+@media all and (max-width: 450px){
+  #header_bg{height: 70px; background: #141414;
+    #logo{height: fit-content; margin-top: 20px; transform: scale(1.6);}
+    #gnb{
+      .depth_01{display: none;}
+    }
+  }
+
+  #ham{position: fixed; top: 4.2%; right: 5%; z-index: 110;
+    width: 25px; height: 25px; display: block;
+    i{position: absolute; left: 2.5px; width: 20px; height: 2px; background: #fff;
+      transition: all 0.4s ease-in-out;}
+    i:nth-child(1){top: 25%;}
+    i:nth-child(2){top: 50%;}
+    i:nth-child(3){top: 75%;}
+  }
+  #ham.active{
+    i{top: 50%;}
+    i:nth-child(1){transform: rotate(45deg);}
+    i:nth-child(2){display: none;}
+    i:nth-child(3){transform: rotate(-45deg);}
+  }
+
+  #ham.active ~ #depth_02{left: 100%;}
+
+  #depth_02{display: block;
+    #del{display: none;}
+  }
+
+  #search{ display: none;
+
+
+  }
+}
