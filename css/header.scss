@@ -71,7 +71,7 @@ header{
   display: none;
   width: 100%;
   background: $color-04;
-  position: fixed; top: -100%; left: 0; z-index: 101;
+  position: fixed; top: -100%; z-index: 101;
   animation: slide_bg 0.4s; animation-fill-mode: both;
   transition: all 0.4s ease-in-out;
 
@@ -128,7 +128,7 @@ header{
 
 
 #search{
-  position: fixed; top: 5.5%; right: 3vw; z-index: 101;
+  position: fixed; top: 5.5%; left: auto; right: 3vw; z-index: 101;
   display: flex; justify-content: center; align-items: center;
   &.open input{display: block; width: auto; height: 2em;}
   .box{width: fit-content; height: fit-content; padding: 0.3vh 0.6vh;
@@ -228,7 +228,7 @@ header{
 
 
 // iphone 14 pro Max(450px) 이하 반응형
-@media all and (max-width: 450px){
+@media all and (max-width: 451px){
   #header_bg{height: 70px; background: #141414;
     #logo{height: fit-content; margin-top: 20px; transform: scale(1.6);}
     #gnb{
@@ -251,14 +251,29 @@ header{
     i:nth-child(3){transform: rotate(-45deg);}
   }
 
-  #ham.active ~ #depth_02{left: 100%;}
+  #ham.active + #depth_02.active{top: 80px; height: 100%;}
+  #depth_02{
+    .sub{
+      li{width: calc((100% / 3) - 1.2%);}
+        li:nth-child(3n){margin-right: 0;}
+        li:nth-child(1n + 4){margin-top: 1em;}
+      a{font-size: min(1.8vw, 2vw);}
+    }
+  }
 
-  #depth_02{display: block;
+  #depth_02.active{display: flex; top: 80px; height: 0; padding-top: 10vh;
+    .area.a{width: 96%; height: 8vh; margin-top: 0;}
+    .area.b{width: 96%; height: 60vh; margin-top: 0;}
     #del{display: none;}
   }
 
-  #search{ display: none;
-
-
+  
+  #search{display: none;
+    &.open{display: block;
+      height: 6vh; top: 100px; right: 0;
+      animation: none;
+      background: $color-01;
+      div.del{display: none;}
+    }
   }
 }

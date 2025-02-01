@@ -115,7 +115,6 @@ header {
   background: #FFFCFC;
   position: fixed;
   top: -100%;
-  left: 0;
   z-index: 101;
   animation: slide_bg 0.4s;
   animation-fill-mode: both;
@@ -249,6 +248,7 @@ header {
 #search {
   position: fixed;
   top: 5.5%;
+  left: auto;
   right: 3vw;
   z-index: 101;
   display: flex;
@@ -427,7 +427,7 @@ header {
     top: 8%;
   }
 }
-@media all and (max-width: 450px) {
+@media all and (max-width: 451px) {
   #header_bg {
     height: 70px;
     background: #141414;
@@ -478,16 +478,53 @@ header {
   #ham.active i:nth-child(3) {
     transform: rotate(-45deg);
   }
-  #ham.active ~ #depth_02 {
-    left: 100%;
+  #ham.active + #depth_02.active {
+    top: 80px;
+    height: 100%;
   }
-  #depth_02 {
-    display: block;
+  #depth_02 .sub li {
+    width: 32.1333333333%;
   }
-  #depth_02 #del {
+  #depth_02 .sub li:nth-child(3n) {
+    margin-right: 0;
+  }
+  #depth_02 .sub li:nth-child(1n+4) {
+    margin-top: 1em;
+  }
+  #depth_02 .sub a {
+    font-size: 1.8vw;
+  }
+  #depth_02.active {
+    display: flex;
+    top: 80px;
+    height: 0;
+    padding-top: 10vh;
+  }
+  #depth_02.active .area.a {
+    width: 96%;
+    height: 8vh;
+    margin-top: 0;
+  }
+  #depth_02.active .area.b {
+    width: 96%;
+    height: 60vh;
+    margin-top: 0;
+  }
+  #depth_02.active #del {
     display: none;
   }
   #search {
+    display: none;
+  }
+  #search.open {
+    display: block;
+    height: 6vh;
+    top: 100px;
+    right: 0;
+    animation: none;
+    background: #C33130;
+  }
+  #search.open div.del {
     display: none;
   }
 }

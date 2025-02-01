@@ -841,8 +841,7 @@ a {
 .inner .wrap .swiper-slide img {
   display: block;
   width: 40%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   margin-right: 0.8em;
 }
 .inner .wrap .swiper-slide ul {
@@ -1061,4 +1060,4 @@ a {
   .inner .wrap h1 {
     top: 2%;
   }
-}/*# sourceMappingURL=style.css.map */
+}
