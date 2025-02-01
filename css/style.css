@@ -54,10 +54,10 @@ a {
 }
 .inner .wrap .camera_ring {
   position: absolute;
-  bottom: 47.18%;
+  bottom: 47.08%;
   right: 1.43%;
-  width: 6.16%;
-  height: 10.2%;
+  width: 83px;
+  height: 83px;
   border: 8px solid #fff;
   border-radius: 50%;
   animation-name: ring_blink;
@@ -88,15 +88,45 @@ a {
   bottom: 48%;
   right: 2%;
   z-index: 40;
-  width: 5%;
-  height: 8.4%;
+  width: 67px;
+  height: 67px;
   background: #fff;
   border-radius: 50%;
   border: 3px solid #000;
   transition: all 0.2s ease-in-out;
 }
+.inner .wrap .menu_btn #line {
+  width: 50%;
+  height: 2px;
+  background: #e5e5e5;
+  position: absolute;
+  top: 47%;
+  left: 24%;
+  transition: all 0.1s ease-in-out;
+}
+.inner .wrap .menu_btn #line:first-child {
+  transform: rotate(-45deg);
+  opacity: 0;
+  visibility: hidden;
+}
+.inner .wrap .menu_btn #line:last-child {
+  transform: rotate(45deg);
+  opacity: 0;
+  visibility: hidden;
+}
 .inner .wrap .menu_btn:hover {
   background: #ffd50a;
+}
+.inner .wrap .menu_btn.active #line {
+  background: #111;
+}
+.inner .wrap .menu_btn.active #line:first-child {
+  opacity: 1;
+  visibility: visible;
+}
+.inner .wrap .menu_btn.active #line:last-child {
+  opacity: 1;
+  visibility: visible;
 }
 .inner .wrap .all_menu {
   width: 0%;
@@ -903,6 +933,12 @@ a {
   }
 }
 @media (max-width: 1024px) {
+  .inner .wrap .all_menu #left_area {
+    border-radius: 18px 0 0 18px;
+  }
+  .inner .wrap .all_menu #right_area {
+    border-radius: 0 18px 18px 0;
+  }
   .inner .wrap .custom_card {
     left: 4%;
   }
@@ -999,6 +1035,26 @@ a {
   }
   .inner .wrap .car:hover {
     left: 23.2%;
+  }
+  .inner .wrap .menu_btn {
+    width: 50px;
+    height: 50px;
+  }
+  .inner .wrap .menu_btn #line {
+    top: 47%;
+    left: 25.4%;
+  }
+  .inner .wrap .camera_ring {
+    width: 61px;
+    height: 61px;
+    bottom: 47.14%;
+    right: 1.42%;
+  }
+  .inner .wrap .camera_zoom {
+    top: 28%;
+  }
+  .inner .wrap .camera_zoom img {
+    width: 40%;
   }
 }
 @media (max-height: 880px) {

@@ -29,8 +29,8 @@ $font_Godo_B: "Godo_B";
     }
 
     .camera_ring {
-      position: absolute; bottom: 47.18%; right: 1.43%;
-      width: 6.16%; height: 10.2%; border: 8px solid #fff; border-radius: 50%;
+      position: absolute; bottom: 47.08%; right: 1.43%;
+      width: 83px; height: 83px; border: 8px solid #fff; border-radius: 50%;
       animation-name: ring_blink;
         animation-duration: 5s;
         animation-iteration-count: infinite;
@@ -48,22 +48,26 @@ $font_Godo_B: "Godo_B";
 
     .menu_btn {
       position: absolute; bottom: 48%; right: 2%; z-index: 40;
-      width: 5%; height: 8.4%; background: #fff; border-radius: 50%;
+      width: 67px; height: 67px; background: #fff; border-radius: 50%;
       border: 3px solid #000; transition: all .2s ease-in-out;
-      // #line {
-      //   width: 70%; height: 1px; background: #e5e5e5;
-      //   position: absolute; top: 49%; left: 15.2%;
-      //   &:last-child {transform: rotate(90deg);} transition: all .1s ease-in-out;
-      // }
-      
-      &:hover {
-        background: #ffd50a;
-        // #line {background: #111;}
+      #line {
+        width: 50%; height: 2px; background: #e5e5e5;
+        position: absolute; top: 47%; left: 24%; transition: all .1s ease-in-out;
+        &:first-child {
+          transform: rotate(-45deg); opacity: 0; visibility: hidden;
+        }
+        &:last-child {
+          transform: rotate(45deg); opacity: 0; visibility: hidden;
+        }
       }
-      // &.active {
-      //   #line:first-child {transform: rotate(-45deg);}
-      //   #line:last-child {transform: rotate(45deg);}
-      // }
+      &:hover {
+        background: #ffd50a;        
+      }
+      &.active {
+        #line {background: #111;}
+        #line:first-child {opacity: 1; visibility: visible;}
+        #line:last-child {opacity: 1; visibility: visible;}
+      }
     }
 
     .all_menu {
@@ -406,6 +410,8 @@ $font_Godo_B: "Godo_B";
 }
 
 @media (max-width: 1024px){
+  .inner .wrap .all_menu #left_area {border-radius: 18px 0 0 18px;}
+  .inner .wrap .all_menu #right_area {border-radius: 0 18px 18px 0;}
   .inner .wrap .custom_card {left: 4%;}
   .inner .wrap .tutorial {left: 39.4%; padding: .8em;}
   .inner .wrap .tutorial #tuto_text1 {display: none;}
@@ -434,6 +440,11 @@ $font_Godo_B: "Godo_B";
   .inner .wrap .delievery:hover {right: 44%;}
   .inner .wrap .car {top: 5.2%; left: 25.2%;}
   .inner .wrap .car:hover {left: 23.2%;}
+  .inner .wrap .menu_btn {width: 50px; height: 50px;}
+  .inner .wrap .menu_btn #line {top: 47%; left: 25.4%;}
+  .inner .wrap .camera_ring {width: 61px; height: 61px; bottom: 47.14%; right: 1.42%;}
+  .inner .wrap .camera_zoom {top: 28%;}
+  .inner .wrap .camera_zoom img {width: 40%;}
 }
 
 @media (max-height: 880px){
