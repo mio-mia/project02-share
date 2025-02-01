@@ -102,7 +102,7 @@ header{
     li:hover a{color: #222;}
   }
   #del{
-    position: absolute; top: 7vw; right: 3.8vw; z-index: 101;
+    position: absolute; top: 10vw; right: 3.4vw; z-index: 101;
     display: flex; justify-content: center; align-items: center;
     width: 4vh; height: 4vh;
     border: 2px solid #000;
@@ -160,16 +160,16 @@ header{
   }
 
   #depth_02{
-    #del{top: 8.5vw; right: 3vw; width: 3vw; height: 3vw;}
+    #del{top: 12.5vw; width: 3vw; height: 3vw;}
 
-  .sub{
-    li{width: calc((100% / 4) - 1.2%); height: fit-content;
-    margin-right: 1.2%;}
-    li:nth-child(4n){margin-right: 0;}
-    li:nth-child(1n + 5){margin-top: 1em;}
-    a{font-size: 1.5vw;}
-  } // sub
-} // depth_02
+    .sub{
+      li{width: calc((100% / 4) - 1.2%); height: fit-content;
+      margin-right: 1.2%;}
+      li:nth-child(4n){margin-right: 0;}
+      li:nth-child(1n + 5){margin-top: 1em;}
+      a{font-size: min(1.2vw, 1.5vw);}
+    } // sub
+  } // depth_02
 
   #depth_02.active{flex-direction: column; justify-content: flex-start;
     padding-top: 1.6vh;
@@ -179,13 +179,14 @@ header{
     .area.b{width: 96%; height: 60vh;}
   }
 
+
   @keyframes slider_search{
     from{height: 0; top: -4.4vw; right: 0;}
     to{height: 12%; top: 0; right: 0;}
   }
-  
-  #search{right: 3vw;
-    &.open{width: 100%; height: 15vh;
+
+  #search{
+    &.open{width: 100%; height: 15vw;
       top: 0; right: 0;
       background: $color-04; box-shadow: 0 2px 4px #22222244;
       animation: slider_search 0.4s; animation-fill-mode: both;
@@ -208,4 +209,28 @@ header{
       } // del
     } // open
   }
+}  // @media
+
+
+
+// ipad(768px) 이하 반응형
+@media all and (max-width: 768px){
+
+  #depth_02{
+    #del{top: clamp(10vw, 13%, 15vw); right: calc(4.5% - 1.5vw);}
+
+    .sub{
+      li:nth-child(1n + 5){margin-top: 0.6em;}
+    }
+  }
+
+  #depth_02.active{
+    .area.b{height: 70vh;}
+  }
+
+  #search{top: 8%;}
 }
+
+
+
+// iphone 14 pro Max(450px) 이하 반응형
