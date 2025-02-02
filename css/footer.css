@@ -15,7 +15,7 @@ a {
 
 footer {
   width: 100%;
-  height: 20vh;
+  height: fit-content;
   padding: 5vh 0;
   background: #dadada;
   font-family: "GmarketSans_500";
@@ -30,15 +30,15 @@ footer .inner {
 }
 footer .inner .left {
   width: 50%;
-  height: 20vh;
+  height: fit-content;
 }
 footer .inner .left h2 {
   width: 100%;
   height: fit-content;
-  margin-bottom: 3vh;
+  margin-bottom: 2vw;
 }
 footer .inner .left h2 img {
-  width: 160px;
+  width: 10vw;
 }
 footer .inner .left .info li {
   display: flex;
@@ -57,14 +57,14 @@ footer .inner .left .info li .tab {
 }
 footer .inner .right {
   width: 50%;
-  height: 20vh;
+  height: fit-content;
 }
 footer .inner .right .map {
   width: 100%;
   height: fit-content;
   display: flex;
   justify-content: flex-end;
-  margin-bottom: 3vh;
+  margin-bottom: 2vw;
 }
 footer .inner .right li {
   font-size: 1vw;
@@ -76,4 +76,26 @@ footer .inner .right li {
 footer .inner .right li:hover {
   text-decoration: underline;
   cursor: pointer;
+}
+
+@media all and (max-width: 768px) {
+  footer {
+    padding: 3.5vh 0;
+  }
+  footer .inner {
+    width: calc(100% - 24vw);
+    padding: 0 12vw;
+  }
+  footer .inner .left h2 img {
+    width: 8vh;
+  }
+}
+@media all and (max-width: 450px) {
+  footer .inner {
+    width: calc(100% - 16vw);
+    padding: 0 8vw;
+  }
+  footer .inner .left h2 img {
+    width: 6vh;
+  }
 }
