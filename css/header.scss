@@ -187,16 +187,16 @@ header{
   }
 
 
-  @keyframes slider_search{
+  @keyframes slider_search01{
     from{height: 0; top: -4.4vw; right: 0;}
-    to{height: 12%; top: 0; right: 0;}
+    to{height: 15vw; top: 0; right: 0;}
   }
 
   #search{
     &.open{width: 100%; height: 15vw;
       top: 0; right: 0;
       background: $color-04; box-shadow: 0 2px 4px #22222244;
-      animation: slider_search 0.4s; animation-fill-mode: both;
+      animation: slider_search01 0.4s; animation-fill-mode: both;
       transition: all 0.4s ease-in-out;
       .box{width: 80%; border: none; background: transparent; position: relative;}
       input{width: 78vh; display: block; padding-left: 0;
@@ -229,14 +229,14 @@ header{
 
 // iphone 14 pro Max(450px) 이하 반응형
 @media all and (max-width: 451px){
-  #header_bg{height: 70px; background: #141414;
-    #logo{height: fit-content; margin-top: 20px; transform: scale(1.6);}
+  #header_bg{height: 50px; background: #141414;
+    #logo{height: fit-content; transform: scale(1.6);}
     #gnb{
       .depth_01{display: none;}
     }
   }
 
-  #ham{position: fixed; top: 4.2%; right: 5%; z-index: 110;
+  #ham{position: fixed; top: 20px; right: 5%; z-index: 110;
     width: 25px; height: 25px; display: block;
     i{position: absolute; left: 2.5px; width: 20px; height: 2px; background: #fff;
       transition: all 0.4s ease-in-out;}
@@ -251,7 +251,7 @@ header{
     i:nth-child(3){transform: rotate(-45deg);}
   }
 
-  #ham.active + #depth_02.active{top: 80px; height: 100%;}
+  #ham.active + #depth_02.active{top: 60px; height: 100%;}
   #depth_02{
     .sub{
       li{width: calc((100% / 3) - 1.2%); margin-right: 1.2%;}
@@ -261,18 +261,28 @@ header{
     }
   }
 
+  @keyframes slide_area_B{
+    from{height: 0;}
+    to{height: 8vh;}
+  }
   #depth_02.active{display: flex; top: 80px; height: 0; padding-top: 100px;
-    .area.a{width: 96%; height: 8vh; margin-top: 0;}
+    .area.a{width: 96%; height: 8vh; margin-top: 0;
+      animation: slide_area_B 0.4s; animation-fill-mode: both;
+      transition-delay: 0.4s;}
     .area.b{width: 96%; height: 60vh; margin-top: 0;}
     #del{display: none;}
   }
 
-  
+  @keyframes slider_search02{
+    from{height: 0;}
+    to{height: 6vh;}
+  }
   #search{display: none;
     &.open{display: flex; justify-content: center; align-items: center;
-      height: 6vh; top: 110px; right: 0;
+      height: 6vh; top: 80px; right: 0;
       background: transparent; box-shadow: none;
-      animation: none; 
+      animation: slider_search02 0.4s; animation-fill-mode: both;
+      transition-delay: 0.3s;
     .box{width: 86%;  border-radius: 0;
       border-top: 2px solid #222;
       border-bottom: 2px solid #222;}

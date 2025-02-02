@@ -358,14 +358,14 @@ header {
     width: 96%;
     height: 60vh;
   }
-  @keyframes slider_search {
+  @keyframes slider_search01 {
     from {
       height: 0;
       top: -4.4vw;
       right: 0;
     }
     to {
-      height: 12%;
+      height: 15vw;
       top: 0;
       right: 0;
     }
@@ -377,7 +377,7 @@ header {
     right: 0;
     background: #FFFCFC;
     box-shadow: 0 2px 4px rgba(34, 34, 34, 0.2666666667);
-    animation: slider_search 0.4s;
+    animation: slider_search01 0.4s;
     animation-fill-mode: both;
     transition: all 0.4s ease-in-out;
   }
@@ -429,12 +429,11 @@ header {
 }
 @media all and (max-width: 451px) {
   #header_bg {
-    height: 70px;
+    height: 50px;
     background: #141414;
   }
   #header_bg #logo {
     height: fit-content;
-    margin-top: 20px;
     transform: scale(1.6);
   }
   #header_bg #gnb .depth_01 {
@@ -442,7 +441,7 @@ header {
   }
   #ham {
     position: fixed;
-    top: 4.2%;
+    top: 20px;
     right: 5%;
     z-index: 110;
     width: 25px;
@@ -479,7 +478,7 @@ header {
     transform: rotate(-45deg);
   }
   #ham.active + #depth_02.active {
-    top: 80px;
+    top: 60px;
     height: 100%;
   }
   #depth_02 .sub li {
@@ -495,6 +494,14 @@ header {
   #depth_02 .sub a {
     font-size: 1.8vw;
   }
+  @keyframes slide_area_B {
+    from {
+      height: 0;
+    }
+    to {
+      height: 8vh;
+    }
+  }
   #depth_02.active {
     display: flex;
     top: 80px;
@@ -505,6 +512,9 @@ header {
     width: 96%;
     height: 8vh;
     margin-top: 0;
+    animation: slide_area_B 0.4s;
+    animation-fill-mode: both;
+    transition-delay: 0.4s;
   }
   #depth_02.active .area.b {
     width: 96%;
@@ -514,6 +524,14 @@ header {
   #depth_02.active #del {
     display: none;
   }
+  @keyframes slider_search02 {
+    from {
+      height: 0;
+    }
+    to {
+      height: 6vh;
+    }
+  }
   #search {
     display: none;
   }
@@ -522,11 +540,13 @@ header {
     justify-content: center;
     align-items: center;
     height: 6vh;
-    top: 110px;
+    top: 80px;
     right: 0;
     background: transparent;
     box-shadow: none;
-    animation: none;
+    animation: slider_search02 0.4s;
+    animation-fill-mode: both;
+    transition-delay: 0.3s;
   }
   #search.open .box {
     width: 86%;
