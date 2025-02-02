@@ -68,8 +68,12 @@ document.addEventListener("DOMContentLoaded", function() {
 				search.classList.add('open');
 		});
 
-		// 화면 넓이가 451px 이상일 때
+
+		// search .del 클릭 시, 닫히는 event class 추가
+
+		// 화면 넓이에 따른 이벤트 변화를 위한 조건 설정
 		const mediaQueryList = window.matchMedia('(min-width: 451px)');
+
 		mediaQueryList.addEventListener('change', (event) => {
 			if (event.matches) {
 				// 451px 이상일 때
@@ -89,9 +93,11 @@ document.addEventListener("DOMContentLoaded", function() {
 			document.addEventListener('click', handleSmallScreenClick);
 		}
 
+		// 실제 실행되는 닫히는 이벤트
 		function handleLargeScreenClick(event) {
 			if (!event.target.closest('#search.open') 
-				&& !event.target.closest('#ham.active')) {
+				&& !event.target.closest('#ham.active')
+				|| event.target.closest('#search .del')) {
 				search.classList.remove('open');
 			}
 		}
@@ -109,6 +115,7 @@ document.addEventListener("DOMContentLoaded", function() {
 		console.error('Error loading header:', error);
 	}); // end of catch
 }); // end of DOMContentLoaded
+
 
 
 
@@ -174,22 +181,78 @@ document.addEventListener("DOMContentLoaded", function() {
 				});
 			❤️ 위에 이벤트에 토글이 3개 들어가는 바람에 이벤트가 오류 나는 경우가 생길 수 있어서
 				  if문 1,2번은 add 클래스가 추가되지 않았을 때, 변수를 추가하는 코드를
-					if문 3,4,5번은 변수에 따른 active 제거 코드로 작성
+					if문 3,4,5번은 변수에 따른 active를 제거하는는 코드로 작성
 				
 
 
 				2) 검색창 클릭 시, 열리는 event class 추가
-				searchBox에.클릭 이벤트 생성('클릭 이벤트 생성', 함수 선언(){
+				searchBox에.표준 이벤트 모델 생성('클릭 이벤트 생성', 함수 선언(){
 					search에.클래스리스트.add('open');
 				});
 
-				#search .del 클릭 시, 닫히는 event class 추가
-				🔥 해석해서 각주 달기기 🔥
+				2-1) search .del 클릭 시, 닫히는 event class 추가
+
+				// 화면 넓이에 따른 이벤트 변화를 위한 조건 설정
+				mediaQueryList 변수 설정 = 윈도우에.일치하는 미디어('(최소너비 : 451px)');
+
+				mediaQueryList에.표준 이벤트 모델 생성('변경 이벤트', 함수 선언(event) => {
+					만약 (이벤트가.일치한다){
+						// 451px 이상일 때
+						문서에.이벤트 생성('클릭 이벤트', handleLargeScreenClick 함수 호출);
+						문서에.이벤트 제거('클릭 이벤트', handleSmallScreenClick 함수 호출);
+					}	아니라면 {
+						// 450px 이하일 때
+						문서에.이벤트 생성('클릭 이벤트', handleSmallScreenClick 함수 호출);
+						문서에.이벤트 제거('클릭 이벤트', handleLargeScreenClick 함수 호출);	
+					}
+				});
 				
+				// 초기 로드 시 이벤트 리스너 설정
+				만약 (mediaQueryList가.일치한다) {
+					문서에.이벤트 생성('클릭 이벤트', handleLargeScreenClick 함수 호출)
+				} 아니라면 {
+					문서에.이벤트 생성('클릭 이벤트', handleSmallScreenClick 함수 호출) 
+				}
+				❤️ 문서를 실행시키자마자 넓이값을 계산하여 어떤 이벤트를 실행시킬지를 결정하는 코드
+			
+				// 실제 실행되는 닫히는 이벤트
+				함수 선언 handleLargeScreenClick(event) {
+					만약 {아니다 이벤트.타겟의.부모가('#search.open')
+						이고<= &&> 아니다 이벤트.타겟의.부모가('#ham.active' 이거나)
+						또는<= ||> 이벤트.타겟의.부모가('#search .del' 라면)){
+						search에.클래스리스트.remove('open');
+					}
+				}
+
+				함수 선언 handleSmallScreenClick(event) {
+					만약 (이벤트.타겟의.부모가('#search .del')
+						이고<= &&> 이벤트.타겟의.부모가('#ham.active' 라면)){
+						search에.클래스리스트.remove('open');
+					}
+				}
 
 			})	// end of then
 			.거부<= catch>(에러 => {
 				에러 출력('Error loading header:', 에러);
 			});	// end of catch
 		}); // end of DOMContentLoaded
+	*/
+
+	/*
+		1. mediaQueryList
+			= 미디어쿼리에 대한 정보를 저장하고 문서 상태에 대한 일치, 이벤트 기반 일치 모두 지원함
+			 * 여기서는 그냥 변수 이름으로 사용함
+			= matchMedia() 메소소드를 사용하여 생성하고 ture/ false 값을 반환함
+			= 지원하는 메소드는 addListener()<값 더하기>, removeListener()<값 빼기> 가 있음
+			= 지원하는 이벤트는 change<변경> 가 있음
+		
+		2.window.matchMedia()
+		 = 미디어 쿼리의 조건을 확인할 수 있는 메소드,
+		   css의 @media와 유사한 방식으로 작동하고 이 작동 값에 대한 js 조건을 붙일 수 있음
+		 = ()안에 css의 @media처럼 조건을 넣어주고 그 조건값이 참이되었을 때, 해당 함수 또는 이벤트를 실행함
+
+		 3. change 이벤트
+		  = 변수에서 설정한 조건이 변경되었을 때, 함수를 실행시키는는 이벤트
+			= 여기서는 mediaQueryList 함수에 값이 변경되었을 때,
+				if (event.metches)를 실행시키는 이벤트로 작동
 	*/
