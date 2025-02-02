@@ -24,7 +24,7 @@ main {
 }
 
 .card h2 {
-  font-size: 2em;
+  font-size: 2vw;
   font-family: "Noto Sans KR";
   font-weight: bold;
 }
@@ -170,5 +170,23 @@ main {
 @media (max-width: 1024px) {
   main .inner {
     margin-top: 15vw;
+  }
+}
+@media (max-width: 768px) {
+  main {
+    width: calc(100% - 24vw);
+    margin: 10.5% 12vw 8vw;
+  }
+  main .inner {
+    margin-top: 18vw;
+  }
+  main .inner .card h2 {
+    font-size: 4vh;
+  }
+}
+@media (max-width: 450px) {
+  main {
+    width: calc(100% - 16vw);
+    padding: 0 8vw;
   }
 }

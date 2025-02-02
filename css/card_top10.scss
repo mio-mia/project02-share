@@ -22,7 +22,7 @@ $color-05: #0E3A3E;   // 다크그린
 
 main{width: 68%; height: fit-content; margin: 10.5% $bg_set 6vw;}
 .card{
-  h2{font-size: 2em; font-family: $font_ko_content; font-weight: bold;}
+  h2{font-size: 2vw; font-family: $font_ko_content; font-weight: bold;}
   .top-3{
     ul{width: 100%; height: fit-content;
       display: flex; justify-content: space-between; align-items: center;}
@@ -85,5 +85,24 @@ main{width: 68%; height: fit-content; margin: 10.5% $bg_set 6vw;}
 @media (max-width: 1024px) {
   main{
    .inner{margin-top: 15vw;}
+  }
+}
+
+
+@media (max-width: 768px) {
+  main{width: calc(100% - 24vw);
+    margin: 10.5% 12vw 8vw;
+   .inner{margin-top: 18vw;
+      .card h2{font-size: 4vh;}
+    }
+  }
+}
+
+
+@media (max-width: 450px) {
+  main{width: calc(100% - 16vw); padding: 0 8vw;
+   .inner{
+    
+   }
   }
 }
