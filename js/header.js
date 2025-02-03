@@ -139,7 +139,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 				1) gnb 클릭 시, sub가 나오는 event class 추가
 
-				표준 이벤트 모델 작성('클릭 이벤트 생성', 함수 선언(event) => {
+				표준 이벤트 모델 작성('클릭 이벤트', 함수 선언(event) => {
 					만약 (이벤트.타겟의.부모가('.depth_01 li' 라면)){
 						depth02에.클래스리스트.toggle('active');
 					}	아니라면 만약 (이벤트.타겟의.부모가('#ham' 이라면)){

@@ -39,9 +39,10 @@ main{width: 68%; height: fit-content; margin: 10.5% $bg_set 6vw;}
         display: inline-flex; justify-content: center; align-items: center;}
       img{width: 50%; height: auto;}
       h4{width: 90%;
-        padding: 0 5%; line-height: 1.4em; margin-bottom: 0.6vw;
+        line-height: 1.4em; margin: 0.6vw 0;
         font-size: 1.2vw; text-align: center;
         word-break: break-all;}
+      .tag{display: flex; justify-content: center; align-items: center;}
       .tag span{width: fit-content; margin: 0 3px 0; font-size: 0.9vw;
         text-align: center; color: #222;}
     } // a
@@ -55,8 +56,8 @@ main{width: 68%; height: fit-content; margin: 10.5% $bg_set 6vw;}
       display: flex; justify-content: flex-start; align-items: center;
       font-family: $font_ko_content;
       .number{display: block; width: 1.8em; margin-left: 0.6em;
-        text-align: center; font-size: 1.8em;}
-      .photo{width: 20%; height: 100%;
+        text-align: center; font-size: 1.8vw;}
+      .photo{width: 12vw; height: 100%;
         display: inline-flex; justify-content: center; align-items: center;}
       img{width: auto; height: 80%;}
       .box{width: fit-content; height: fit-content;
@@ -64,6 +65,7 @@ main{width: 68%; height: fit-content; margin: 10.5% $bg_set 6vw;}
       h4{font-size: 1.6vw; line-height: 2vw;}
       .text{display: flex; flex-direction: row;
         font-size: 1vw; color: #4b4b4b; margin: 1vw 0 0.6vw;}
+      .tag{display: flex; justify-content: center; align-items: center;}
       .tag span{width: fit-content; margin: 0 3px 0; font-size: 0.9vw;
         text-align: center; color: #151515;}
     }
@@ -83,24 +85,40 @@ main{width: 68%; height: fit-content; margin: 10.5% $bg_set 6vw;}
 
 
 @media (max-width: 1024px) {
-  main{
-   .inner{margin-top: 15vw;}
-  }
+  main{margin-top: 13.5%;}
 }
 
 
 @media (max-width: 768px) {
-  main{width: calc(100% - 24vw);
-    margin: 10.5% 12vw 8vw;
-   .inner{margin-top: 18vw;
-      .card h2{font-size: 4vh;}
+  main{width: calc(100% - 20vw); margin: 8.5% 10vw 8vw;}
+  .card{
+    .inner{margin-top: 18vw;}
+    h2{font-size: 3vw;}
+    .top-3{
+      li{width: 31.5%;}
+      a p{font-size: 1.6vh; top: 20px; left: 20px;}
+      a .photo{margin-top: 1.2vw;}
+      a img{width: 40%;}
+      a h4{font-size: 1.1vh;}
+      a .tag span{font-size: 0.9vh;}
+     }
+    .list{margin-top: 20px;
+      li{margin-bottom: 10px;}
+      a .photo{width: 12vw;}
+      a img{height: 70%;}
+      a .text{font-size: 1.2vw; margin-top: 0.8vw;}
     }
-  }
-}
+  } // card
+
+  #check{
+    .lie-a img{width: 60% !important; height: auto !important;}
+    .lie-b img{width: 50% !important; height: auto !important;}
+    }    
+} // 768px
 
 
 @media (max-width: 450px) {
-  main{width: calc(100% - 16vw); padding: 0 8vw;
+  main{width: calc(100% - 16vw); margin: 8.5 % 8vw 8vw;
    .inner{
     
    }
