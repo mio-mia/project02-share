@@ -55,8 +55,8 @@ main {
 }
 .card .top-3 a p {
   position: absolute;
-  top: 30px;
-  left: 30px;
+  top: 25px;
+  left: 25px;
   font-size: 1.8vw;
   font-weight: bold;
 }
@@ -71,6 +71,13 @@ main {
 .card .top-3 a img {
   width: 50%;
   height: auto;
+}
+.card .top-3 a .box {
+  width: 90%;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 .card .top-3 a h4 {
   width: 90%;
@@ -157,7 +164,7 @@ main {
 .card .list a .tag span {
   width: fit-content;
   margin: 0 3px 0;
-  font-size: 0.9vw;
+  font-size: 1vw;
   text-align: center;
   color: #151515;
 }
@@ -184,10 +191,10 @@ main {
 @media (max-width: 768px) {
   main {
     width: calc(100% - 20vw);
-    margin: 8.5% 10vw 8vw;
+    margin: 0 10vw 8vw;
   }
   .card .inner {
-    margin-top: 18vw;
+    margin-top: 14vh;
   }
   .card h2 {
     font-size: 3vw;
@@ -225,7 +232,7 @@ main {
     height: 70%;
   }
   .card .list a .text {
-    font-size: 1.2vw;
+    font-size: 1.2vh;
     margin-top: 0.8vw;
   }
   #check .lie-a img {
@@ -240,6 +247,90 @@ main {
 @media (max-width: 450px) {
   main {
     width: calc(100% - 16vw);
-    margin: 0.5vw 8vw;
+    margin-left: 8vw;
+    margin-right: 8vw;
+  }
+  main .inner {
+    margin-top: 10vh !important;
+  }
+  main .card .top-3 ul {
+    justify-content: center;
+    flex-direction: column;
+  }
+  main .card .top-3 li {
+    width: 100%;
+    height: 15vw;
+    margin-top: 12px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: "Noto Sans KR";
+  }
+  main .card .top-3 a {
+    justify-content: flex-start;
+    flex-direction: row;
+  }
+  main .card .top-3 a p {
+    position: static;
+    display: block;
+    width: 1.8em;
+    margin-left: 0.6em;
+    text-align: center;
+    font-size: 2.2vw;
+  }
+  main .card .top-3 a .photo {
+    width: 12vw;
+    height: 100%;
+    margin-top: 0;
+  }
+  main .card .top-3 a img {
+    width: auto;
+    height: 70%;
+  }
+  main .card .top-3 .box {
+    width: 70%;
+    height: fit-content;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  main .card .top-3 a h4 {
+    font-size: 1.2vh;
+    line-height: 2vw;
+    text-align: left;
+  }
+  main .card .top-3 a .tag span {
+    font-size: 0.84vh;
+    margin-top: 0.8vh;
+  }
+  main .card .list {
+    margin-top: 0;
+  }
+  main .card .list li {
+    height: 14vw;
+    margin-top: 12px;
+    border-radius: 10px;
+  }
+  main .card .list a .number {
+    font-size: 2.2vw;
+  }
+  main .card .list a .photo {
+    width: 13vw;
+  }
+  main .card .list .box {
+    width: 70%;
+  }
+  main .card .list a h4 {
+    font-size: 1vh;
+  }
+  main .card .list a .text {
+    font-size: 0.78vh;
+    margin: 0.4vh 0 !important;
+    line-height: 1.2;
+  }
+  main .card .list a .tag span {
+    font-size: 0.7vh;
   }
 }
