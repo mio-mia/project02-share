@@ -20,20 +20,21 @@ a {
 main .inner {
   width: 68%;
   height: fit-content;
-  margin: 10.5% 16% 0;
+  margin: 9% 16% 0;
 }
 
 h2 {
   width: 100%;
   height: fit-content;
-  margin-bottom: 1.4vw;
+  margin: 0 0 1.4vw 2%;
   color: #141414;
-  font-size: 2vw;
-  font-family: "GmarketSans_500";
+  font-size: 1.6vw;
+  font-weight: 600;
+  font-family: "Noto Sans KR";
 }
 
 .content {
-  width: 100%;
+  width: calc(100% - 4vh);
   height: fit-content;
   padding: 2vh;
   margin-bottom: 5vw;
@@ -60,9 +61,9 @@ h2 {
   display: flex;
   flex-direction: row;
   width: 98%;
-  margin-left: 2%;
+  margin: 2% 0 1% 2%;
   font-family: "Noto Sans KR";
-  font-size: 1.6vw;
+  font-size: 1.44vw;
   font-weight: 500;
 }
 .content .search .dep-01 .title span {
@@ -90,34 +91,45 @@ h2 {
 .content .search .dep-01 .card-btn {
   width: 42%;
   height: fit-content;
-  padding: 0.5em 0.6em;
+  padding: 0.8em 0.6em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: #F4F1EA;
   border-radius: 15px;
-  text-align: center;
-  font-size: 1.4vw;
-  font-family: "Noto Sans KR";
   transition: all 0.3s ease-in-out;
   cursor: pointer;
 }
 .content .search .dep-01 i {
-  opacity: 0.4;
+  display: inline-block;
+  width: 1.2vw;
+  height: 1.2vw;
+  background: url("../img/select.png") no-repeat center center;
+  background-size: 100% 100%;
+  opacity: 0.6;
+}
+.content .search .dep-01 .card-btn h3 {
+  display: inline-block;
+  text-align: center;
+  font-size: 1.2vw;
+  font-family: "Noto Sans KR";
 }
 .content .search .dep-01 .card-btn:hover {
   font-weight: bold;
 }
 .content .search .dep-01 .card-btn:hover i {
+  background: url("../img/select_o.png") no-repeat center center;
+  background-size: 100% 100%;
   opacity: 1;
-  font-weight: bold;
-  color: #e48500;
 }
 .content .search .dep-01 .card-btn.checked {
   font-weight: bold;
   background: #ffd87c !important;
 }
 .content .search .dep-01 .card-btn.checked i {
+  background: url("../img/select_o.png") no-repeat center center;
+  background-size: 100% 100%;
   opacity: 1;
-  font-weight: bold;
-  color: #e48500;
 }
 .content .search .dep-02 {
   width: 96%;
@@ -131,9 +143,9 @@ h2 {
 }
 .content .search .dep-02 .title {
   width: 98%;
-  margin-left: 2%;
+  margin: 2% 0 1% 2%;
   font-family: "Noto Sans KR";
-  font-size: 1.6vw;
+  font-size: 1.44vw;
   font-weight: 500;
 }
 .content .search .dep-02 > div {
@@ -154,9 +166,11 @@ h2 {
 .content .search .dep-02 .left .custom-btn {
   width: calc(100% - 6vh);
   height: calc(48% - 6vh);
-  border-radius: 20px;
   padding: 3vh;
   font-size: 1.2vw;
+  border-radius: 20px;
+  box-shadow: 0px 3px 3px 0px rgba(34, 34, 34, 0.2);
+  transition: all 0.3s ease-in-out;
   position: relative;
 }
 .content .search .dep-02 .left .custom-btn span {
@@ -187,15 +201,14 @@ h2 {
   width: 84%;
   height: 48vh;
   margin: 2% 2% 2% 1%;
-  clear: both;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
 }
 .content .search .dep-02 .right ul {
   width: 100%;
   height: 30.3333333333%;
-  margin-top: 2.6%;
-}
-.content .search .dep-02 .right ul:first-child {
-  margin-top: 0;
 }
 .content .search .dep-02 .right .custom-btn {
   float: left;
@@ -203,9 +216,11 @@ h2 {
   padding: 2.6vh 2vh;
   width: calc(23% - 4vh);
   height: calc(100% - 5.2vh);
-  border-radius: 20px;
   font-size: 0.9vw;
   line-height: 1.4;
+  border-radius: 20px;
+  box-shadow: 0px 3px 3px 0px rgba(34, 34, 34, 0.2);
+  transition: all 0.3s ease-in-out;
   position: relative;
 }
 .content .search .dep-02 .right .custom-btn:nth-child(4n) {
@@ -281,25 +296,54 @@ h2 {
   font-size: 1.2vw;
   text-align: center;
   font-weight: 500;
-  line-height: 1.6vw;
+  line-height: 1.6;
   letter-spacing: 0.1vw;
 }
 .content .search_btn span {
   display: block;
   width: fit-content;
   height: fit-content;
-  padding: 0.5vw 1vw;
-  background: #ff8787;
-  border-radius: 10px;
+  padding: 0.8em 0.65em;
+  background: transparent;
+  border-radius: 15px;
   cursor: pointer;
   text-align: center;
+  color: #0078ff;
   font-size: 1.2vw;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.15vw;
+  border: 2px solid #0078ff;
+  position: relative;
+  z-index: 102;
+  overflow: hidden;
+}
+.content .search_btn span:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  width: 0;
+  height: 100%;
+  background: #0078ff;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+.content .search_btn span:hover {
+  color: #fff;
+  box-shadow: 0px 3px 3px 0px rgba(34, 34, 34, 0.2);
+}
+.content .search_btn span:active {
+  top: 2px;
+}
+.content .search_btn span:hover:after {
+  left: 0;
+  width: 100%;
 }
 
 @media (max-width: 1024px) {
   main .inner {
-    margin-top: 15vw;
+    width: 80%;
+    margin: 11% 10% 0;
   }
 }

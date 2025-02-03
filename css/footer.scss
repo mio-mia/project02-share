@@ -21,12 +21,12 @@ $color-05: #0E3A3E;   // 다크그린
 footer{
   width: 100%; height: fit-content; padding: 5vh 0; background: #dadada;
   font-family: $font_ko_content; color: #4b4b4b;
-  .inner{ width: 68%; padding: 0 $bg_set;
+  .inner{width: 68%; padding: 0 $bg_set;
     display: flex; justify-content: space-between; flex-direction: row;
     .left{width: 50%; height: fit-content;
       h2{width: 100%; height: fit-content;
         margin-bottom: 5%;
-        img{width: 10vw;}
+        img{width: 30%;}
       } // h2
       .info{
         li{display: flex; flex-direction: row;
@@ -50,6 +50,7 @@ footer{
 
 
 @media all and (max-width: 1024px){
+  footer .inner{width: 80%; padding: 0 10%;}
   footer .inner .right .map.b{display: none;}
 }
 

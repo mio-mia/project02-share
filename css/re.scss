@@ -20,11 +20,12 @@ $color-05: #0E3A3E;   // 다크그린
 
 
 
-main .inner{width: 68%; height: fit-content; margin: 10.5% $bg_set 0;}
-h2{width: 100%; height: fit-content; margin-bottom: 1.4vw;
-  color: #141414; font-size: 2vw; font-family: $font_Gmarket_Medium;}
+main .inner{width: 68%; height: fit-content; margin: 9% $bg_set 0;}
+h2{width: 100%; height: fit-content; margin: 0 0 1.4vw 2%;
+  color: #141414; font-size: 1.6vw; font-weight: 600;
+  font-family: $font_ko_content;}
 .content{
-  width: 100%; height: fit-content; padding: 2vh; margin-bottom: 5vw;
+  width: calc(100% - 4vh); height: fit-content; padding: 2vh; margin-bottom: 5vw;
   background: #fff;
   border-radius: 16px;
   display: flex; justify-content: space-between; align-items: center;
@@ -35,9 +36,9 @@ h2{width: 100%; height: fit-content; margin-bottom: 1.4vw;
       display: flex; justify-content: space-around; align-items: center;
       flex-direction: column;
       width: 96%; margin: 2% auto 4%; 
-      .title{ display: flex;flex-direction: row;
-        width: 98%; margin-left: 2%;
-        font-family: $font_ko_content; font-size: 1.6vw; font-weight: 500;
+      .title{display: flex;flex-direction: row;
+        width: 98%; margin: 2% 0 1% 2%;
+        font-family: $font_ko_content; font-size: 1.44vw; font-weight: 500;
         span{display: block;
           width: fit-content; padding: 2px 7px; margin-left: 0.6vw;
           font-size: 0.6em; text-align: center; line-height: 1.2em;
@@ -47,32 +48,39 @@ h2{width: 100%; height: fit-content; margin-bottom: 1.4vw;
       display: flex; justify-content: space-between; align-items: center;
       flex-direction: row;
       padding: 0 2%; margin-top: 2%;}
-      .card-btn{width: 42%; height: fit-content;
-        padding: 0.5em 0.6em;
+      .card-btn{width: 42%; height: fit-content; padding: 0.8em 0.6em;
+        display: flex; justify-content: center; align-items: center;
         background: $color-02; border-radius: 15px;
-        text-align: center; font-size: 1.4vw; font-family: $font_ko_content;
         transition: all 0.3s ease-in-out; cursor: pointer;}
-      i{opacity: 0.4;}
+      i{display: inline-block; width: 1.2vw; height: 1.2vw;
+        background: url('../img/select.png') no-repeat center center;
+        background-size: 100% 100%; opacity: 0.6;}
+      .card-btn h3{display: inline-block;
+        text-align: center; font-size: 1.2vw; font-family: $font_ko_content;}
       .card-btn:hover{font-weight: bold;}
-      .card-btn:hover i{opacity: 1; font-weight: bold; color: #e48500;}
+      .card-btn:hover i{background: url('../img/select_o.png') no-repeat center center;
+        background-size: 100% 100%; opacity: 1;}
       .card-btn.checked{font-weight: bold; background: #ffd87c !important;}
-      .card-btn.checked i{opacity: 1; font-weight: bold; color: #e48500;}
+      .card-btn.checked i{background: url('../img/select_o.png') no-repeat center center;
+        background-size: 100% 100%; opacity: 1;}
     } // dep-01
     .dep-02{
       width: 96%; height: 86%; margin: 2% auto 0;
       display: flex; justify-content: space-around; align-items: center;
       flex-direction: column;
       font-family: $font_ko_content;
-      .title{width: 98%; margin-left: 2%;
-        font-family: $font_ko_content; font-size: 1.6vw; font-weight: 500;}
+      .title{width: 98%; margin: 2% 0 1% 2%;
+        font-family: $font_ko_content; font-size: 1.44vw; font-weight: 500;}
       >div{width: 100%; height: 100%; display: flex; flex-direction: row;}
       .left{
         width: 16%; height: 48vh;
         margin: 2% 1% 2% 2%;
         display: flex; justify-content: space-between; align-items: center;
         flex-direction: column;
-        .custom-btn{width: calc(100% - 6vh); height: calc(48% - 6vh); border-radius: 20px;
+        .custom-btn{width: calc(100% - 6vh); height: calc(48% - 6vh);
           padding: 3vh; font-size: 1.2vw;
+          border-radius: 20px; box-shadow: 0px 3px 3px 0px #22222233;
+          transition: all 0.3s ease-in-out;
           position: relative;
           span{position: absolute; bottom: 2.4vh; right: 2.4vh;
           font-size: 2.4vw; color: #055DF2;}
@@ -91,14 +99,15 @@ h2{width: 100%; height: fit-content; margin-bottom: 1.4vw;
         }
       } // left
       .right{
-        width: 84%; height: 48vh;
-        margin: 2% 2% 2% 1%;
-        clear: both;
-        ul{width: 100%; height: calc((100% / 3) - 3%); margin-top: 2.6%;}
-        ul:first-child{margin-top: 0;}
+        width: 84%; height: 48vh; margin: 2% 2% 2% 1%;
+        display: flex; justify-content: space-between; align-items: center;
+        flex-direction: column;
+        ul{width: 100%; height: calc((100% / 3) - 3%);}
         .custom-btn{float: left; margin-right: calc(8% / 3); padding: 2.6vh 2vh;
-          width: calc(23% - 4vh); height: calc(100% - 5.2vh); border-radius: 20px;
+          width: calc(23% - 4vh); height: calc(100% - 5.2vh);
           font-size: 0.9vw; line-height: 1.4;
+          border-radius: 20px; box-shadow: 0px 3px 3px 0px #22222233;
+          transition: all 0.3s ease-in-out;
           position: relative;
           &:nth-child(4n){margin-right: 0;}
           span{position: absolute; bottom: 1.8vh; right: 1.8vh;
@@ -139,13 +148,28 @@ h2{width: 100%; height: fit-content; margin-bottom: 1.4vw;
     font-family: $font_ko_content;
     p{display: block; margin-bottom: 1vw;
       font-size: 1.2vw; text-align: center; font-weight: 500;
-      line-height: 1.6vw; letter-spacing: 0.1vw;}
+      line-height: 1.6; letter-spacing: 0.1vw;}
     span{display: block;
-      width: fit-content; height: fit-content; padding: 0.5vw 1vw;
-      background: #ff8787;
-      border-radius: 10px; cursor: pointer;
-      text-align: center; font-size: 1.2vw; font-weight: 500;
-      letter-spacing: 0.15vw;}
+      width: fit-content; height: fit-content; padding: 0.8em 0.65em;
+      background: transparent; border-radius: 15px; cursor: pointer;
+      text-align: center; color: $color-03;
+      font-size: 1.2vw; font-weight: 600;
+      letter-spacing: 0.15vw;
+      // btn 커스텀
+      border: 2px solid $color-03;
+      position: relative;  z-index: 102;
+      overflow: hidden;
+    }
+    span:after{content: "";
+      position: absolute; top: 0; right: 0; z-index: -1;
+      width: 0; height: 100%;
+      background: $color-03;
+      transition: all 0.3s ease; overflow: hidden;
+     }
+    span:hover{color: #fff; box-shadow: 0px 3px 3px 0px #22222233;}
+    span:active{top: 2px;}
+    span:hover:after{left: 0; width: 100%;}
+
   }
 } // content
 
@@ -153,6 +177,6 @@ h2{width: 100%; height: fit-content; margin-bottom: 1.4vw;
 
 @media (max-width: 1024px) {
   main{
-   .inner{margin-top: 15vw;}
+    .inner{width: 80%; margin: 11% 10% 0;}
   }
 }
