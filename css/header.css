@@ -335,7 +335,7 @@ header {
   display: none;
   opacity: 0;
   position: absolute;
-  top: 8vh;
+  top: 10%;
   right: -4vw;
   width: 3.4vw;
   height: 3vw;
@@ -450,7 +450,7 @@ header {
   }
   #search.open {
     width: 100%;
-    height: 20vw;
+    height: 250px;
     top: 0;
     right: 0;
     background: #FFFCFC;
