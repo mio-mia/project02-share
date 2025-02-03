@@ -34,9 +34,9 @@ h2 {
 }
 
 .content {
-  width: calc(100% - 4vh);
+  width: 96%;
   height: fit-content;
-  padding: 2vh;
+  padding: 2%;
   margin-bottom: 5vw;
   background: #fff;
   border-radius: 16px;
@@ -168,6 +168,7 @@ h2 {
   height: calc(48% - 6vh);
   padding: 3vh;
   font-size: 1.2vw;
+  font-weight: 500;
   border-radius: 20px;
   box-shadow: 0px 3px 3px 0px rgba(34, 34, 34, 0.2);
   transition: all 0.3s ease-in-out;
@@ -216,7 +217,8 @@ h2 {
   padding: 2.6vh 2vh;
   width: calc(23% - 4vh);
   height: calc(100% - 5.2vh);
-  font-size: 0.9vw;
+  font-size: 1vw;
+  font-weight: 500;
   line-height: 1.4;
   border-radius: 20px;
   box-shadow: 0px 3px 3px 0px rgba(34, 34, 34, 0.2);
@@ -234,7 +236,6 @@ h2 {
   color: #055DF2;
 }
 .content .search .dep-02 .right .custom-btn:hover {
-  background: #aaaaaa;
   font-weight: bold;
   cursor: pointer;
   box-shadow: 2px 2px 6px 0 rgba(255, 255, 255, 0.5), -2px -2px 6px 0 rgba(116, 125, 136, 0.5), inset -2px -2px 6px 0 rgba(255, 255, 255, 0.2), inset 2px 2px 6px 0 rgba(0, 0, 0, 0.4);
@@ -309,7 +310,7 @@ h2 {
   cursor: pointer;
   text-align: center;
   color: #0078ff;
-  font-size: 1.2vw;
+  font-size: 1.1vw;
   font-weight: 600;
   letter-spacing: 0.15vw;
   border: 2px solid #0078ff;
@@ -341,9 +342,61 @@ h2 {
   width: 100%;
 }
 
-@media (max-width: 1024px) {
+@media all and (max-width: 1024px) {
   main .inner {
     width: 80%;
     margin: 11% 10% 0;
+  }
+  main h2 {
+    font-size: 1.3em !important;
+  }
+  main .content {
+    flex-direction: column;
+  }
+  main .search .dep-01 .title {
+    font-size: 1.15em !important;
+  }
+  main .search .dep-01 .card-btn h3 {
+    font-size: 1.1em !important;
+  }
+  main .search .dep-02 .left {
+    height: 40vh !important;
+  }
+  main .search .dep-02 .left .custom-btn {
+    width: calc(100% - 4vh) !important;
+    height: calc(48% - 4vh) !important;
+    padding: 2vh !important;
+    font-size: 1.1em !important;
+  }
+  main .search .dep-02 .title {
+    font-size: 1.15em !important;
+  }
+  main .search .dep-02 .right {
+    height: 40vh !important;
+  }
+  main .search .dep-02 .right .custom-btn {
+    width: calc(23% - 3.2vh) !important;
+    height: calc(100% - 4vh) !important;
+    padding: 2vh 1.6vh !important;
+    font-size: 0.9em !important;
+  }
+  main .search_btn {
+    width: 100% !important;
+    padding: 6% 1% !important;
+  }
+  main .search_btn p {
+    font-size: 1.4em !important;
+  }
+  main .search_btn span {
+    font-size: 1.3em !important;
+    box-shadow: 0px 3px 3px 0px rgba(34, 34, 34, 0.2) !important;
+  }
+  main .search_btn span:active {
+    top: 2px;
+    color: #fff !important;
+  }
+  main .search_btn span:active:after {
+    left: 0;
+    width: 100%;
   }
 }

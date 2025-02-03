@@ -25,7 +25,7 @@ h2{width: 100%; height: fit-content; margin: 0 0 1.4vw 2%;
   color: #141414; font-size: 1.6vw; font-weight: 600;
   font-family: $font_ko_content;}
 .content{
-  width: calc(100% - 4vh); height: fit-content; padding: 2vh; margin-bottom: 5vw;
+  width: 96%; height: fit-content; padding: 2%; margin-bottom: 5vw;
   background: #fff;
   border-radius: 16px;
   display: flex; justify-content: space-between; align-items: center;
@@ -78,7 +78,7 @@ h2{width: 100%; height: fit-content; margin: 0 0 1.4vw 2%;
         display: flex; justify-content: space-between; align-items: center;
         flex-direction: column;
         .custom-btn{width: calc(100% - 6vh); height: calc(48% - 6vh);
-          padding: 3vh; font-size: 1.2vw;
+          padding: 3vh; font-size: 1.2vw; font-weight: 500;
           border-radius: 20px; box-shadow: 0px 3px 3px 0px #22222233;
           transition: all 0.3s ease-in-out;
           position: relative;
@@ -105,14 +105,14 @@ h2{width: 100%; height: fit-content; margin: 0 0 1.4vw 2%;
         ul{width: 100%; height: calc((100% / 3) - 3%);}
         .custom-btn{float: left; margin-right: calc(8% / 3); padding: 2.6vh 2vh;
           width: calc(23% - 4vh); height: calc(100% - 5.2vh);
-          font-size: 0.9vw; line-height: 1.4;
+          font-size: 1vw; font-weight: 500; line-height: 1.4;
           border-radius: 20px; box-shadow: 0px 3px 3px 0px #22222233;
           transition: all 0.3s ease-in-out;
           position: relative;
           &:nth-child(4n){margin-right: 0;}
           span{position: absolute; bottom: 1.8vh; right: 1.8vh;
           font-size: 2vw; color: #055DF2;}
-          &:hover{background: #aaaaaa; font-weight: bold; cursor: pointer;
+          &:hover{font-weight: bold; cursor: pointer;
             box-shadow: 2px 2px 6px 0 rgba(255,255,255,.5),
                         -2px -2px 6px 0 rgba(116, 125, 136, .5), 
                         inset -2px -2px 6px 0 rgba(255,255,255,.2),
@@ -153,7 +153,7 @@ h2{width: 100%; height: fit-content; margin: 0 0 1.4vw 2%;
       width: fit-content; height: fit-content; padding: 0.8em 0.65em;
       background: transparent; border-radius: 15px; cursor: pointer;
       text-align: center; color: $color-03;
-      font-size: 1.2vw; font-weight: 600;
+      font-size: 1.1vw; font-weight: 600;
       letter-spacing: 0.15vw;
       // btn 커스텀
       border: 2px solid $color-03;
@@ -175,8 +175,37 @@ h2{width: 100%; height: fit-content; margin: 0 0 1.4vw 2%;
 
 
 
-@media (max-width: 1024px) {
+@media all and (max-width: 1024px) {
   main{
     .inner{width: 80%; margin: 11% 10% 0;}
-  }
+    h2{font-size: 1.3em !important;}
+    .content{flex-direction: column;}
+    .search{
+      .dep-01 .title{font-size: 1.15em !important;}
+      .dep-01 .card-btn h3{font-size: 1.1em !important;}
+
+      .dep-02 .left{height: 40vh !important;
+        .custom-btn{
+          width: calc(100% - 4vh) !important;
+          height: calc(48% - 4vh) !important;
+          padding: 2vh !important;
+          font-size: 1.1em !important;}
+      }
+      .dep-02 .title{font-size: 1.15em !important;}
+      .dep-02 .right{height: 40vh !important;
+        .custom-btn{
+          width: calc(23% - 3.2vh) !important;
+          height: calc(100% - 4vh) !important;
+          padding: 2vh 1.6vh !important;
+          font-size: 0.9em !important;}
+      }
+    } // search
+    .search_btn{width: 100% !important; padding: 6% 1%  !important;
+      p{font-size: 1.4em !important;}
+      span{font-size: 1.3em !important;
+        box-shadow: 0px 3px 3px 0px #22222233 !important;}
+      span:active{top: 2px; color: #fff !important;}
+      span:active:after{left: 0; width: 100%;}
+    }
+  } // main
 }
