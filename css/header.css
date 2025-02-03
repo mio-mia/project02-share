@@ -123,7 +123,7 @@ header {
 }
 #depth_02 .area {
   height: 86%;
-  margin: 100px 0 0 2%;
+  margin-left: 2%;
 }
 #depth_02 .area.a {
   width: 24%;
@@ -131,6 +131,7 @@ header {
   padding-left: 4%;
   border-radius: 35px;
   background: #F4F1EA;
+  margin-top: 100px;
 }
 #depth_02 .area.a ul {
   width: 100%;
@@ -141,16 +142,17 @@ header {
   flex-direction: column;
 }
 #depth_02 .area.a .title {
-  font-size: 2.5rem;
+  font-size: 2.5vw;
   font-weight: bold;
   color: #333;
   font-weight: bold;
+  line-height: 1.3;
 }
 #depth_02 .area.a .title span {
   color: #0078ff;
 }
 #depth_02 .area.a .text {
-  font-size: 1.88rem;
+  font-size: 1.9vw;
   padding-top: 1em;
 }
 #depth_02 .area.a .text img {
@@ -241,6 +243,7 @@ header {
   width: 4vh;
   height: 4vh;
   border: 2px solid #000;
+  cursor: pointer;
 }
 #depth_02 #del i {
   width: 22px;
@@ -385,12 +388,45 @@ header {
     padding-top: 1.6vh;
   }
   #depth_02.active .area.a {
-    width: 88%;
+    width: 84%;
     height: 14vh;
     margin-top: 26px;
   }
-  #depth_02.active .area.a li {
+  #depth_02.active .area.a ul {
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    height: 14vh;
+  }
+  #depth_02.active .area.a li.text {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 22vw;
+  }
+  #depth_02.active .area.a .title {
+    font-size: 2.3vw;
+    font-weight: bold;
+    color: #333;
+    font-weight: bold;
+    line-height: 1.3;
+  }
+  #depth_02.active .area.a .title span {
+    color: #0078ff;
+  }
+  #depth_02.active .area.a .text {
+    font-size: 1.6vw;
+    padding-top: 0.4em;
+  }
+  #depth_02.active .area.a .text img {
+    width: 7%;
+    vertical-align: -3px;
+  }
+  #depth_02.active .area.a li a {
     height: 100%;
+    margin-top: 0;
   }
   #depth_02.active .area.b {
     width: 96%;
@@ -557,9 +593,45 @@ header {
     width: 96%;
     height: 8vh;
     margin-top: 0;
-    animation: slide_area_B 0.4s;
+    padding-left: 0;
+    border-radius: 15px;
+    animation: slide_area_B 0.3s;
     animation-fill-mode: both;
     transition-delay: 0.4s;
+  }
+  #depth_02.active .area.a ul {
+    height: 8vh;
+  }
+  #depth_02.active .area.a li.text {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 22vw;
+    margin-right: 4vw;
+  }
+  #depth_02.active .area.a .title {
+    font-size: 2.8vw;
+    font-weight: bold;
+    color: #333;
+    font-weight: bold;
+    line-height: 1.3;
+  }
+  #depth_02.active .area.a .title span {
+    color: #0078ff;
+  }
+  #depth_02.active .area.a .text {
+    font-size: 2vw;
+    padding-top: 0.4em;
+  }
+  #depth_02.active .area.a .text img {
+    width: 7%;
+    vertical-align: -3px;
+  }
+  #depth_02.active .area.a li a {
+    height: 100%;
+    margin-top: 0;
+    font-size: 3.6vw;
   }
   #depth_02.active .area.b {
     width: 96%;

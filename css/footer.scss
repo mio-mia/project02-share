@@ -20,7 +20,7 @@ $color-05: #0E3A3E;   // 다크그린
 
 footer{
   width: 100%; height: fit-content; padding: 5vh 0; background: #dadada;
-  font-family: $font_Gmarket_Medium; color: #4b4b4b;
+  font-family: $font_ko_content; color: #4b4b4b;
   .inner{ width: 68%; padding: 0 $bg_set;
     display: flex; justify-content: space-between; flex-direction: row;
     .left{width: 50%; height: fit-content;

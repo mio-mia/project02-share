@@ -75,15 +75,15 @@ header{
   animation: slide_bg 0.4s; animation-fill-mode: both;
   transition: all 0.4s ease-in-out;
 
-  .area{height: 86%; margin: 100px 0 0 2%;
+  .area{height: 86%; margin-left: 2%;
     &.a{width: 24%; height: 84.5vh; padding-left: 4%; border-radius: 35px;
-      background: $color-02;
+      background: $color-02; margin-top: 100px;
       ul{width: 100%; height: 100%;
         display: flex; justify-content: center; align-items: flex-start;
         flex-direction: column;}
-      .title {font-size: 2.5rem; font-weight: bold; color: #333; font-weight: bold;}
+      .title {font-size: 2.5vw; font-weight: bold; color: #333; font-weight: bold; line-height: 1.3;}
       .title span {color: #0078ff;}
-      .text {font-size: 1.88rem; padding-top: 1em;}
+      .text {font-size: 1.9vw; padding-top: 1em;}
       .text img {width: 7%; vertical-align: -3px;}
       li a {
         font-size: 1.56rem; margin-top: 3em; padding: .34em 2em .5em; background: #0078ff; color: #fff;
@@ -119,7 +119,7 @@ header{
     position: absolute; top: 130px; right: 3.4vw; z-index: 101;
     display: flex; justify-content: center; align-items: center;
     width: 4vh; height: 4vh;
-    border: 2px solid #000;
+    border: 2px solid #000; cursor: pointer;
     i{width: 22px; height: 3px; background: #000;
       position: absolute; top: 45%;} 
     i:nth-child(1){transform: rotate(45deg);}
@@ -192,8 +192,16 @@ header{
 
   #depth_02.active{flex-direction: column; justify-content: flex-start;
     padding-top: 1.6vh;
-    .area.a{width: 88%; height: 14vh; margin-top: 26px;
-      li{height: 100%;}
+    .area.a{width: 84%; height: 14vh; margin-top: 26px;
+      ul{justify-content: center; align-items: center; flex-direction: row;
+        width: 100%; height: 14vh;}
+      li.text{display: flex; justify-content: center; align-items: flex-start; flex-direction: column;
+        width: 22vw;}
+      .title{font-size: 2.3vw; font-weight: bold; color: #333; font-weight: bold; line-height: 1.3;}
+      .title span{color: #0078ff;}
+      .text{font-size: 1.6vw; padding-top: 0.4em;}
+      .text img {width: 7%; vertical-align: -3px;}
+      li a{height: 100%; margin-top: 0;}
     }
     .area.b{width: 96%; height: 60vh;}
   }
@@ -280,9 +288,20 @@ header{
     to{height: 8vh;}
   }
   #depth_02.active{display: flex; top: 80px; height: 0; padding-top: 100px;
-    .area.a{width: 96%; height: 8vh; margin-top: 0;
-      animation: slide_area_B 0.4s; animation-fill-mode: both;
-      transition-delay: 0.4s;}
+    .area.a{width: 96%; height: 8vh;
+      margin-top: 0; padding-left: 0;
+      border-radius: 15px;
+      animation: slide_area_B 0.3s; animation-fill-mode: both;
+      transition-delay: 0.4s;
+    ul{height: 8vh;}
+    li.text{display: flex; justify-content: center; align-items: flex-start; flex-direction: column;
+      width: 22vw; margin-right: 4vw;}
+    .title{font-size: 2.8vw; font-weight: bold; color: #333; font-weight: bold; line-height: 1.3;}
+    .title span{color: #0078ff;}
+    .text{font-size: 2vw; padding-top: 0.4em;}
+    .text img {width: 7%; vertical-align: -3px;}
+    li a{height: 100%; margin-top: 0; font-size: 3.6vw;}
+    }
     .area.b{width: 96%; height: 60vh; margin-top: 0;}
     #del{display: none;}
   }
