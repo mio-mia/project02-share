@@ -249,7 +249,7 @@ h2{width: 100%; height: fit-content; margin: 0 0 1.4vw 2%;
 
       .dep-02{height: fit-content !important; margin-top: 8% !important;}
       .dep-02 .title{font-size: 1.05em !important; margin-bottom: 2.5% !important;}
-      .dep-02>div{height: 78vh !important; flex-direction: column !important;}
+      .dep-02>div{flex-direction: column !important;}
       .dep-02 .left{width: 96% !important;
         height: 90px !important;
         margin: 2% 2% 2% 1% !important;
@@ -261,20 +261,20 @@ h2{width: 100%; height: fit-content; margin: 0 0 1.4vw 2%;
           font-size: 0.95em !important;}
         .custom-btn span{font-size: 1.4em !important;}
       }
-      .dep-02 .right{width: 96% !important; height: 54vh !important;
-        ul{ height: 90px !important;}
+      .dep-02 .right{width: 96% !important; height: 620px !important;
+        ul{height: 196px !important;}
         ul li:nth-child(2n){margin-right: 0 !important;}
-        ul li:nth-child(1n + 3){margin-top: 4% !important;}
+        ul li:nth-child(1n + 3){margin-top: 16px !important;}
         .custom-btn{
           width: calc(48% - 3.2vh) !important;
-          height: calc(100% - 4vh) !important;
+          height: calc(90px - 4vh) !important;
           font-size: 0.9em !important;}
         .custom-btn span{font-size: 1.4em !important;}
       }
     } // search
     .search_btn{width: 100% !important;
       p{font-size: 1.1em !important;}
-      span{font-size: 1em !important;}
+      span{font-size: 0.9em !important;}
     }
   } // main
 }

@@ -479,7 +479,6 @@ h2 {
     margin-bottom: 2.5% !important;
   }
   main .search .dep-02 > div {
-    height: 78vh !important;
     flex-direction: column !important;
   }
   main .search .dep-02 .left {
@@ -499,20 +498,20 @@ h2 {
   }
   main .search .dep-02 .right {
     width: 96% !important;
-    height: 54vh !important;
+    height: 620px !important;
   }
   main .search .dep-02 .right ul {
-    height: 90px !important;
+    height: 196px !important;
   }
   main .search .dep-02 .right ul li:nth-child(2n) {
     margin-right: 0 !important;
   }
   main .search .dep-02 .right ul li:nth-child(1n+3) {
-    margin-top: 4% !important;
+    margin-top: 16px !important;
   }
   main .search .dep-02 .right .custom-btn {
     width: calc(48% - 3.2vh) !important;
-    height: calc(100% - 4vh) !important;
+    height: calc(90px - 4vh) !important;
     font-size: 0.9em !important;
   }
   main .search .dep-02 .right .custom-btn span {
@@ -525,6 +524,6 @@ h2 {
     font-size: 1.1em !important;
   }
   main .search_btn span {
-    font-size: 1em !important;
+    font-size: 0.9em !important;
   }
 }
