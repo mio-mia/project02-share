@@ -315,7 +315,7 @@ h2 {
   letter-spacing: 0.15vw;
   border: 2px solid #0078ff;
   position: relative;
-  z-index: 102;
+  z-index: 1;
   overflow: hidden;
 }
 .content .search_btn span:after {
@@ -345,7 +345,7 @@ h2 {
 @media all and (max-width: 1024px) {
   main .inner {
     width: 80%;
-    margin: 11% 10% 0;
+    margin: 12.5% 10% 0;
   }
   main h2 {
     font-size: 1.3em !important;
