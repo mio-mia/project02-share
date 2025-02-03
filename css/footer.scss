@@ -25,32 +25,44 @@ footer{
     display: flex; justify-content: space-between; flex-direction: row;
     .left{width: 50%; height: fit-content;
       h2{width: 100%; height: fit-content;
-        margin-bottom: 2vw;
+        margin-bottom: 5%;
         img{width: 10vw;}
       } // h2
       .info{
-        li{display: flex; flex-direction: row; flex-wrap: nowrap;
-          font-size: 0.6vw; margin: 0.6em 0;
-          font-family: $font_Gmarket_Medium; letter-spacing: 1.4;}
-        p{display: block;}
+        li{display: flex; flex-direction: row;
+          font-size: 13px; margin: 0.6em 0;
+          font-family: $font_ko_content;}
+        p{display: block; text-wrap: nowrap;}
         li .tab{margin-left: 3%;}
       } // info
     }
-    .right{ width: 50%; height: fit-content;
+    .right{width: 50%; height: fit-content; margin-top: 2%;
       .map{width: 100%; height: fit-content;
         display: flex; justify-content: flex-end; margin-bottom: 2vw;}
-      li{font-size: 1vw; text-align: center;
-        font-family: $font_eng; font-weight: bold;
+      .map.b li{font-size: 14.5px;}
+      li{font-size: 16px; text-align: center;
+        font-family: $font_ko_content; font-weight: 500;
         margin-left: 5%;}
       li:hover{text-decoration: underline; cursor: pointer;}
     }
   } // inner
 }
 
+
+@media all and (max-width: 1024px){
+  footer .inner .right .map.b{display: none;}
+}
+
 @media all and (max-width: 768px){
   footer{padding: 3.5vh 0;
     .inner{width: calc(100% - 24vw); padding: 0 12vw;
-      .left h2 img{width: 8vh;}
+      flex-direction: column;
+      .left{width: 100%;}
+      .left h2 img{width: 20%;}
+      .left .info li p{text-wrap: wrap; line-height: 1.3;}
+      .right{width: 100%; margin-top: 0;}
+      .right .map{justify-content: flex-start; margin-top: 15px;}
+      .right li{margin-left: 0; margin-right: 5%;}
     }
   }
 }
@@ -58,7 +70,8 @@ footer{
 @media all and (max-width: 450px){
   footer{
     .inner{width: calc(100% - 16vw); padding: 0 8vw;
-      .left h2 img{width: 6vh;}
+      .left h2{margin-bottom: 6%;}
+      .left h2 img{width: 30%;}
     }
   }
 }

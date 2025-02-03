@@ -124,6 +124,7 @@ header {
 #depth_02 .area {
   height: 86%;
   margin-left: 2%;
+  margin-top: 100px;
 }
 #depth_02 .area.a {
   width: 24%;
@@ -131,7 +132,6 @@ header {
   padding-left: 4%;
   border-radius: 35px;
   background: #F4F1EA;
-  margin-top: 100px;
 }
 #depth_02 .area.a ul {
   width: 100%;
