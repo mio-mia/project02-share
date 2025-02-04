@@ -6,425 +6,489 @@
   <title>SPOT!</title>
   <link rel="shortcut icon" href="images/favicon.png">
   <link rel="stylesheet" href="css/font.css">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Reddit+Sans+Condensed:wght@200..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Reddit+Sans+Condensed:wght@200..900&family=Slackey&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/style.css">
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 
 <body>
   <div class="inner">
-    <div class="wrap">
-      <div class="camera_zoom">
-        <img src="images/camera_zoom.png" alt="카메라 줌">
-      </div>
-      <div class="camera_bolt">
-        <img src="images/bolt.png" alt="카메라 조명">
-      </div>
-      <div class="camera_ring"></div>
-      <a href=".all_menu" class="menu_btn">
-        <span id="line"></span>
-        <span id="line"></span>
+    <div class="logo">
+      <a href="main.html">
+        <img src="images/logo2_off.png" alt="로고" onmouseover="this.src='images/logo2_on.png'" onmouseout="this.src='images/logo2_off.png'">
       </a>
-      <div class="camera_reverse">
-        <img src="images/reverse.png" alt="카메라 반전">
+    </div>
+    <div class="container">
+      <div class="camera_top">
+        <li><img src="images/flash.png" alt="카메라 플래시"></li>
+        <li><img src="images/shake.png" alt="카메라 흔들림"></li>
+        <li><img src="images/live.png" alt="카메라 라이브"></li>        
       </div>
-      <div class="all_menu">
-        <div id="left_area"></div>
-        <div id="right_area"></div>        
-      </div>
-      <div class="menu_text"> 
-        <ul id="depth_1">
-          <li>
-            <a href="#">카드 분류별 랭킹</a>
-            <div>
-              <ul id="depth_2">
-                <li><a href="#">신용카드 Top 10</a></li>
-                <li><a href="#">체크카드 Top 10</a></li>
-                <li><a href="#">카드타입별 보기</a></li>
-                <li><a href="#">전월실적별 보기</a></li>
-              </ul>
-            </div>
-          </li>
-          <li>
-            <a href="#">혜택별 카드</a>
-            <div>
-              <ul id="depth_2">
-                <li><a href="#">마트·편의점 / 배달</a></li>
-                <li><a href="#">모든 가맹점 / 무실적</a></li>
-                <li><a href="#">통신 / 구독·스트리밍</a></li>
-                <li><a href="#">쇼핑</a></li>
-                <li><a href="#">교통</a></li>
-                <li><a href="#">여행·바우처 / 해외결제</a></li>
-                <li><a href="#">항공 마일리지 /라운지</a></li>
-                <li><a href="#">주유 / 차량정비</a></li>
-                <li><a href="#">공과금</a></li>
-                <li><a href="#">제휴</a></li>
-              </ul>
-            </div>
-          </li>
-          <li>
-            <a href="#">정부지원 카드</a>
-            <div>
-              <ul id="depth_2">
-                <li><a href="#">알뜰교통카드</a></li>
-                <li><a href="#">나라사랑카드</a></li>
-                <li><a href="#">내일배움카드</a></li>
-                <li><a href="#">국민행복카드</a></li>
-                <li><a href="#">경차사랑카드</a></li>
-                <li><a href="#">고향사랑기부제 특화카드</a></li>
-              </ul>
-            </div>
-          </li>
-          <li>
-            <a href="#">브랜드별 카드 찾기</a>
-            <div>
-              <ul id="depth_2">
-                <li><a href="#">KB국민카드</a></li>
-                <li><a href="#">현대카드</a></li>
-                <li><a href="#">삼성카드</a></li>
-                <li><a href="#">신한카드</a></li>
-                <li><a href="#">롯데카드</a></li>
-                <li><a href="#">NH농협카드</a></li>
-                <li><a href="#">BC바로카드</a></li>
-                <li><a href="#">우리카드</a></li>
-                <li><a href="#">IBK기업은행</a></li>
-                <li><a href="#">전체</a></li>
-              </ul>
-            </div>
-          </li>
+      <div id="lens"><img src="images/top_camera.png" alt="렌즈"></div>
+      <div class="camera_bottom">
+        <ul id="bottom_top">
+          <li>분류별 랭킹</li>
+          <li>혜택별 카드</li>
+          <li>정부지원 카드</li>
+          <li>카드 찾기</li>
         </ul>
+        <div id="preview">
+          <img src="images/preview.png" alt="카메라 미리보기">
+        </div>
+        <div id="bottom_camera">
+          <img src="images/bottom_camera.png" alt="하단 카메라">
+        </div>
+        <div id="bottom_reverse">
+          <img src="images/reverse3.png" alt="하단 리버스2">
+        </div>
       </div>
-      <div class="custom_card">
-        <div id="custom_title">나에게<br><span>딱</span> 맞는 <span>카드</span>는?!</div>
-        <div id="custom_text">맞춤카드추천 <img id="custom_img" src="images/custom_card.png" alt="맞춤카드 이미지"></div>
-        <div id="custom_link"><a href="https://mio-mia.github.io/project02-share/html/re.html">바로가기</a></div>
-      </div>
-      <img class="backBg" src="images/tablet5.png">
-      <h1><a href="index.html"><img class="logo" src="images/logo_off.png" alt="로고" onmouseover="this.src='images/logo_on.png'" onmouseout="this.src='images/logo_off.png'"></a></h1>
-      <div class="pc"><span id="pc_click">click!</span></div>
-      <div class="swiper pc_swiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide"><img src="cards/ott1.png" alt="">
-            <ul>
-              <li id="sub_title">BC 바로 클리어 플러스</li>
-              <li id="sub_text1">스트리밍 10% 할인</li>
-              <li id="sub_text2">#국내전용 5,000원<br>#해외겸용 5,000원<br>#전월실적 15만원 이상</li>
-              <li id="sub_link"><a href="#">바로가기</a></li>
-            </ul>
-          </div>
-          <div class="swiper-slide"><img src="cards/ott2.png" alt="">
-            <ul>
-              <li id="sub_title">삼성 iD ON 카드</li>
-              <li id="sub_text1">스트리밍 10% 할인</li>
-              <li id="sub_text2">#국내전용 20,000원<br>#해외겸용 20,000원<br>#전월실적 30만원 이상</li>
-              <li id="sub_link"><a href="#">바로가기</a></li>
-            </ul>
-          </div>
-          <div class="swiper-slide"><img src="cards/ott3.png" alt="">
-            <ul>
-              <li id="sub_title">taptap DIGITAL</li>
-              <li id="sub_text1">스트리밍 50% 할인</li>
-              <li id="sub_text2">#국내전용 10,000원<br>#해외겸용 10,000원<br>#전월실적 30만원 이상</li>
-              <li id="sub_link"><a href="#">바로가기</a></li>
-            </ul>
-          </div>
-          <div class="swiper-slide"><img src="cards/ott4.png" alt="">
-            <ul>
-              <li id="sub_title">원더카드 (원더 Life)</li>
-              <li id="sub_text1">넷플릭스・디즈니 플러스 등<br>40% 할인</li>
-              <li id="sub_text2">#국내전용 19,000원<br>#해외겸용 19,000원<br>#전월실적 40만원 이상</li>
-              <li id="sub_link"><a href="#">바로가기</a></li>
-            </ul>
-          </div>
-          <div class="swiper-slide"><img src="cards/ott5.png" alt="">
-            <ul>
-              <li id="sub_title">taptap SHOPPING</li>
-              <li id="sub_text1">스트리밍 3천원 할인</li>
-              <li id="sub_text2">#국내전용 10,000원<br>#해외겸용 10,000원<br>#전월실적 30만원 이상</li>
-              <li id="sub_link"><a href="#">바로가기</a></li>
-            </ul>
-          </div>
-          <div class="swiper-slide"><img src="cards/ott6.png" alt="">
-            <ul>
-              <li id="sub_title">K-패스 카드</li>
-              <li id="sub_text1">OTT/스트리밍 15% 할인</li>
-              <li id="sub_text2">#국내전용 6,000원<br>#해외겸용 6,000원<br>#전월실적 30만원 이상</li>
-              <li id="sub_link"><a href="#">바로가기</a></li>
-            </ul>
-          </div>  
+      <div class="wrap">
+        <div class="logo2">
+          <a href="main.html">
+            <img src="images/logo2_off.png" alt="로고" onmouseover="this.src='images/logo2_on.png'" onmouseout="this.src='images/logo2_off.png'">
+          </a>
         </div>
-        <div class="swiper-button-prev button"></div>
-        <div class="swiper-button-next button"></div>
-      </div><!--end:.pc_swiper-->
-      <div class="bag"><span id="bag_click">click!</span></div>
-      <div class="swiper bag_swiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide"><img src="cards/shopping1.png" alt="">
-            <ul>
-              <li id="sub_title">신한카드 Mr.Life</li>
-              <li id="sub_text1">마트, 편의점 10% 할인</li>
-              <li id="sub_text2">#해외겸용 15,000원<br>#전월실적 30만원 이상<br>#온라인발급 전용 카드</li>
-              <li id="sub_link"><a href="#">바로가기</a></li>
-            </ul>
-          </div>
-          <div class="swiper-slide"><img src="cards/shopping2.png" alt="">
-            <ul>
-              <li id="sub_title">LOCA LIKIT 1.2</li>
-              <li id="sub_text1">모든 가맹점 1.2% 할인</li>
-              <li id="sub_text2">#국내전용 10,000원<br>#해외겸용 10,000원<br>#전월실적 없음</li>
-              <li id="sub_link"><a href="#">바로가기</a></li>
-            </ul>
-          </div>
-          <div class="swiper-slide"><img src="cards/shopping3.png" alt="">
-            <ul>
-              <li id="sub_title">현대카드 M</li>
-              <li id="sub_text1">국내 외 가맹점 1.5% 적립</li>
-              <li id="sub_text2">#국내전용 30,000원<br>#해외겸용 30,000원<br>#전월실적 50만원 이상</li>
-              <li id="sub_link"><a href="#">바로가기</a></li>
-            </ul>
-          </div>
-          <div class="swiper-slide"><img src="cards/shopping4.png" alt="">
-            <ul>
-              <li id="sub_title">신한카드 처음(ANNIVERSE)</li>
-              <li id="sub_text1">음식·생활·패션 5% 적립</li>
-              <li id="sub_text2">#국내전용 15,000원<br>#해외겸용 18,000원<br>#전월실적 30만원 이상</li>
-              <li id="sub_link"><a href="#">바로가기</a></li>
-            </ul>
-          </div>
-          <div class="swiper-slide"><img src="cards/shopping5.png" alt="">
-            <ul>
-              <li id="sub_title">카드의 정석 SHOPPING+</li>
-              <li id="sub_text1">온라인 쇼핑 10% 청구할인</li>
-              <li id="sub_text2">#국내전용 10,000원<br>#해외겸용 12,000원<br>#전월실적 30만원 이상</li>
-              <li id="sub_link"><a href="#">바로가기</a></li>
-            </ul>
-          </div>
-          <div class="swiper-slide"><img src="cards/shopping6.png" alt="">
-            <ul>
-              <li id="sub_title">신한카드 처음</li>
-              <li id="sub_text1">음식점·카페·편의점·온라인 쇼핑<br>5% 적립</li>
-              <li id="sub_text2">#국내전용 15,000원<br>#해외겸용 18,000원<br>#전월실적 30만원 이상</li>
-              <li id="sub_link"><a href="#">바로가기</a></li>
-            </ul>
-          </div>
+        <div class="camera_zoom">
+          <img src="images/camera_zoom.png" alt="카메라 줌">
         </div>
-        <div class="swiper-button-prev button"></div>
-        <div class="swiper-button-next button"></div>
-      </div><!--end:.bag_swiper-->
-      <div class="trip"><span id="trip_click">click!</span></div>
-      <div class="swiper trip_swiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide"><img src="cards/trip1.png" alt="">
-            <ul>
-              <li id="sub_title">삼성카드 & MILEAGE<br>PLATINUM (스카이패스)</li>
-              <li id="sub_text1">1,000원당 1마일 기본적립</li>
-              <li id="sub_text2">#국내전용 47,000원<br>#해외겸용 49,000원<br>#전월실적 없음</li>
-              <li id="sub_link"><a href="#">바로가기</a></li>
-            </ul>
-          </div>
-          <div class="swiper-slide"><img src="cards/trip2.png" alt="">
-            <ul>
-              <li id="sub_title">카드의 정석<br>EVERY MILE SKYPASS</li>
-              <li id="sub_text1">국내 공항라운지 동반 1인<br>동시 이용</li>
-              <li id="sub_text2">#국내전용 39,000원<br>#해외겸용 39,000원<br>#전월실적 없음</li>
-              <li id="sub_link"><a href="#">바로가기</a></li>
-            </ul>
-          </div>
-          <div class="swiper-slide"><img src="cards/trip3.png" alt="">
-            <ul>
-              <li id="sub_title">JADE Classic</li>
-              <li id="sub_text1">전세계 공항라운지 연 3회<br>무료 이용</li>
-              <li id="sub_text2">#국내전용 115,000원<br>#해외겸용 120,000원<br>#전월실적 50만원 이상</li>
-              <li id="sub_link"><a href="#">바로가기</a></li>
-            </ul>
-          </div>
-          <div class="swiper-slide"><img src="cards/trip4.png" alt="">
-            <ul>
-              <li id="sub_title">현대카드 Summit</li>
-              <li id="sub_text1">공항라운지 무료 이용</li>
-              <li id="sub_text2">#국내전용 200,000원<br>#해외겸용 200,000원<br>#전월실적 50만원 이상</li>
-              <li id="sub_link"><a href="#">바로가기</a></li>
-            </ul>
-          </div>
-          <div class="swiper-slide"><img src="cards/trip5.png" alt="">
-            <ul>
-              <li id="sub_title">DA 카드의 정석 Ⅱ</li>
-              <li id="sub_text1">국내 공항라운지 무료 이용</li>
-              <li id="sub_text2">#국내전용 12,000원<br>#해외겸용 12,000원<br>#전월실적 30만원 이상</li>
-              <li id="sub_link"><a href="#">바로가기</a></li>
-            </ul>
-          </div>
-          <div class="swiper-slide"><img src="cards/trip6.png" alt="">
-            <ul>
-              <li id="sub_title">현대카드<br>MX Black Edition2</li>
-              <li id="sub_text1">공항라운지 무료 이용</li>
-              <li id="sub_text2">#국내전용 200,000원<br>#해외겸용 200,000원<br>#전월실적 50만원 이상</li>
-              <li id="sub_link"><a href="#">바로가기</a></li>
-            </ul>
-          </div>
+        <div class="camera_bolt">
+          <img src="images/bolt.png" alt="카메라 조명">
         </div>
-        <div class="swiper-button-prev button"></div>
-        <div class="swiper-button-next button"></div>
-      </div><!--end:.trip_swiper-->
-      <div class="movie"><span id="movie_click">click!</span></div>
-      <div class="swiper movie_swiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide"><img src="cards/movie1.png" alt="">
-            <ul>
-              <li id="sub_title">삼성카드 taptap O</li>
-              <li id="sub_text1">CGV, 롯데시네마 5,000원 할인</li>
-              <li id="sub_text2">#국내전용 10,000원<br>#해외겸용 10,000원<br>#전월실적 30만원 이상<br>#온라인발급 전용 카드</li>
-              <li id="sub_link"><a href="#">바로가기</a></li>
-            </ul>
-          </div>
-          <div class="swiper-slide"><img src="cards/movie2.png" alt="">
-            <ul>
-              <li id="sub_title">삼성 iD SIMPLE 카드</li>
-              <li id="sub_text1">영화 3,000원 할인</li>
-              <li id="sub_text2">#국내전용 7,000원<br>#해외겸용 7,000원<br>#전월실적 없음</li>
-              <li id="sub_link"><a href="#">바로가기</a></li>
-            </ul>
-          </div>
-          <div class="swiper-slide"><img src="cards/movie3.png" alt="">
-            <ul>
-              <li id="sub_title">올바른 FLEX 카드</li>
-              <li id="sub_text1">영화 30% 할인</li>
-              <li id="sub_text2">#국내전용 10,000원<br>#해외겸용 12,000원<br>#전월실적 30만원 이상</li>
-              <li id="sub_link"><a href="#">바로가기</a></li>
-            </ul>
-          </div>
-          <div class="swiper-slide"><img src="cards/movie4.png" alt="">
-            <ul>
-              <li id="sub_title">BLISS.5 카드(마일리지)</li>
-              <li id="sub_text1">영화 2천원 할인</li>
-              <li id="sub_text2">#해외겸용 95,000원<br>#전월실적 30만원 이상</li>
-              <li id="sub_link"><a href="#">바로가기</a></li>
-            </ul>
-          </div>
-          <div class="swiper-slide"><img src="cards/movie5.png" alt="">
-            <ul>
-              <li id="sub_title">Oil & Life카드(Oil카드)</li>
-              <li id="sub_text1">CGV, 롯데시네마 2,000원<br>현장할인</li>
-              <li id="sub_text2">#해외겸용 5,000원<br>#전월실적 30만원 이상</li>
-              <li id="sub_link"><a href="#">바로가기</a></li>
-            </ul>
-          </div>
+        
+        <a href=".all_menu" class="menu_btn">
+          <span id="line"></span>
+          <span id="line"></span>
+        </a>
+        <div class="camera_reverse">
+          <img src="images/reverse.png" alt="카메라 반전">
         </div>
-        <div class="swiper-button-prev button"></div>
-        <div class="swiper-button-next button"></div>
-      </div><!--end:.movie_swiper-->
-      <div class="delievery"><span id="delievery_click">click!</span></div>
-      <div class="swiper delievery_swiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide"><img src="cards/delievery1.png" alt="">
-            <ul>
-              <li id="sub_title">KB국민 My WE:SH 카드</li>
-              <li id="sub_text1">음식점 10% 할인</li>
-              <li id="sub_text2">#국내전용 15,000원<br>#해외겸용 15,000원<br>#전월실적 40만원 이상</li>
-              <li id="sub_link"><a href="#">바로가기</a></li>
-            </ul>
-          </div>
-          <div class="swiper-slide"><img src="cards/delievery2.png" alt="">
-            <ul>
-              <li id="sub_title">LOCA 365 카드</li>
-              <li id="sub_text1">배달앱 10% 할인</li>
-              <li id="sub_text2">#국내전용 20,000원<br>#해외겸용 20,000원<br>#전월실적 50만원 이상</li>
-              <li id="sub_link"><a href="#">바로가기</a></li>
-            </ul>
-          </div>
-          <div class="swiper-slide"><img src="cards/delievery3.png" alt="">
-            <ul>
-              <li id="sub_title">네이버페이 taptap</li>
-              <li id="sub_text1">커피 전문점 5% 적립</li>
-              <li id="sub_text2">#국내전용 15,000원<br>#해외겸용 15,000원<br>#전월실적 30만원 이상</li>
-              <li id="sub_link"><a href="#">바로가기</a></li>
-            </ul>
-          </div>
-          <div class="swiper-slide"><img src="cards/delievery4.png" alt="">
-            <ul>
-              <li id="sub_title">LOCA LIKIT Eat</li>
-              <li id="sub_text1">배달앱 60% 할인</li>
-              <li id="sub_text2">#국내전용 10,000원<br>#해외겸용 10,000원<br>#전월실적 40만원 이상</li>
-              <li id="sub_link"><a href="#">바로가기</a></li>
-            </ul>
-          </div>
-          <div class="swiper-slide"><img src="cards/delievery5.png" alt="">
-            <ul>
-              <li id="sub_title">신한카드 국민행복</li>
-              <li id="sub_text1">배달앱 10% 할인</li>
-              <li id="sub_text2">#국내전용 없음<br>#해외겸용 없음<br>#전월실적 30만원 이상</li>
-              <li id="sub_link"><a href="#">바로가기</a></li>
-            </ul>
-          </div>
+        
+        <div class="all_menu">
+          <div id="left_area"></div>
+          <div id="right_area"></div>        
         </div>
-        <div class="swiper-button-prev button"></div>
-        <div class="swiper-button-next button"></div>
-      </div><!--end:.delivery_swiper-->
-      <div class="car"><span id="car_click">click!</span></div>
-      <div class="swiper car_swiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide"><img src="cards/car1.png" alt="">
-            <ul>
-              <li id="sub_title">신한카드 Deep Oil</li>
-              <li id="sub_text1">4개 정유사 10% 할인</li>
-              <li id="sub_text2">#해외겸용 10,000원<br>#전월실적 30만원 이상</li>
-              <li id="sub_link"><a href="#">바로가기</a></li>
-            </ul>
-          </div>
-          <div class="swiper-slide"><img src="cards/car2.png" alt="">
-            <ul>
-              <li id="sub_title">굿데이 올림 카드</li>
-              <li id="sub_text1">주유 60원/L 할인</li>
-              <li id="sub_text2">#국내전용 15,000원<br>#해외겸용 20,000원<br>#전월실적 30만원 이상</li>
-              <li id="sub_link"><a href="#">바로가기</a></li>
-            </ul>
-          </div>
-          <div class="swiper-slide"><img src="cards/car3.png" alt="">
-            <ul>
-              <li id="sub_title">삼성 iD ALL 카드</li>
-              <li id="sub_text1">주유 2.5% 할인</li>
-              <li id="sub_text2">#국내전용 20,000원<br>#해외겸용 20,000원<br>#전월실적 40만원 이상</li>
-              <li id="sub_link"><a href="#">바로가기</a></li>
-            </ul>
-          </div>
-          <div class="swiper-slide"><img src="cards/car4.png" alt="">
-            <ul>
-              <li id="sub_title">다담카드</li>
-              <li id="sub_text1">주유소/충전소 60원/L 할인</li>
-              <li id="sub_text2">#해외겸용 15,000원<br>#전월실적 30만원 이상</li>
-              <li id="sub_link"><a href="#">바로가기</a></li>
-            </ul>
-          </div>
-          <div class="swiper-slide"><img src="cards/car5.png" alt="">
-            <ul>
-              <li id="sub_title">CLUB SK 카드</li>
-              <li id="sub_text1">SK주유소 최대 150원/L<br>청구할인</li>
-              <li id="sub_text2">#국내전용 6,000원<br>#해외겸용 7,000원<br>#전월실적 40만원 이상</li>
-              <li id="sub_link"><a href="#">바로가기</a></li>
-            </ul>
-          </div>
-          <div class="swiper-slide"><img src="cards/car6.png" alt="">
-            <ul>
-              <li id="sub_title">신한카드 RPM+ Platinum#</li>
-              <li id="sub_text1">모든 주유소 40~150P/L 적립<br>모든 충전소 10~50P/L 적립</li>
-              <li id="sub_text2">#해외겸용 32,000원<br>#전월실적 50만원 이상</li>
-              <li id="sub_link"><a href="#">바로가기</a></li>
-            </ul>
-          </div>
+        <div class="menu_text"> 
+          <ul id="depth_1">
+            <li>
+              <a href="#">카드 분류별 랭킹</a>
+              <div>
+                <ul id="depth_2">
+                  <li><a href="https://mio-mia.github.io/project02-share/html/credit.html" target="_blank">신용카드 Top 10</a></li>
+                  <li><a href="https://mio-mia.github.io/project02-share/html/check.html" target="_blank">체크카드 Top 10</a></li>
+                  <li><a href="#">카드타입별 보기</a></li>
+                  <li><a href="#">전월실적별 보기</a></li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <a href="#">혜택별 카드</a>
+              <div>
+                <ul id="depth_2">
+                  <li><a href="#">마트·편의점 / 배달</a></li>
+                  <li><a href="#">모든 가맹점 / 무실적</a></li>
+                  <li><a href="#">통신 / 구독·스트리밍</a></li>
+                  <li><a href="#">쇼핑</a></li>
+                  <li><a href="#">교통</a></li>
+                  <li><a href="#">여행·바우처 / 해외결제</a></li>
+                  <li><a href="#">항공 마일리지 /라운지</a></li>
+                  <li><a href="#">주유 / 차량정비</a></li>
+                  <li><a href="#">공과금</a></li>
+                  <li><a href="#">제휴</a></li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <a href="#">정부지원 카드</a>
+              <div>
+                <ul id="depth_2">
+                  <li><a href="#">알뜰교통카드</a></li>
+                  <li><a href="#">나라사랑카드</a></li>
+                  <li><a href="#">내일배움카드</a></li>
+                  <li><a href="#">국민행복카드</a></li>
+                  <li><a href="#">경차사랑카드</a></li>
+                  <li><a href="#">고향사랑기부제 특화카드</a></li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <a href="#">브랜드별 카드 찾기</a>
+              <div>
+                <ul id="depth_2">
+                  <li><a href="#">KB국민카드</a></li>
+                  <li><a href="#">현대카드</a></li>
+                  <li><a href="#">삼성카드</a></li>
+                  <li><a href="#">신한카드</a></li>
+                  <li><a href="#">롯데카드</a></li>
+                  <li><a href="#">NH농협카드</a></li>
+                  <li><a href="#">BC바로카드</a></li>
+                  <li><a href="#">우리카드</a></li>
+                  <li><a href="#">IBK기업은행</a></li>
+                  <li><a href="#">전체</a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
         </div>
-        <div class="swiper-button-prev button"></div>
-        <div class="swiper-button-next button"></div>
-      </div><!--end:.car_swiper-->
-      <div class="tutorial">
-        <div><span id="tuto_title">뭘 해야 하지?</span></div>
-        <div><span id="tuto_text1">마우스를 올려보세요!!</span></div>
-        <div><span id="tuto_text2">점을 터치해 보세요!!</span></div>
-        <div id="dot_box"></div>
-        <div id="mouse"><img src="images/mouse_333.png" alt="마우스 포인터"></div>
-        <div id="touch"><img src="images/touch_333.png" alt="터치 포인터"></div>
-        <div><a href=".tutorial" id="tuto_close">닫기</a></div>
-      </div><!--end:.tutorial-->      
-    </div><!--end:.wrap-->    
+        <div class="custom_card">
+          <div id="custom_title">나에게<br><span>딱</span> 맞는 <span>카드</span>는?!</div>
+          <div id="custom_text">맞춤카드추천 <img id="custom_img" src="images/custom_card.png" alt="맞춤카드 이미지"></div>
+          <div id="custom_link"><a href="https://mio-mia.github.io/project02-share/html/re.html" target="_blank">바로가기</a></div>
+        </div>      
+        <div class="bezel">
+          <img src="images/screen.png" alt="스크린">
+        </div>
+        
+        <div class="pc open_btn"><span id="pc_click">CLICK</span></div>        
+        <div class="swiper pc_swiper">
+          <div class="swiper_close open_btn">
+            <span id="line"></span>
+            <span id="line"></span>
+          </div>
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="cards/ott1.png" alt="">
+              <ul>
+                <li id="sub_title">BC 바로 클리어 플러스</li>
+                <li id="sub_text1">스트리밍 10% 할인</li>
+                <li id="sub_text2">#국내전용 5,000원<br>#해외겸용 5,000원<br>#전월실적 15만원 이상</li>
+                <li id="sub_link"><a href="#">바로가기</a></li>
+              </ul>
+            </div>
+            <div class="swiper-slide"><img src="cards/ott2.png" alt="">
+              <ul>
+                <li id="sub_title">삼성 iD ON 카드</li>
+                <li id="sub_text1">스트리밍 10% 할인</li>
+                <li id="sub_text2">#국내전용 20,000원<br>#해외겸용 20,000원<br>#전월실적 30만원 이상</li>
+                <li id="sub_link"><a href="#">바로가기</a></li>
+              </ul>
+            </div>
+            <div class="swiper-slide"><img src="cards/ott3.png" alt="">
+              <ul>
+                <li id="sub_title">taptap DIGITAL</li>
+                <li id="sub_text1">스트리밍 50% 할인</li>
+                <li id="sub_text2">#국내전용 10,000원<br>#해외겸용 10,000원<br>#전월실적 30만원 이상</li>
+                <li id="sub_link"><a href="#">바로가기</a></li>
+              </ul>
+            </div>
+            <div class="swiper-slide"><img src="cards/ott4.png" alt="">
+              <ul>
+                <li id="sub_title">원더카드 (원더 Life)</li>
+                <li id="sub_text1">넷플릭스・디즈니 플러스 등<br>40% 할인</li>
+                <li id="sub_text2">#국내전용 19,000원<br>#해외겸용 19,000원<br>#전월실적 40만원 이상</li>
+                <li id="sub_link"><a href="#">바로가기</a></li>
+              </ul>
+            </div>
+            <div class="swiper-slide"><img src="cards/ott5.png" alt="">
+              <ul>
+                <li id="sub_title">taptap SHOPPING</li>
+                <li id="sub_text1">스트리밍 3천원 할인</li>
+                <li id="sub_text2">#국내전용 10,000원<br>#해외겸용 10,000원<br>#전월실적 30만원 이상</li>
+                <li id="sub_link"><a href="#">바로가기</a></li>
+              </ul>
+            </div>
+            <div class="swiper-slide"><img src="cards/ott6.png" alt="">
+              <ul>
+                <li id="sub_title">K-패스 카드</li>
+                <li id="sub_text1">OTT/스트리밍 15% 할인</li>
+                <li id="sub_text2">#국내전용 6,000원<br>#해외겸용 6,000원<br>#전월실적 30만원 이상</li>
+                <li id="sub_link"><a href="#">바로가기</a></li>
+              </ul>
+            </div>  
+          </div>
+          <div class="swiper-button-prev button"></div>
+          <div class="swiper-button-next button"></div>
+        </div><!--end:.pc_swiper-->
+        <div class="bag open_btn"><span id="bag_click">CLICK</span></div>
+        <div class="swiper bag_swiper">
+          <div class="swiper_close open_btn">
+            <span id="line"></span>
+            <span id="line"></span>
+          </div>
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="cards/shopping1.png" alt="">
+              <ul>
+                <li id="sub_title">신한카드 Mr.Life</li>
+                <li id="sub_text1">마트, 편의점 10% 할인</li>
+                <li id="sub_text2">#해외겸용 15,000원<br>#전월실적 30만원 이상<br>#온라인발급 전용 카드</li>
+                <li id="sub_link"><a href="#">바로가기</a></li>
+              </ul>
+            </div>
+            <div class="swiper-slide"><img src="cards/shopping2.png" alt="">
+              <ul>
+                <li id="sub_title">LOCA LIKIT 1.2</li>
+                <li id="sub_text1">모든 가맹점 1.2% 할인</li>
+                <li id="sub_text2">#국내전용 10,000원<br>#해외겸용 10,000원<br>#전월실적 없음</li>
+                <li id="sub_link"><a href="#">바로가기</a></li>
+              </ul>
+            </div>
+            <div class="swiper-slide"><img src="cards/shopping3.png" alt="">
+              <ul>
+                <li id="sub_title">현대카드 M</li>
+                <li id="sub_text1">국내 외 가맹점 1.5% 적립</li>
+                <li id="sub_text2">#국내전용 30,000원<br>#해외겸용 30,000원<br>#전월실적 50만원 이상</li>
+                <li id="sub_link"><a href="#">바로가기</a></li>
+              </ul>
+            </div>
+            <div class="swiper-slide"><img src="cards/shopping4.png" alt="">
+              <ul>
+                <li id="sub_title">신한카드 처음(ANNIVERSE)</li>
+                <li id="sub_text1">음식·생활·패션 5% 적립</li>
+                <li id="sub_text2">#국내전용 15,000원<br>#해외겸용 18,000원<br>#전월실적 30만원 이상</li>
+                <li id="sub_link"><a href="#">바로가기</a></li>
+              </ul>
+            </div>
+            <div class="swiper-slide"><img src="cards/shopping5.png" alt="">
+              <ul>
+                <li id="sub_title">카드의 정석 SHOPPING+</li>
+                <li id="sub_text1">온라인 쇼핑 10% 청구할인</li>
+                <li id="sub_text2">#국내전용 10,000원<br>#해외겸용 12,000원<br>#전월실적 30만원 이상</li>
+                <li id="sub_link"><a href="#">바로가기</a></li>
+              </ul>
+            </div>
+            <div class="swiper-slide"><img src="cards/shopping6.png" alt="">
+              <ul>
+                <li id="sub_title">신한카드 처음</li>
+                <li id="sub_text1">음식점·카페·편의점·온라인 쇼핑<br>5% 적립</li>
+                <li id="sub_text2">#국내전용 15,000원<br>#해외겸용 18,000원<br>#전월실적 30만원 이상</li>
+                <li id="sub_link"><a href="#">바로가기</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="swiper-button-prev button"></div>
+          <div class="swiper-button-next button"></div>
+        </div><!--end:.bag_swiper-->
+        <div class="trip open_btn"><span id="trip_click">CLICK</span></div>
+        <div class="swiper trip_swiper">
+          <div class="swiper_close open_btn">
+            <span id="line"></span>
+            <span id="line"></span>
+          </div>
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="cards/trip1.png" alt="">
+              <ul>
+                <li id="sub_title">삼성카드 & MILEAGE<br>PLATINUM (스카이패스)</li>
+                <li id="sub_text1">1,000원당 1마일 기본적립</li>
+                <li id="sub_text2">#국내전용 47,000원<br>#해외겸용 49,000원<br>#전월실적 없음</li>
+                <li id="sub_link"><a href="#">바로가기</a></li>
+              </ul>
+            </div>
+            <div class="swiper-slide"><img src="cards/trip2.png" alt="">
+              <ul>
+                <li id="sub_title">카드의 정석<br>EVERY MILE SKYPASS</li>
+                <li id="sub_text1">국내 공항라운지 동반 1인<br>동시 이용</li>
+                <li id="sub_text2">#국내전용 39,000원<br>#해외겸용 39,000원<br>#전월실적 없음</li>
+                <li id="sub_link"><a href="#">바로가기</a></li>
+              </ul>
+            </div>
+            <div class="swiper-slide"><img src="cards/trip3.png" alt="">
+              <ul>
+                <li id="sub_title">JADE Classic</li>
+                <li id="sub_text1">전세계 공항라운지 연 3회<br>무료 이용</li>
+                <li id="sub_text2">#국내전용 115,000원<br>#해외겸용 120,000원<br>#전월실적 50만원 이상</li>
+                <li id="sub_link"><a href="#">바로가기</a></li>
+              </ul>
+            </div>
+            <div class="swiper-slide"><img src="cards/trip4.png" alt="">
+              <ul>
+                <li id="sub_title">현대카드 Summit</li>
+                <li id="sub_text1">공항라운지 무료 이용</li>
+                <li id="sub_text2">#국내전용 200,000원<br>#해외겸용 200,000원<br>#전월실적 50만원 이상</li>
+                <li id="sub_link"><a href="#">바로가기</a></li>
+              </ul>
+            </div>
+            <div class="swiper-slide"><img src="cards/trip5.png" alt="">
+              <ul>
+                <li id="sub_title">DA 카드의 정석 Ⅱ</li>
+                <li id="sub_text1">국내 공항라운지 무료 이용</li>
+                <li id="sub_text2">#국내전용 12,000원<br>#해외겸용 12,000원<br>#전월실적 30만원 이상</li>
+                <li id="sub_link"><a href="#">바로가기</a></li>
+              </ul>
+            </div>
+            <div class="swiper-slide"><img src="cards/trip6.png" alt="">
+              <ul>
+                <li id="sub_title">현대카드<br>MX Black Edition2</li>
+                <li id="sub_text1">공항라운지 무료 이용</li>
+                <li id="sub_text2">#국내전용 200,000원<br>#해외겸용 200,000원<br>#전월실적 50만원 이상</li>
+                <li id="sub_link"><a href="#">바로가기</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="swiper-button-prev button"></div>
+          <div class="swiper-button-next button"></div>
+        </div><!--end:.trip_swiper-->
+        <div class="movie open_btn"><span id="movie_click">CLICK</span></div>
+        <div class="swiper movie_swiper">
+          <div class="swiper_close open_btn">
+            <span id="line"></span>
+            <span id="line"></span>
+          </div>
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="cards/movie1.png" alt="">
+              <ul>
+                <li id="sub_title">삼성카드 taptap O</li>
+                <li id="sub_text1">CGV, 롯데시네마 5,000원 할인</li>
+                <li id="sub_text2">#국내전용 10,000원<br>#해외겸용 10,000원<br>#전월실적 30만원 이상<br>#온라인발급 전용 카드</li>
+                <li id="sub_link"><a href="#">바로가기</a></li>
+              </ul>
+            </div>
+            <div class="swiper-slide"><img src="cards/movie2.png" alt="">
+              <ul>
+                <li id="sub_title">삼성 iD SIMPLE 카드</li>
+                <li id="sub_text1">영화 3,000원 할인</li>
+                <li id="sub_text2">#국내전용 7,000원<br>#해외겸용 7,000원<br>#전월실적 없음</li>
+                <li id="sub_link"><a href="#">바로가기</a></li>
+              </ul>
+            </div>
+            <div class="swiper-slide"><img src="cards/movie3.png" alt="">
+              <ul>
+                <li id="sub_title">올바른 FLEX 카드</li>
+                <li id="sub_text1">영화 30% 할인</li>
+                <li id="sub_text2">#국내전용 10,000원<br>#해외겸용 12,000원<br>#전월실적 30만원 이상</li>
+                <li id="sub_link"><a href="#">바로가기</a></li>
+              </ul>
+            </div>
+            <div class="swiper-slide"><img src="cards/movie4.png" alt="">
+              <ul>
+                <li id="sub_title">BLISS.5 카드(마일리지)</li>
+                <li id="sub_text1">영화 2천원 할인</li>
+                <li id="sub_text2">#해외겸용 95,000원<br>#전월실적 30만원 이상</li>
+                <li id="sub_link"><a href="#">바로가기</a></li>
+              </ul>
+            </div>
+            <div class="swiper-slide"><img src="cards/movie5.png" alt="">
+              <ul>
+                <li id="sub_title">Oil & Life카드(Oil카드)</li>
+                <li id="sub_text1">CGV, 롯데시네마 2,000원<br>현장할인</li>
+                <li id="sub_text2">#해외겸용 5,000원<br>#전월실적 30만원 이상</li>
+                <li id="sub_link"><a href="#">바로가기</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="swiper-button-prev button"></div>
+          <div class="swiper-button-next button"></div>
+        </div><!--end:.movie_swiper-->
+        <div class="delievery open_btn"><span id="delievery_click">CLICK</span></div>
+        <div class="swiper delievery_swiper">
+          <div class="swiper_close open_btn">
+            <span id="line"></span>
+            <span id="line"></span>
+          </div>
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="cards/delievery1.png" alt="">
+              <ul>
+                <li id="sub_title">KB국민 My WE:SH 카드</li>
+                <li id="sub_text1">음식점 10% 할인</li>
+                <li id="sub_text2">#국내전용 15,000원<br>#해외겸용 15,000원<br>#전월실적 40만원 이상</li>
+                <li id="sub_link"><a href="#">바로가기</a></li>
+              </ul>
+            </div>
+            <div class="swiper-slide"><img src="cards/delievery2.png" alt="">
+              <ul>
+                <li id="sub_title">LOCA 365 카드</li>
+                <li id="sub_text1">배달앱 10% 할인</li>
+                <li id="sub_text2">#국내전용 20,000원<br>#해외겸용 20,000원<br>#전월실적 50만원 이상</li>
+                <li id="sub_link"><a href="#">바로가기</a></li>
+              </ul>
+            </div>
+            <div class="swiper-slide"><img src="cards/delievery3.png" alt="">
+              <ul>
+                <li id="sub_title">네이버페이 taptap</li>
+                <li id="sub_text1">커피 전문점 5% 적립</li>
+                <li id="sub_text2">#국내전용 15,000원<br>#해외겸용 15,000원<br>#전월실적 30만원 이상</li>
+                <li id="sub_link"><a href="#">바로가기</a></li>
+              </ul>
+            </div>
+            <div class="swiper-slide"><img src="cards/delievery4.png" alt="">
+              <ul>
+                <li id="sub_title">LOCA LIKIT Eat</li>
+                <li id="sub_text1">배달앱 60% 할인</li>
+                <li id="sub_text2">#국내전용 10,000원<br>#해외겸용 10,000원<br>#전월실적 40만원 이상</li>
+                <li id="sub_link"><a href="#">바로가기</a></li>
+              </ul>
+            </div>
+            <div class="swiper-slide"><img src="cards/delievery5.png" alt="">
+              <ul>
+                <li id="sub_title">신한카드 국민행복</li>
+                <li id="sub_text1">배달앱 10% 할인</li>
+                <li id="sub_text2">#국내전용 없음<br>#해외겸용 없음<br>#전월실적 30만원 이상</li>
+                <li id="sub_link"><a href="#">바로가기</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="swiper-button-prev button"></div>
+          <div class="swiper-button-next button"></div>
+        </div><!--end:.delivery_swiper-->
+        <div class="car open_btn"><span id="car_click">CLICK</span></div>
+        <div class="swiper car_swiper">
+          <div class="swiper_close open_btn">
+            <span id="line"></span>
+            <span id="line"></span>
+          </div>
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="cards/car1.png" alt="">
+              <ul>
+                <li id="sub_title">신한카드 Deep Oil</li>
+                <li id="sub_text1">4개 정유사 10% 할인</li>
+                <li id="sub_text2">#해외겸용 10,000원<br>#전월실적 30만원 이상</li>
+                <li id="sub_link"><a href="#">바로가기</a></li>
+              </ul>
+            </div>
+            <div class="swiper-slide"><img src="cards/car2.png" alt="">
+              <ul>
+                <li id="sub_title">굿데이 올림 카드</li>
+                <li id="sub_text1">주유 60원/L 할인</li>
+                <li id="sub_text2">#국내전용 15,000원<br>#해외겸용 20,000원<br>#전월실적 30만원 이상</li>
+                <li id="sub_link"><a href="#">바로가기</a></li>
+              </ul>
+            </div>
+            <div class="swiper-slide"><img src="cards/car3.png" alt="">
+              <ul>
+                <li id="sub_title">삼성 iD ALL 카드</li>
+                <li id="sub_text1">주유 2.5% 할인</li>
+                <li id="sub_text2">#국내전용 20,000원<br>#해외겸용 20,000원<br>#전월실적 40만원 이상</li>
+                <li id="sub_link"><a href="#">바로가기</a></li>
+              </ul>
+            </div>
+            <div class="swiper-slide"><img src="cards/car4.png" alt="">
+              <ul>
+                <li id="sub_title">다담카드</li>
+                <li id="sub_text1">주유소/충전소 60원/L 할인</li>
+                <li id="sub_text2">#해외겸용 15,000원<br>#전월실적 30만원 이상</li>
+                <li id="sub_link"><a href="#">바로가기</a></li>
+              </ul>
+            </div>
+            <div class="swiper-slide"><img src="cards/car5.png" alt="">
+              <ul>
+                <li id="sub_title">CLUB SK 카드</li>
+                <li id="sub_text1">SK주유소 최대 150원/L<br>청구할인</li>
+                <li id="sub_text2">#국내전용 6,000원<br>#해외겸용 7,000원<br>#전월실적 40만원 이상</li>
+                <li id="sub_link"><a href="#">바로가기</a></li>
+              </ul>
+            </div>
+            <div class="swiper-slide"><img src="cards/car6.png" alt="">
+              <ul>
+                <li id="sub_title">신한카드 RPM+ Platinum#</li>
+                <li id="sub_text1">모든 주유소 40~150P/L 적립<br>모든 충전소 10~50P/L 적립</li>
+                <li id="sub_text2">#해외겸용 32,000원<br>#전월실적 50만원 이상</li>
+                <li id="sub_link"><a href="#">바로가기</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="swiper-button-prev button"></div>
+          <div class="swiper-button-next button"></div>
+        </div><!--end:.car_swiper-->
+        <div class="tutorial">
+          <div><span id="tuto_title">뭘 해야 하지?</span></div>
+          <div><span id="tuto_text1">점 위에 마우스를 올려보세요!!</span></div>
+          <div><span id="tuto_text2">점을 터치해 보세요!!</span></div>
+          <div id="dot_box"></div>
+          <div id="mouse"><img src="images/pointer_333.png" alt="마우스 포인터"></div>
+          <div id="touch"><img src="images/touch_333.png" alt="터치 포인터"></div>
+          <div><a href=".tutorial" id="tuto_close">닫기</a></div>
+        </div><!--end:.tutorial-->      
+      </div><!--end:.wrap-->   
+    </div> 
   </div><!--end.inner-->
 
   <script src="js/EzenAddClass.js"></script>
