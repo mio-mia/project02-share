@@ -66,7 +66,7 @@ main{width: 68%; height: fit-content; margin: 10.5% $bg_set 6vw;}
         display: flex; align-items: flex-start; flex-direction: column;}
       h4{font-size: 1.6vw; line-height: 2vw;}
       .text{display: flex; flex-direction: row;
-        font-size: 1vw; color: #4b4b4b; margin: 1vw 0 0.6vw;}
+        font-size: 1vw; color: #4b4b4b; margin: 0.7vw 0 0.6vw;}
       .tag{display: flex; justify-content: center; align-items: center;}
       .tag span{width: fit-content; margin: 0 3px 0; font-size: 1vw;
         text-align: center; color: #151515;}
@@ -101,6 +101,7 @@ main{width: 68%; height: fit-content; margin: 10.5% $bg_set 6vw;}
       a p{font-size: 1.6vh; top: 20px; left: 20px;}
       a .photo{margin-top: 1.2vw;}
       a img{width: 40%;}
+      .box{width: 70%;}
       a h4{font-size: 1.1vh;}
       a .tag span{font-size: 0.9vh;}
      }
@@ -108,7 +109,8 @@ main{width: 68%; height: fit-content; margin: 10.5% $bg_set 6vw;}
       li{margin-bottom: 10px;}
       a .photo{width: 12vw;}
       a img{height: 70%;}
-      a .text{font-size: 1.2vh; margin-top: 0.8vw;}
+      .box{width: 70%;}
+      a .text{margin-top: 0.8vw;}
     }
   } // card
 
@@ -126,29 +128,32 @@ main{width: 68%; height: fit-content; margin: 10.5% $bg_set 6vw;}
     .card{
       .top-3{
         ul{justify-content: center; flex-direction: column;}
-        li{width: 100%; height: 15vw; margin-top: 12px; border-radius: 10px;
+        li{width: 100%; height: 110px; margin-top: 12px; border-radius: 10px;
           display: flex; justify-content: flex-start; align-items: center;
           font-family: $font_ko_content;}
         a{justify-content: flex-start; flex-direction: row;}
         a p{position: static; display: block; width: 1.8em; margin-left: 0.6em;
-          text-align: center; font-size: 2.2vw;}
-        a .photo{width: 12vw; height: 100%; margin-top: 0;}
-        a img{width: auto; height: 70%;}
-        .box{width: 70%; height: fit-content;
+          text-align: center; font-size: 1.2em;}
+        a .photo{width: 90px; height: 100%; margin-top: 0;}
+        a img{width: auto; height: 60%;}
+        .box{width: 60%; height: fit-content;
           display: flex; justify-content: space-evenly; align-items: flex-start;
           flex-direction: column;}
-        a h4{font-size: 1.2vh; line-height: 2vw; text-align: left;}
-        a .tag span{font-size: 0.84vh; margin-top: 0.8vh;}
+        a h4{font-size: 0.9em; line-height: 1.4; text-align: left;}
+        a .tag span{font-size: 0.6em; margin-top: 0.8vh;}
       } // top-3 
       .list{margin-top: 0;
-        li{height: 14vw; margin-top: 12px; border-radius: 10px;}
-        a .number{font-size: 2.2vw;}
-        a .photo{width: 13vw;}
-        .box{width: 70%;}
-        a h4{font-size: 1vh;}
-        a .text{font-size: 0.78vh; margin: 0.4vh 0 !important; line-height: 1.2;}
-        a .tag span{font-size: 0.7vh;}
+        li{height: 100px; margin-top: 12px; border-radius: 10px;}
+        a .number{font-size: 1.15em;}
+        a .photo{width: 90px;}
+        a img{width: auto; height: 60%;}
+        .box{width: 60%;}
+        a h4{font-size: 0.9em; line-height: 1.4;}
+        a .text{display: none;}
+        a .tag span{font-size: 0.6em; margin-top: 0.8vh;}
       } // list
     } // card
-  }
+  #check .lie-a img{width: 68% !important; height: auto !important;}
+  #check .lie-b img{width: 64% !important; height: auto !important;}
+  } // main
 }

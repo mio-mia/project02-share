@@ -154,7 +154,7 @@ main {
   flex-direction: row;
   font-size: 1vw;
   color: #4b4b4b;
-  margin: 1vw 0 0.6vw;
+  margin: 0.7vw 0 0.6vw;
 }
 .card .list a .tag {
   display: flex;
@@ -213,6 +213,9 @@ main {
   .card .top-3 a img {
     width: 40%;
   }
+  .card .top-3 .box {
+    width: 70%;
+  }
   .card .top-3 a h4 {
     font-size: 1.1vh;
   }
@@ -231,8 +234,10 @@ main {
   .card .list a img {
     height: 70%;
   }
+  .card .list .box {
+    width: 70%;
+  }
   .card .list a .text {
-    font-size: 1.2vh;
     margin-top: 0.8vw;
   }
   #check .lie-a img {
@@ -259,7 +264,7 @@ main {
   }
   main .card .top-3 li {
     width: 100%;
-    height: 15vw;
+    height: 110px;
     margin-top: 12px;
     border-radius: 10px;
     display: flex;
@@ -277,19 +282,19 @@ main {
     width: 1.8em;
     margin-left: 0.6em;
     text-align: center;
-    font-size: 2.2vw;
+    font-size: 1.2em;
   }
   main .card .top-3 a .photo {
-    width: 12vw;
+    width: 90px;
     height: 100%;
     margin-top: 0;
   }
   main .card .top-3 a img {
     width: auto;
-    height: 70%;
+    height: 60%;
   }
   main .card .top-3 .box {
-    width: 70%;
+    width: 60%;
     height: fit-content;
     display: flex;
     justify-content: space-evenly;
@@ -297,40 +302,52 @@ main {
     flex-direction: column;
   }
   main .card .top-3 a h4 {
-    font-size: 1.2vh;
-    line-height: 2vw;
+    font-size: 0.9em;
+    line-height: 1.4;
     text-align: left;
   }
   main .card .top-3 a .tag span {
-    font-size: 0.84vh;
+    font-size: 0.6em;
     margin-top: 0.8vh;
   }
   main .card .list {
     margin-top: 0;
   }
   main .card .list li {
-    height: 14vw;
+    height: 100px;
     margin-top: 12px;
     border-radius: 10px;
   }
   main .card .list a .number {
-    font-size: 2.2vw;
+    font-size: 1.15em;
   }
   main .card .list a .photo {
-    width: 13vw;
+    width: 90px;
+  }
+  main .card .list a img {
+    width: auto;
+    height: 60%;
   }
   main .card .list .box {
-    width: 70%;
+    width: 60%;
   }
   main .card .list a h4 {
-    font-size: 1vh;
+    font-size: 0.9em;
+    line-height: 1.4;
   }
   main .card .list a .text {
-    font-size: 0.78vh;
-    margin: 0.4vh 0 !important;
-    line-height: 1.2;
+    display: none;
   }
   main .card .list a .tag span {
-    font-size: 0.7vh;
+    font-size: 0.6em;
+    margin-top: 0.8vh;
+  }
+  main #check .lie-a img {
+    width: 68% !important;
+    height: auto !important;
+  }
+  main #check .lie-b img {
+    width: 64% !important;
+    height: auto !important;
   }
 }
