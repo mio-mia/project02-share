@@ -9,388 +9,453 @@ $font_Godo_B: "Godo_B";
   width: 100%; height: 100vh;
   background: url(../images/background1_1.jpg) no-repeat; background-size: cover;
   display: flex; justify-content: center; align-items: center;
-  .wrap {
-    max-width: 1559px; max-height: 876px;
-    position: relative;
-    .backBg {width: 100%; height: 100%; z-index: 10;}
-    h1 {
-      position: absolute; top: -5.4%; left: 47.3%;
-      img {width: 16%;}
+  .logo {
+    display: inline-block; z-index: 30;
+    width: 6%; height: 4%; position: absolute; top: 1.4%; left: 48%;
+    img {width: 100%;}
+  }
+  .container {
+    max-width: 1559px; max-height: 876px; z-index: 10; position: relative;
+    padding: .3%; background: #000;
+    overflow: hidden;  border: 2px solid #67b22b; border-radius: 30px;
+
+    .camera_top {
+      position: absolute; top: 0%; left: 0%; border-radius: 20px 0 0 20px;
+      width: 12%; height: 100%; background: #000; display: none;
+      li {
+        &:first-child {position: absolute; top: 90%; left: 11%;}
+        &:nth-child(2) {position: absolute; top: 81.6%; left: 11%;}
+        &:last-child {position: absolute; top: 4.8%; left: 11%;}
+        img {width: 28%;}
+      }
     }
-    
-    .camera_zoom {
-      position: absolute; top: 30%; left: 1.8%;
+
+    #lens {
+      position: absolute; top: 46%; left: 2.6%; display: none;
       img {width: 50%;}
     }
 
-    .camera_bolt {
-      position: absolute; top: 33%; left: 94.2%;
-      img {width: 45%;}
-    }
-
-    .camera_ring {
-      position: absolute; bottom: 47.08%; right: 1.43%;
-      width: 83px; height: 83px; border: 8px solid #fff; border-radius: 50%;
-      animation-name: ring_blink;
-        animation-duration: 5s;
-        animation-iteration-count: infinite;
-        @keyframes ring_blink {
-          0% {border-color: #fff;}
-          50% {border-color: #111;}
-          100% {border-color: #fff;}
-        }
-    }
-
-    .camera_reverse {
-      position: absolute; bottom: 37%; left: 94.2%;
-      img {width: 45%;}
-    }
-
-    .menu_btn {
-      position: absolute; bottom: 48%; right: 2%; z-index: 40;
-      width: 67px; height: 67px; background: #fff; border-radius: 50%;
-      border: 3px solid #000; transition: all .2s ease-in-out;
-      #line {
-        width: 50%; height: 2px; background: #e5e5e5;
-        position: absolute; top: 47%; left: 24%; transition: all .1s ease-in-out;
-        &:first-child {
-          transform: rotate(-45deg); opacity: 0; visibility: hidden;
-        }
-        &:last-child {
-          transform: rotate(45deg); opacity: 0; visibility: hidden;
+    .camera_bottom {
+      position: absolute; top: 0%; right: 0%; border-radius: 0 20px 20px 0; display: none;
+      width: 12%; height: 100%; background: #000;
+      #bottom_top {
+        display: flex; color: #fff; flex-direction: column;
+        li {
+          transform: rotate(-90deg);
+          font-size: .8rem;
+          &:first-child {position: absolute; top: 86%; left: -18%;}
+          &:nth-child(2) {position: absolute; top: 61%; left: -18%;}
+          &:nth-child(3) {position: absolute; top: 35%; left: -25%;}
+          &:last-child {position: absolute; top: 10%; left: -10.8%;}
+          &:hover {color: #ffd50a;}          
         }
       }
-      &:hover {
-        background: #ffd50a;        
+      #preview {
+        position: absolute; top: 87.4%; left: 44%;
+        img {width: 62%; transform: rotate(-90deg); border-radius: 5px;}
       }
-      &.active {
-        #line {background: #111;}
-        #line:first-child {opacity: 1; visibility: visible;}
-        #line:last-child {opacity: 1; visibility: visible;}
+      #bottom_camera {
+        position: absolute; top: 41.4%; left: 35%;
+        img {width: 86%;}
+      }
+      #bottom_reverse {
+        position: absolute; top: 5%; left: 44%;
+        img {width: 60%; transform: rotate(-90deg);}
       }
     }
 
-    .all_menu {
-      width: 0%; height: 97.1%; position: absolute; top: 1.3%; right: .8%;
-      border-radius: 25px; z-index: 30; transition: all .2s ease-in-out;
-      font-family: 'Noto Sans KR';
-      &.active {
-        width: 98.4%;
-        & + .menu_text {top: 6%; opacity: 1; visibility: visible;}
-        & ~ .custom_card {opacity: 1; visibility: visible;}
+    .wrap {
+      .logo2 {
+        display: none; z-index: 30;
+        width: 6%; height: 4%; position: absolute; top: 1.6%; left: 48%;
+        img {width: 100%;}
       }
-      
-      #left_area {
-        background: #F4F1EA; width: 35%; height: 100%; float: left;
-        border-radius: 25px 0 0 25px;
+      .bezel {
+        img {width: 100%; height: 100%; border-radius: 26px;}
       }
-      #right_area {
-        background: #fff; width: 65%; height: 100%; float: right;
-        border-radius: 0 25px 25px 0;        
-      }      
-    }
-    .menu_text {
-      width: 60%; height: 92.26%;
-      opacity: 0; visibility: hidden; transition: all .2s ease-in-out;
-      position: absolute; top: 5%; left: 35%; z-index: 30;
-      #depth_1 {
-        display: flex; flex-direction: column;
-        padding: 0 2.7em;
-        & > li {
-          font-weight: bold; font-size: 1.125rem; padding: 2.16em 0;
-          border-bottom: 1px solid #dfdfdf;
-          // 폰트 18 픽셀
+      .camera_zoom {
+        position: absolute; top: 30%; left: 1.8%;
+        img {width: 50%;}
+      }
+
+      .camera_bolt {
+        position: absolute; top: 33%; left: 94.2%;
+        img {width: 45%;}
+      }
+
+      .camera_reverse {
+        position: absolute; bottom: 37%; left: 94.2%;
+        img {width: 45%;}
+      }
+
+      .menu_btn {
+        position: absolute; bottom: 48%; right: 2%; z-index: 40;
+        width: 67px; height: 67px; background: #fff; border-radius: 50%;
+        border: 3px solid #000; transition: all .2s ease-in-out; outline: 7px solid #fff;
+
+        animation-name: ring_blink;
+          animation-duration: 3s;
+          animation-iteration-count: infinite;
+          @keyframes ring_blink {
+            0% {outline-color: #fff;}
+            50% {outline-color: #111;}
+            100% {outline-color: #fff;}
+          }
+
+        #line {
+          width: 50%; height: 2px; background: #e5e5e5;
+          position: absolute; top: 47%; left: 24.6%; transition: all .1s ease-in-out;
+          &:first-child {
+            transform: rotate(-45deg); opacity: 0; visibility: hidden;
+          }
+          &:last-child {
+            transform: rotate(45deg); opacity: 0; visibility: hidden;
+          }
         }
-        & > li:first-child {padding-top: 4.31em;}
-        a {
-          width: 20%; color: #191919; display: block; float: left; margin-right: .3em;
-          &:hover {color: #0078ff;}
+        &:hover {
+          background: #ffd50a;        
         }
-        #depth_2 {
-          display: flex; transition: all .2s ease-in-out; font-size: 1rem; flex-wrap: wrap;
-          padding-left: 2em;
-          // 폰트 16 픽셀
-          & > li {font-weight: normal; margin-right: 1.6em;}
+        &.showActive {
+          #line {background: #111;}
+          #line:first-child {opacity: 1; visibility: visible;}
+          #line:last-child {opacity: 1; visibility: visible;}
+        }
+      }
+
+      .all_menu {
+        width: 0%; height: 98.2%; position: absolute; top: .9%; right: .42%;
+        border-radius: 25px; z-index: 30; transition: all .2s ease-in-out;
+        font-family: 'Noto Sans KR';
+        &.showActive {
+          width: 99.2%;
+          & + .menu_text {top: 6%; opacity: 1; visibility: visible;}
+          & ~ .custom_card {opacity: 1; visibility: visible;}
+        }
+        
+        #left_area {
+          background: #F4F1EA; width: 35%; height: 100%; float: left;
+          border-radius: 22px 0 0 22px;
+        }
+        #right_area {
+          background: #fff; width: 65%; height: 100%; float: right;
+          border-radius: 0 22px 22px 0;        
+        }      
+      }
+      .menu_text {
+        width: 60%; height: 92.26%; font-family: 'Noto Sans KR';
+        opacity: 0; visibility: hidden; transition: all .2s ease-in-out;
+        position: absolute; top: 5%; left: 35%; z-index: 30;
+        #depth_1 {
+          display: flex; flex-direction: column;
+          padding: 0 2.7em;
+          & > li {
+            font-weight: bold; font-size: 1.125rem; padding: 2.16em 0;
+            border-bottom: 1px solid #dfdfdf;
+            // 폰트 18 픽셀
+          }
+          & > li:first-child {padding-top: 4.31em;}
           a {
-            color: #333; display: block; width: 100%; padding-bottom: 1em;
-            transition: all .2s ease-in-out;
+            width: 20%; color: #191919; display: block; float: left; margin-right: .3em;
             &:hover {color: #0078ff;}
+          }
+          #depth_2 {
+            display: flex; transition: all .2s ease-in-out; font-size: 1rem; flex-wrap: wrap;
+            padding-left: 2em;
+            // 폰트 16 픽셀
+            & > li {font-weight: normal; margin-right: 1.6em;}
+            a {
+              color: #333; display: block; width: 100%; padding-bottom: 1em;
+              transition: all .2s ease-in-out;
+              &:hover {color: #0078ff;}
+            }
           }
         }
       }
-    }
-    .custom_card {
-      width: 30%; height: 92.26%;
-      position: absolute; top: 15%; left: 7%; z-index: 30; line-height: 1.5;
-      opacity: 0; visibility: hidden; transition-delay: .1s;
-      #custom_title {
-        font-size: 2.5rem; font-weight: bold; color: #333; font-weight: bold;
-        span {color: #0078ff;}
-        // 폰트 40 픽셀
+      .custom_card {
+        width: 30%; height: 92.26%;
+        position: absolute; top: 15%; left: 7%; z-index: 30; line-height: 1.5;
+        opacity: 0; visibility: hidden; transition-delay: .1s;
+        #custom_title {
+          font-size: 2.5rem; font-weight: bold; color: #333; font-weight: bold;
+          span {color: #0078ff;}
+          // 폰트 40 픽셀
+        }
+        #custom_text {
+          font-size: 1.88rem; padding-top: 1em;
+          // 폰트 30 픽셀
+        }
+        #custom_link a {
+          font-size: 1.56rem; margin-top: 3em; padding: .34em 2em .5em; background: #0078ff; color: #fff;
+          border-radius: 10px; display: inline-block; transition: all .2s ease-in-out;
+          border: 1px solid transparent; font-weight: bold;
+          // 폰트 25 픽셀
+          &:hover {background: #fff; border-color: #0078ff; color: #0078ff;}
+        }
+        #custom_img {width: 7%; vertical-align: -3px;}
       }
-      #custom_text {
-        font-size: 1.88rem; padding-top: 1em;
-        // 폰트 30 픽셀
-      }
-      #custom_link a {
-        font-size: 1.56rem; margin-top: 3em; padding: .34em 2em .5em; background: #0078ff; color: #fff;
-        border-radius: 10px; display: inline-block; transition: all .2s ease-in-out;
-        border: 1px solid transparent; font-weight: bold;
-        // 폰트 25 픽셀
-        &:hover {background: #fff; border-color: #0078ff; color: #0078ff;}
-      }
-      #custom_img {width: 7%; vertical-align: -3px;}
-    }
-    
-    .pc {
-      position: absolute; top: 30%; right: 18%; cursor: pointer; color: #fff;
-      width: 50px; height: 50px; border: 1px solid #999; border-radius: 8px;
-      background: radial-gradient(transparent, #ffffff66); font-weight: 900; text-align: center;
-      font-size: 20px; line-height: 34px; transition: .2s ease-in-out;
-
-      #pc_click {display: none; margin-top: 7px; text-shadow: 0 0 2px #000;}
-
-      &:hover {
-        width: 100px; right: 16.4%;
-        &::before {display: none;}
-        &::after {right: -110px; opacity: 1; visibility: visible;}
-        #pc_click {display: block;}
-      }
-      &::before {content: ""; position: absolute; top: 50%; left: 50%;
-        margin-top: -4px; margin-left: -4px;
-        width: 8px; height: 8px; background: #fff; border-radius: 50%;}
-      &::after {
-        content: "OTT"; position: absolute; top: 0; right: -150px; line-height: 2.5;
-        width: 100px; height: 50px; border-radius: 15px; background: #F4F1EA;
-        opacity: 0; visibility: hidden; transition: all .2s ease-in-out; color: #333;
-      }      
-    }
-    .pc_swiper {opacity: 0; visibility: hidden; transition: all .2s ease-in-out;}
-    .pc.active + .pc_swiper {opacity: 1; visibility: visible;}
-
-    .bag {
-      position: absolute; bottom: 18%; left: 30%; cursor: pointer; color: #fff;
-      width: 50px; height: 50px; border: 1px solid #999; border-radius: 8px;
-      background: radial-gradient(transparent, #ffffff88); font-weight: 900; text-align: center;
-      font-size: 20px; line-height: 35px; transition: .2s ease-in-out;
-
-      #bag_click {display: none; margin-top: 7px; text-shadow: 0 0 2px #000;}
       
-      &:hover {
-        width: 100px; left: 28.6%;
-        &::before {display: none;}
-        &::after {right: -170px; opacity: 1; visibility: visible;}
-        #bag_click {display: block;}
-      }
-      &::before {content: ""; position: absolute; top: 50%; left: 50%;
-        margin-top: -4px; margin-left: -4px;
-        width: 8px; height: 8px; background: #fff; border-radius: 50%;}
-      &::after {
-        content: "SHOPPING"; position: absolute; top: 0; right: -220px; line-height: 2.5;
-        width: 160px; height: 50px; border-radius: 15px; background: #F4F1EA;
-        opacity: 0; visibility: hidden; transition: all .2s ease-in-out; color: #333;
-      }
-    }
-    .bag_swiper {opacity: 0; visibility: hidden; transition: all .2s ease-in-out;}
-    .bag.active + .bag_swiper {opacity: 1; visibility: visible;}
+      .pc {
+        position: absolute; top: 30%; right: 18%; cursor: pointer; color: #fff;
+        width: 50px; height: 50px; border: 1px solid #999; border-radius: 8px;
+        background: radial-gradient(transparent, #ffffff66); font-weight: 900; text-align: center;
+        font-size: 20px; line-height: 34px; transition: .2s ease-in-out; font-family: 'Noto Sans KR';
 
-    .trip {
-      position: absolute; top: 12%; left: 51%; cursor: pointer; color: #fff;
-      width: 50px; height: 50px; border: 1px solid #999; border-radius: 8px;
-      background: radial-gradient(transparent, #ffffffaa); font-weight: 900; text-align: center;
-      font-size: 20px; line-height: 35px; transition: .2s ease-in-out;
+        #pc_click {display: none; margin-top: 7px; text-shadow: 0 0 2px #000;}
 
-      #trip_click {display: none; margin-top: 7px; text-shadow: 0 0 2px #000;}
-
-      &:hover {
-        width: 100px; left: 49.4%;
-        &::before {display: none;}
-        &::after {right: -120px; opacity: 1; visibility: visible;}
-        #trip_click {display: block;}
-      }
-      &::before {content: ""; position: absolute; top: 50%; left: 50%;
-        margin-top: -4px; margin-left: -4px;
-        width: 8px; height: 8px; background: #fff; border-radius: 50%;}
-      &::after {
-        content: "TRIP"; position: absolute; top: 0; right: -170px; line-height: 2.5;
-        width: 110px; height: 50px; border-radius: 15px; background: #F4F1EA;
-        opacity: 0; visibility: hidden; transition: all .2s ease-in-out; color: #333;
-      }
-    }
-    .trip_swiper {opacity: 0; visibility: hidden; transition: all .2s ease-in-out;}
-    .trip.active + .trip_swiper {opacity: 1; visibility: visible;}
-
-    .movie {
-      position: absolute; top: 12%; left: 72.4%; cursor: pointer; color: #fff;
-      width: 50px; height: 50px; border: 1px solid #999; border-radius: 8px;
-      background: radial-gradient(transparent, #ffffff88); font-weight: 900; text-align: center;
-      font-size: 20px; line-height: 35px; transition: .2s ease-in-out;
-
-      #movie_click {display: none; margin-top: 7px; text-shadow: 0 0 2px #000;}
-
-      &:hover {
-        width: 100px; left: 70.6%;
-        &::before {display: none;}
-        &::after {right: -170px; opacity: 1; visibility: visible;}
-        #movie_click {display: block;}
-      }
-      &::before {content: ""; position: absolute; top: 50%; left: 50%;
-        margin-top: -4px; margin-left: -4px;
-        width: 8px; height: 8px; background: #fff; border-radius: 50%;}
-      &::after {
-        content: "MOVIE"; position: absolute; top: 0; right: -220px; line-height: 2.5;
-        width: 160px; height: 50px; border-radius: 15px; background: #F4F1EA;
-        opacity: 0; visibility: hidden; transition: all .2s ease-in-out; color: #333;
-      }
-    }
-    .movie_swiper {opacity: 0; visibility: hidden; transition: all .2s ease-in-out;}
-    .movie.active + .movie_swiper {opacity: 1; visibility: visible;}
-
-    .delievery {
-      position: absolute; bottom: 5%; right: 47.2%; cursor: pointer; color: #fff;
-      width: 50px; height: 50px; border: 1px solid #999; border-radius: 8px;
-      background: radial-gradient(transparent, #ffffffbb); font-weight: 900; text-align: center;
-      font-size: 20px; line-height: 35px; transition: .2s ease-in-out;
-
-      #delievery_click {display: none; margin-top: 7px; text-shadow: 0 0 2px #000;}
-
-      &:hover {
-        width: 100px; right: 45.6%;
-        &::before {display: none;}
-        &::after {right: -190px; opacity: 1; visibility: visible;}
-        #delievery_click {display: block;}
-      }
-      &::before {content: ""; position: absolute; top: 50%; left: 50%;
-        margin-top: -4px; margin-left: -4px;
-        width: 8px; height: 8px; background: #fff; border-radius: 50%;}
-      &::after {
-        content: "DELIEVERY"; position: absolute; top: 0; right: -250px; line-height: 2.5;
-        width: 180px; height: 50px; border-radius: 15px; background: #F4F1EA;
-        opacity: 0; visibility: hidden; transition: all .2s ease-in-out; color: #333;
-      }
-    }
-    .delievery_swiper {opacity: 0; visibility: hidden; transition: all .2s ease-in-out;}
-    .delievery.active + .delievery_swiper {opacity: 1; visibility: visible;}
-
-    .car {
-      position: absolute; top: 6.6%; left: 26%; cursor: pointer; color: #fff;
-      width: 50px; height: 50px; border: 1px solid #999; border-radius: 8px;
-      background: radial-gradient(transparent, #ffffffbb); font-weight: 900; text-align: center;
-      font-size: 20px; line-height: 35px; transition: .2s ease-in-out;
-
-      #car_click {display: none; margin-top: 7px; text-shadow: 0 0 2px #000;}
-
-      &:hover {
-        width: 100px; left: 24.6%;
-        &::before {display: none;}
-        &::after {right: -110px; opacity: 1; visibility: visible;}
-        #car_click {display: block;}
-      }
-      &::before {content: ""; position: absolute; top: 50%; left: 50%;
-        margin-top: -4px; margin-left: -4px;
-        width: 8px; height: 8px; background: #fff; border-radius: 50%;}
-      &::after {
-        content: "CAR"; position: absolute; top: 0; right: -150px; line-height: 2.5;
-        width: 100px; height: 50px; border-radius: 15px; background: #F4F1EA;
-        opacity: 0; visibility: hidden; transition: all .2s ease-in-out; color: #333;
-      }
-    }
-    .car_swiper {opacity: 0; visibility: hidden; transition: all .2s ease-in-out;}
-    .car.active + .car_swiper {opacity: 1; visibility: visible;}
-
-    .tutorial {
-      width: 24%; height: 30%; background: #ffffff;
-      border-radius: 8px; position: absolute; top: 28%; left: 39%; 
-      box-shadow: 1px 1px 2px #000000aa; padding: 1.6em;
-      &.active {display: none;}
-      #tuto_title {
-        font-size: 1.25rem; display: inline-block;
-        // 폰트 20 픽셀
-        font-weight: 500;
-      }
-      #tuto_text1 {
-        font-size: .94rem; display: inline-block;
-        // 폰트 15 픽셀
-        font-weight: 400; padding-top: 1em;
-      }
-      #tuto_text2 {
-        font-size: .94rem; display: inline-block;
-        // 폰트 15 픽셀
-        font-weight: 400; padding-top: 1em; display: none;
-      }
-      #tuto_close {
-        font-size: .94rem; display: inline-block; padding: 40% 0 0 90%;
-        // 폰트 15 픽셀
-        font-weight: 600; color: #0033ff; text-decoration: none;
-      }
-      #dot_box {
-        position: absolute; top: 40%; left: 45%; color: #333;
-        width: 50px; height: 50px; border: 1px solid #333; border-radius: 8px;
-        background: radial-gradient(transparent, #ffffffbb);
+        &:hover {
+          width: 100px; right: 16.4%;
+          &::before {display: none;}
+          &::after {right: -110px; opacity: 1; visibility: visible;}
+          #pc_click {display: block;}
+        }
         &::before {content: ""; position: absolute; top: 50%; left: 50%;
           margin-top: -4px; margin-left: -4px;
-          width: 8px; height: 8px; background: #333; border-radius: 50%;}
-      }
-      #mouse {
-        position: absolute; top: 70%; left: 84%; transition: all .2s ease-in-out;
-        animation-name: mouse_move;
-        animation-duration: 1.5s;
-        animation-iteration-count: infinite;
-        @keyframes mouse_move {
-          from {top: 62%; left: 82%;}
-          to {top: 48%; left: 49%;}
+          width: 8px; height: 8px; background: #fff; border-radius: 50%;}
+        &::after {
+          content: "OTT"; position: absolute; top: 0; right: -150px; line-height: 2.5;
+          width: 100px; height: 50px; border-radius: 15px; background: #F4F1EA;
+          opacity: 0; visibility: hidden; transition: all .2s ease-in-out; color: #333;
         }
       }
-      #touch {
-        display: none;
-        position: absolute; top: 55%; left: 58%; transition: all .2s ease-in-out;
-        animation-name: finger_move;
-        animation-duration: 1.5s;
-        animation-iteration-count: infinite;
-        @keyframes finger_move {
-          0% {left: 58%; transform: scale(1.6);}
-          40% {left: 49%; transform: scale(1); opacity: 1;}
-          50% {left: 49%; transform: scale(1); opacity: .1;}
-          60% {left: 49%; transform: scale(1); opacity: 1;}
-          100% {left: 58%; transform: scale(1.6);}
+      .pc_swiper {opacity: 0; visibility: hidden; transition: all .2s ease-in-out;}
+      .pc.active + .pc_swiper {opacity: 1; visibility: visible;}
+
+      .bag {
+        position: absolute; bottom: 18%; left: 30%; cursor: pointer; color: #fff;
+        width: 50px; height: 50px; border: 1px solid #999; border-radius: 8px;
+        background: radial-gradient(transparent, #ffffff88); font-weight: 900; text-align: center;
+        font-size: 20px; line-height: 35px; transition: .2s ease-in-out; font-family: 'Noto Sans KR';
+
+        #bag_click {display: none; margin-top: 7px; text-shadow: 0 0 2px #000;}
+        
+        &:hover {
+          width: 100px; left: 28.6%;
+          &::before {display: none;}
+          &::after {right: -170px; opacity: 1; visibility: visible;}
+          #bag_click {display: block;}
+        }
+        &::before {content: ""; position: absolute; top: 50%; left: 50%;
+          margin-top: -4px; margin-left: -4px;
+          width: 8px; height: 8px; background: #fff; border-radius: 50%;}
+        &::after {
+          content: "SHOPPING"; position: absolute; top: 0; right: -220px; line-height: 2.5;
+          width: 160px; height: 50px; border-radius: 15px; background: #F4F1EA;
+          opacity: 0; visibility: hidden; transition: all .2s ease-in-out; color: #333;
         }
       }
+      .bag_swiper {opacity: 0; visibility: hidden; transition: all .2s ease-in-out;}
+      .bag.active + .bag_swiper {opacity: 1; visibility: visible;}
+
+      .trip {
+        position: absolute; top: 12%; left: 51%; cursor: pointer; color: #fff;
+        width: 50px; height: 50px; border: 1px solid #999; border-radius: 8px;
+        background: radial-gradient(transparent, #ffffffaa); font-weight: 900; text-align: center;
+        font-size: 20px; line-height: 35px; transition: .2s ease-in-out; font-family: 'Noto Sans KR';
+
+        #trip_click {display: none; margin-top: 7px; text-shadow: 0 0 2px #000;}
+
+        &:hover {
+          width: 100px; left: 49.4%;
+          &::before {display: none;}
+          &::after {right: -120px; opacity: 1; visibility: visible;}
+          #trip_click {display: block;}
+        }
+        &::before {content: ""; position: absolute; top: 50%; left: 50%;
+          margin-top: -4px; margin-left: -4px;
+          width: 8px; height: 8px; background: #fff; border-radius: 50%;}
+        &::after {
+          content: "TRIP"; position: absolute; top: 0; right: -170px; line-height: 2.5;
+          width: 110px; height: 50px; border-radius: 15px; background: #F4F1EA;
+          opacity: 0; visibility: hidden; transition: all .2s ease-in-out; color: #333;
+        }
+      }
+      .trip_swiper {opacity: 0; visibility: hidden; transition: all .2s ease-in-out;}
+      .trip.active + .trip_swiper {opacity: 1; visibility: visible;}
+
+      .movie {
+        position: absolute; top: 12%; left: 72.4%; cursor: pointer; color: #fff;
+        width: 50px; height: 50px; border: 1px solid #999; border-radius: 8px;
+        background: radial-gradient(transparent, #ffffff88); font-weight: 900; text-align: center;
+        font-size: 20px; line-height: 35px; transition: .2s ease-in-out; font-family: 'Noto Sans KR';
+
+        #movie_click {display: none; margin-top: 7px; text-shadow: 0 0 2px #000;}
+
+        &:hover {
+          width: 100px; left: 70.6%;
+          &::before {display: none;}
+          &::after {right: -170px; opacity: 1; visibility: visible;}
+          #movie_click {display: block;}
+        }
+        &::before {content: ""; position: absolute; top: 50%; left: 50%;
+          margin-top: -4px; margin-left: -4px;
+          width: 8px; height: 8px; background: #fff; border-radius: 50%;}
+        &::after {
+          content: "MOVIE"; position: absolute; top: 0; right: -220px; line-height: 2.5;
+          width: 160px; height: 50px; border-radius: 15px; background: #F4F1EA;
+          opacity: 0; visibility: hidden; transition: all .2s ease-in-out; color: #333;
+        }
+      }
+      .movie_swiper {opacity: 0; visibility: hidden; transition: all .2s ease-in-out;}
+      .movie.active + .movie_swiper {opacity: 1; visibility: visible;}
+
+      .delievery {
+        position: absolute; bottom: 5%; right: 47.2%; cursor: pointer; color: #fff;
+        width: 50px; height: 50px; border: 1px solid #999; border-radius: 8px;
+        background: radial-gradient(transparent, #ffffffbb); font-weight: 900; text-align: center;
+        font-size: 20px; line-height: 35px; transition: .2s ease-in-out; font-family: 'Noto Sans KR';
+
+        #delievery_click {display: none; margin-top: 7px; text-shadow: 0 0 2px #000;}
+
+        &:hover {
+          width: 100px; right: 45.6%;
+          &::before {display: none;}
+          &::after {right: -190px; opacity: 1; visibility: visible;}
+          #delievery_click {display: block;}
+        }
+        &::before {content: ""; position: absolute; top: 50%; left: 50%;
+          margin-top: -4px; margin-left: -4px;
+          width: 8px; height: 8px; background: #fff; border-radius: 50%;}
+        &::after {
+          content: "DELIEVERY"; position: absolute; top: 0; right: -250px; line-height: 2.5;
+          width: 180px; height: 50px; border-radius: 15px; background: #F4F1EA;
+          opacity: 0; visibility: hidden; transition: all .2s ease-in-out; color: #333;
+        }
+      }
+      .delievery_swiper {opacity: 0; visibility: hidden; transition: all .2s ease-in-out;}
+      .delievery.active + .delievery_swiper {opacity: 1; visibility: visible;}
+
+      .car {
+        position: absolute; top: 6.6%; left: 26%; cursor: pointer; color: #fff;
+        width: 50px; height: 50px; border: 1px solid #999; border-radius: 8px;
+        background: radial-gradient(transparent, #ffffffbb); font-weight: 900; text-align: center;
+        font-size: 20px; line-height: 35px; transition: .2s ease-in-out; font-family: 'Noto Sans KR';
+
+        #car_click {display: none; margin-top: 7px; text-shadow: 0 0 2px #000;}
+
+        &:hover {
+          width: 100px; left: 26%;
+          &::before {display: none;}
+          &::after {right: -110px; opacity: 1; visibility: visible;}
+          #car_click {display: block;}
+        }
+        &::before {content: ""; position: absolute; top: 50%; left: 50%;
+          margin-top: -4px; margin-left: -4px;
+          width: 8px; height: 8px; background: #fff; border-radius: 50%;}
+        &::after {
+          content: "CAR"; position: absolute; top: 0; right: -150px; line-height: 2.5;
+          width: 100px; height: 50px; border-radius: 15px; background: #F4F1EA;
+          opacity: 0; visibility: hidden; transition: all .2s ease-in-out; color: #333;
+        }
+      }
+      .car_swiper {opacity: 0; visibility: hidden; transition: all .2s ease-in-out;}
+      .car.active + .car_swiper {opacity: 1; visibility: visible;}
+
+      .tutorial {
+        width: 24%; height: 30%; background: #ffffff; font-family: 'Noto Sans KR';
+        border-radius: 8px; position: absolute; top: 28%; left: 39%; 
+        box-shadow: 1px 1px 2px #000000aa; padding: 1.6em;
+        &.tutoActive {display: none;}
+        #tuto_title {
+          font-size: 1.25rem; display: inline-block;
+          // 폰트 20 픽셀
+          font-weight: 500;
+        }
+        #tuto_text1 {
+          font-size: .94rem; display: inline-block;
+          // 폰트 15 픽셀
+          font-weight: 400; padding-top: 1em;
+        }
+        #tuto_text2 {
+          font-size: .94rem; display: inline-block;
+          // 폰트 15 픽셀
+          font-weight: 400; padding-top: 1em; display: none;
+        }
+        #tuto_close {
+          font-size: .94rem; display: inline-block; padding: 40% 0 0 90%;
+          // 폰트 15 픽셀
+          font-weight: 600; color: #0033ff; text-decoration: none;
+        }
+        #dot_box {
+          position: absolute; top: 45%; left: 45%; color: #333;
+          width: 50px; height: 50px; border: 1px solid #333; border-radius: 8px;
+          background: radial-gradient(transparent, #ffffffbb);
+          &::before {content: ""; position: absolute; top: 50%; left: 50%;
+            margin-top: -4px; margin-left: -4px;
+            width: 8px; height: 8px; background: #333; border-radius: 50%;}
+        }
+        #mouse {
+          position: absolute; top: 70%; left: 84%; transition: all .2s ease-in-out;
+          
+          animation-name: mouse_move;
+          animation-duration: 1.5s;
+          animation-iteration-count: infinite;
+          @keyframes mouse_move {
+            from {top: 56%; left: 54%; transform: scale(1.4);}
+            to {top: 54%; left: 49.6%; transform: scale(1);}
+          }
+        }
+        #touch {
+          display: none;
+          position: absolute; top: 55%; left: 58%; transition: all .2s ease-in-out;
+          animation-name: finger_move;
+          animation-duration: 1.5s;
+          animation-iteration-count: infinite;
+          @keyframes finger_move {
+            0% {left: 58%; transform: scale(1.6);}
+            40% {left: 49%; transform: scale(1); opacity: 1;}
+            50% {left: 49%; transform: scale(1); opacity: .1;}
+            60% {left: 49%; transform: scale(1); opacity: 1;}
+            100% {left: 58%; transform: scale(1.6);}
+          }
+        }
+      }
+      
+      .swiper {
+        width: 40%; border-radius: 15px; position: absolute; top: 29%; left: 30%;
+        font-family: 'Noto Sans KR'; user-select: none;
+        .swiper_close {
+          cursor: pointer;
+          #line {
+            width: 5%; height: 2px; background: #111; z-index: 30;
+            position: absolute; top: 6.6%; right: 2.2%; transition: all .1s ease-in-out;
+            &:first-child {transform: rotate(-45deg);}
+            &:last-child {transform: rotate(45deg);}
+          }
+        }
+      }
+      .swiper-slide {border-radius: 15px; text-align: center;
+        background: #F4F1EA; display: flex; align-items: center; padding: 3% 8%;}
+      .swiper-slide img {display: block; width: 40%; object-fit: cover; margin-right: .8em;}
+      .swiper-slide ul {
+        width: 100%; display: flex; flex-direction: column; align-items: center;
+      }
+      .swiper-slide #sub_title {
+        font-size: 1.56rem; font-weight: bold; line-height: 1.2;
+        // 폰트 25 픽셀
+      }
+      .swiper-slide #sub_text1 {
+        font-size: 1.25rem; font-weight: 500; margin: 1em 0 2em; color: #333; line-height: 1.2;
+        // 폰트 20 픽셀
+      }
+      .swiper-slide #sub_text2 {
+        font-size: 1rem; font-weight: 300; color: #333; margin-bottom: 2.6em; line-height: 1.2;
+        // 폰트 16 픽셀
+      }
+      .swiper-slide #sub_link a {
+        font-size: 1.25rem; padding: .38em 1.6em .5em; background: #0078ff; color: #fff;
+        border-radius: 10px; display: inline-block; transition: all .2s ease-in-out;
+        border: 1px solid transparent; font-weight: bold;
+        // 폰트 20 픽셀
+        &:hover {background: #fff; border-color: #0078ff; color: #0078ff;}
+      }
+      .button {color: #333 !important; border-radius: 5px;}
+      .button:hover {color: #0078ff !important;}
     }
-    
-    .swiper {width: 40%; border-radius: 15px; position: absolute; top: 29%; left: 30%;
-      font-family: 'Noto Sans KR';}
-    .swiper-slide {border-radius: 15px; text-align: center;
-      background: #F4F1EA; display: flex; align-items: center; padding: 3% 8%;}
-    .swiper-slide img {display: block; width: 40%; object-fit: cover; margin-right: .8em;}
-    .swiper-slide ul {
-      width: 100%; display: flex; flex-direction: column; align-items: center;
-    }
-    .swiper-slide #sub_title {
-      font-size: 1.56rem; font-weight: bold; line-height: 1.2;
-      // 폰트 25 픽셀
-    }
-    .swiper-slide #sub_text1 {
-      font-size: 1.25rem; font-weight: 500; margin: 1em 0 2em; color: #333; line-height: 1.2;
-      // 폰트 20 픽셀
-    }
-    .swiper-slide #sub_text2 {
-      font-size: 1rem; font-weight: 300; color: #333; margin-bottom: 2.6em; line-height: 1.2;
-      // 폰트 16 픽셀
-    }
-    .swiper-slide #sub_link a {
-      font-size: 1.25rem; padding: .38em 1.6em .5em; background: #0078ff; color: #fff;
-      border-radius: 10px; display: inline-block; transition: all .2s ease-in-out;
-      border: 1px solid transparent; font-weight: bold;
-      // 폰트 20 픽셀
-      &:hover {background: #fff; border-color: #0078ff; color: #0078ff;}
-    }
-    .button {color: #333 !important; border-radius: 5px;}
-    .button:hover {color: #0078ff !important;}
   }
 }
 
 @media (max-width: 1411px){
-  .inner .wrap .tutorial #tuto_close {
+  .inner .container .wrap .tutorial #tuto_close {
     padding: 7em 0 0 16em;
     @keyframes mouse_move {
       from {top: 62%; left: 82%;}
@@ -400,53 +465,133 @@ $font_Godo_B: "Godo_B";
 }
 
 @media (max-width: 1350px){
-  .inner .wrap .menu_text #depth_1 {padding: 0 .8em}
-  .inner .wrap .menu_text #depth_1 > li {padding: 1.4em 0;}
-  .inner .wrap .menu_text #depth_1 > li:first-child {padding-top: 3em;}
-  .inner .wrap .menu_text #depth_1 a {width: 25%;}
-  .inner .wrap .menu_text #depth_1 #depth_2 {padding-left: 0;}
-  .inner .wrap .menu_text #depth_1 #depth_2 > li {margin-right: 1em;}
-  .inner .wrap .menu_text #depth_1 #depth_2 a {padding-bottom: .6em;}
+  .inner .container .wrap .menu_text #depth_1 {padding: 0 .8em}
+  .inner .container .wrap .menu_text #depth_1 > li {padding: 1.4em 0;}
+  .inner .container .wrap .menu_text #depth_1 > li:first-child {padding-top: 3em;}
+  .inner .container .wrap .menu_text #depth_1 a {width: 25%;}
+  .inner .container .wrap .menu_text #depth_1 #depth_2 {padding-left: 0;}
+  .inner .container .wrap .menu_text #depth_1 #depth_2 > li {margin-right: 1em;}
+  .inner .container .wrap .menu_text #depth_1 #depth_2 a {padding-bottom: .6em;}
 }
 
 @media (max-width: 1024px){
-  .inner .wrap .all_menu #left_area {border-radius: 18px 0 0 18px;}
-  .inner .wrap .all_menu #right_area {border-radius: 0 18px 18px 0;}
-  .inner .wrap .custom_card {left: 4%;}
-  .inner .wrap .tutorial {left: 39.4%; padding: .8em;}
-  .inner .wrap .tutorial #tuto_text1 {display: none;}
-  .inner .wrap .tutorial #tuto_text2 {display: block; padding-top: .5em;}
-  .inner .wrap .tutorial #tuto_close {padding: 5.6em 0 0 12.4em;}
-  .inner .wrap .tutorial #dot_box {top: 44%; left: 44%;}
-  .inner .wrap .tutorial #mouse {display: none;}
-  .inner .wrap .tutorial #touch {display: block;}
-  .inner .wrap .swiper {top: 25%; left: 31%;}
-  .inner .wrap .swiper .swiper-slide #sub_title {font-size: 1rem;}
-  .inner .wrap .swiper .swiper-slide #sub_text1 {font-size: .8rem;}
-  .inner .wrap .swiper .swiper-slide #sub_link a {font-size: .8rem; padding: .38em 1.4em .5em;}
-  .inner .wrap .swiper .swiper-slide img {padding-left: 1em; margin-right: .2em;}
-  .inner .wrap .custom_card #custom_title {font-size: 1.88rem;}
-  .inner .wrap .custom_card #custom_text {font-size: 1.56rem;}
-  .inner .wrap .custom_card #custom_link a {font-size: 1.2rem; padding: .34em 1.4em .42em;}
-  .inner .wrap .pc {top: 28.4%; right: 17.4%;}
-  .inner .wrap .pc:hover {right: 15%;}
-  .inner .wrap .bag {bottom: 18%; left: 30%;}
-  .inner .wrap .bag:hover {left: 28%;}
-  .inner .wrap .trip {top: 12%; left: 51%;}
-  .inner .wrap .trip:hover {left: 48.6%;}
-  .inner .wrap .movie {top: 10%; left: 71.6%;}
-  .inner .wrap .movie:hover {left: 69.8%;}
-  .inner .wrap .delievery {bottom: 4%; right: 46.6%;}
-  .inner .wrap .delievery:hover {right: 44%;}
-  .inner .wrap .car {top: 5.2%; left: 25.2%;}
-  .inner .wrap .car:hover {left: 23.2%;}
-  .inner .wrap .menu_btn {width: 50px; height: 50px;}
-  .inner .wrap .menu_btn #line {top: 47%; left: 25.4%;}
-  .inner .wrap .camera_ring {width: 61px; height: 61px; bottom: 47.14%; right: 1.42%;}
-  .inner .wrap .camera_zoom {top: 28%;}
-  .inner .wrap .camera_zoom img {width: 40%;}
+  .inner .logo {display: none;}
+  .inner .container .wrap .logo2 {display: block;}
+  .inner .container .wrap .all_menu {top: .8%; right: .42%;}
+  .inner .container .wrap .all_menu.active {width: 99.3%;}
+  .inner .container .wrap .all_menu #left_area {border-radius: 22px 0 0 22px;}
+  .inner .container .wrap .all_menu #right_area {border-radius: 0 22px 22px 0;}
+  .inner .container .wrap .custom_card {left: 4%;}
+  .inner .container .wrap .tutorial {left: 39.4%; padding: .8em;}
+  .inner .container .wrap .tutorial #tuto_text1 {display: none;}
+  .inner .container .wrap .tutorial #tuto_text2 {display: block; padding-top: .5em;}
+  .inner .container .wrap .tutorial #tuto_close {padding: 5.6em 0 0 12.4em;}
+  .inner .container .wrap .tutorial #dot_box {top: 44%; left: 44%;}
+  .inner .container .wrap .tutorial #mouse {display: none;}
+  .inner .container .wrap .tutorial #touch {display: block;}
+  .inner .container .wrap .swiper {top: 25%; left: 31%;}
+  .inner .container .wrap .swiper .swiper-slide #sub_title {font-size: 1rem;}
+  .inner .container .wrap .swiper .swiper-slide #sub_text1 {font-size: .8rem;}
+  .inner .container .wrap .swiper .swiper-slide #sub_link a {font-size: .8rem; padding: .38em 1.4em .5em;}
+  .inner .container .wrap .swiper .swiper-slide img {padding-left: 1em; margin-right: .2em;}
+  .inner .container .wrap .custom_card #custom_title {font-size: 1.88rem;}
+  .inner .container .wrap .custom_card #custom_text {font-size: 1.56rem;}
+  .inner .container .wrap .custom_card #custom_link a {font-size: 1.2rem; padding: .34em 1.4em .42em;}
+  .inner .container .wrap .pc {top: 28.4%; right: 17.4%;}
+  .inner .container .wrap .pc:hover {right: 15%;}
+  .inner .container .wrap .bag {bottom: 18%; left: 30%;}
+  .inner .container .wrap .bag:hover {left: 28%;}
+  .inner .container .wrap .trip {top: 12%; left: 51%;}
+  .inner .container .wrap .trip:hover {left: 48.6%;}
+  .inner .container .wrap .movie {top: 10%; left: 71.6%;}
+  .inner .container .wrap .movie:hover {left: 69.8%;}
+  .inner .container .wrap .delievery {bottom: 4%; right: 46.6%;}
+  .inner .container .wrap .delievery:hover {right: 44%;}
+  .inner .container .wrap .car {top: 5.2%; left: 25.2%;}
+  .inner .container .wrap .car:hover {left: 23.2%;}
+  .inner .container .wrap .menu_btn {width: 50px; height: 50px;}
+  .inner .container .wrap .menu_btn #line {top: 47%; left: 25.4%;}
+  .inner .container .wrap .camera_zoom {top: 28%;}
+  .inner .container .wrap .camera_zoom img {width: 40%;}
 }
 
-@media (max-height: 880px){
-  .inner .wrap h1 {top: 2%;}
+@media (max-width: 768px){
+  .inner .container {transform: rotate(90deg); background: #000000aa;}
+  .inner .container .wrap {transform: rotate(-90deg); cursor: move;}
+  .inner .container .wrap .logo2 {top: 1%; left: 48%;}  
+  .inner .container .wrap .tutorial {left: 38%; padding: .2em .4em;}
+  .inner .container .wrap .tutorial #tuto_title {font-size: .7rem;}
+  .inner .container .wrap .tutorial #tuto_text2 {font-size: .5rem; padding-top: .3em;}
+  .inner .container .wrap .tutorial #tuto_close {font-size: .6rem; padding: 7.8em 0 0 15.4em;}
+  .inner .container .wrap .tutorial #dot_box {top: 35%; left: 40%; width: 38px; height: 38px;}
+  .inner .container .wrap .tutorial #dot_box::before {width: 6px; height: 6px; top: 52%; left: 52%;}
+  .inner .container .wrap .tutoria #touch {
+    @keyframes finger_move {
+      0% {top: 43%; left: 54%; transform: scale(1.2);}
+      40% {top: 43%; left: 43.4%; transform: scale(1); opacity: 1;}
+      50% {top: 43%; left: 43.4%; transform: scale(1); opacity: .1;}
+      60% {top: 43%; left: 43.4%; transform: scale(1); opacity: 1;}
+      100% {top: 43%; left: 54%; transform: scale(1.2);}
+    }
+  }
+  
+  .inner .container .wrap .pc {
+    top: 28.2%; right: 17.4%; font-size: .8rem; width: 35px; height: 35px; line-height: 15px;
+  }
+  .inner .container .wrap .pc #pc_click {margin-top: 9px;}
+  .inner .container .wrap .pc:hover {width: 45px; right: 16%;}
+  .inner .container .wrap .pc::after {width: 60px; height: 35px; top: 110%; left: 0%;}
+
+  .inner .container .wrap .bag {
+    bottom: 18%; left: 30%; font-size: .8rem; width: 35px; height: 35px; line-height: 15px;
+  }
+  .inner .container .wrap .bag:hover {width: 45px; left: 29%;}
+  .inner .container .wrap .bag #bag_click {margin-top: 9px;}
+  .inner .container .wrap .bag::after {width: 80px; height: 35px; top: -1%; left: 110%;}
+
+  .inner .container .wrap .trip {
+    top: 11%; left: 51%; font-size: .8rem; width: 35px; height: 35px; line-height: 15px;
+  }
+  .inner .container .wrap .trip:hover {width: 45px; left: 50%;}
+  .inner .container .wrap .trip #trip_click {margin-top: 9px;}
+  .inner .container .wrap .trip::after {width: 40px; height: 35px; top: 0; left: 110%;
+    line-height: 2.6; border-radius: 8px;}
+
+  .inner .container .wrap .movie {
+    top: 10%; left: 72.2%; font-size: .8rem; width: 35px; height: 35px; line-height: 15px;
+  }
+  .inner .container .wrap .movie:hover {width: 45px; left: 71.2%;}
+  .inner .container .wrap .movie #movie_click {margin-top: 9px;}
+  .inner .container .wrap .movie::after {width: 55px; height: 35px; top: -1.2%; left: 110%;}
+
+  .inner .container .wrap .delievery {
+    bottom: 2.8%; right: 47%; font-size: .8rem; width: 35px; height: 35px; line-height: 15px;
+  }
+  .inner .container .wrap .delievery:hover {width: 45px; right: 46.4%}
+  .inner .container .wrap .delievery #delievery_click {margin-top: 9px;}
+  .inner .container .wrap .delievery::after {width: 84px; height: 35px; top: -1.2%; left: 110%;
+    line-height: 2.6; border-radius: 8px;}
+
+  .inner .container .wrap .car {
+    top: 4.2%; left: 25%; font-size: .8rem; width: 35px; height: 35px; line-height: 15px;
+  }
+  .inner .container .wrap .car:hover {width: 45px; left: 24.6%;}
+  .inner .container .wrap .car #car_click {margin-top: 9px;}
+  .inner .container .wrap .car::after {width: 45px; height: 35px; top: -1.2%; left: 110%; line-height: 2.6;
+    border-radius: 8px;}
+
+  .inner .container .wrap .swiper .swiper-slide #sub_title {font-size: .5rem;}
+  .inner .container .wrap .swiper .swiper-slide #sub_text1 {font-size: .4rem;}
+  .inner .container .wrap .swiper .swiper-slide #sub_text2 {font-size: .4rem;}
+  .inner .container .wrap .swiper .swiper-slide #sub_link a {font-size: .4rem; padding: .5em 1.3em .4em;}
+  .inner .container .wrap .swiper .swiper-slide img {padding-left: 1.3em; margin-right: .2em;}
+
+  .inner .container .wrap .camera_zoom {display: none;}
+  .inner .container .wrap .camera_bolt {display: none;}
+  .inner .container .wrap .camera_ring {display: none;}
+  .inner .container .wrap .menu_btn {display: none;}
+  .inner .container .wrap .camera_reverse {display: none;}
+  .inner .container .camera_top {display: block;}
+  .inner .container #lens {display: block;}
+  .inner .container .camera_bottom {display: block;}
 }

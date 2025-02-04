@@ -18,72 +18,177 @@ a {
   justify-content: center;
   align-items: center;
 }
-.inner .wrap {
+.inner .logo {
+  display: inline-block;
+  z-index: 30;
+  width: 6%;
+  height: 4%;
+  position: absolute;
+  top: 1.4%;
+  left: 48%;
+}
+.inner .logo img {
+  width: 100%;
+}
+.inner .container {
   max-width: 1559px;
   max-height: 876px;
+  z-index: 10;
   position: relative;
+  padding: 0.3%;
+  background: #000;
+  overflow: hidden;
+  border: 2px solid #67b22b;
+  border-radius: 30px;
 }
-.inner .wrap .backBg {
+.inner .container .camera_top {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  border-radius: 20px 0 0 20px;
+  width: 12%;
+  height: 100%;
+  background: #000;
+  display: none;
+}
+.inner .container .camera_top li:first-child {
+  position: absolute;
+  top: 90%;
+  left: 11%;
+}
+.inner .container .camera_top li:nth-child(2) {
+  position: absolute;
+  top: 81.6%;
+  left: 11%;
+}
+.inner .container .camera_top li:last-child {
+  position: absolute;
+  top: 4.8%;
+  left: 11%;
+}
+.inner .container .camera_top li img {
+  width: 28%;
+}
+.inner .container #lens {
+  position: absolute;
+  top: 46%;
+  left: 2.6%;
+  display: none;
+}
+.inner .container #lens img {
+  width: 50%;
+}
+.inner .container .camera_bottom {
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  border-radius: 0 20px 20px 0;
+  display: none;
+  width: 12%;
+  height: 100%;
+  background: #000;
+}
+.inner .container .camera_bottom #bottom_top {
+  display: flex;
+  color: #fff;
+  flex-direction: column;
+}
+.inner .container .camera_bottom #bottom_top li {
+  transform: rotate(-90deg);
+  font-size: 0.8rem;
+}
+.inner .container .camera_bottom #bottom_top li:first-child {
+  position: absolute;
+  top: 86%;
+  left: -18%;
+}
+.inner .container .camera_bottom #bottom_top li:nth-child(2) {
+  position: absolute;
+  top: 61%;
+  left: -18%;
+}
+.inner .container .camera_bottom #bottom_top li:nth-child(3) {
+  position: absolute;
+  top: 35%;
+  left: -25%;
+}
+.inner .container .camera_bottom #bottom_top li:last-child {
+  position: absolute;
+  top: 10%;
+  left: -10.8%;
+}
+.inner .container .camera_bottom #bottom_top li:hover {
+  color: #ffd50a;
+}
+.inner .container .camera_bottom #preview {
+  position: absolute;
+  top: 87.4%;
+  left: 44%;
+}
+.inner .container .camera_bottom #preview img {
+  width: 62%;
+  transform: rotate(-90deg);
+  border-radius: 5px;
+}
+.inner .container .camera_bottom #bottom_camera {
+  position: absolute;
+  top: 41.4%;
+  left: 35%;
+}
+.inner .container .camera_bottom #bottom_camera img {
+  width: 86%;
+}
+.inner .container .camera_bottom #bottom_reverse {
+  position: absolute;
+  top: 5%;
+  left: 44%;
+}
+.inner .container .camera_bottom #bottom_reverse img {
+  width: 60%;
+  transform: rotate(-90deg);
+}
+.inner .container .wrap .logo2 {
+  display: none;
+  z-index: 30;
+  width: 6%;
+  height: 4%;
+  position: absolute;
+  top: 1.6%;
+  left: 48%;
+}
+.inner .container .wrap .logo2 img {
+  width: 100%;
+}
+.inner .container .wrap .bezel img {
   width: 100%;
   height: 100%;
-  z-index: 10;
+  border-radius: 26px;
 }
-.inner .wrap h1 {
-  position: absolute;
-  top: -5.4%;
-  left: 47.3%;
-}
-.inner .wrap h1 img {
-  width: 16%;
-}
-.inner .wrap .camera_zoom {
+.inner .container .wrap .camera_zoom {
   position: absolute;
   top: 30%;
   left: 1.8%;
 }
-.inner .wrap .camera_zoom img {
+.inner .container .wrap .camera_zoom img {
   width: 50%;
 }
-.inner .wrap .camera_bolt {
+.inner .container .wrap .camera_bolt {
   position: absolute;
   top: 33%;
   left: 94.2%;
 }
-.inner .wrap .camera_bolt img {
+.inner .container .wrap .camera_bolt img {
   width: 45%;
 }
-.inner .wrap .camera_ring {
-  position: absolute;
-  bottom: 47.08%;
-  right: 1.43%;
-  width: 83px;
-  height: 83px;
-  border: 8px solid #fff;
-  border-radius: 50%;
-  animation-name: ring_blink;
-  animation-duration: 5s;
-  animation-iteration-count: infinite;
-}
-@keyframes ring_blink {
-  0% {
-    border-color: #fff;
-  }
-  50% {
-    border-color: #111;
-  }
-  100% {
-    border-color: #fff;
-  }
-}
-.inner .wrap .camera_reverse {
+.inner .container .wrap .camera_reverse {
   position: absolute;
   bottom: 37%;
   left: 94.2%;
 }
-.inner .wrap .camera_reverse img {
+.inner .container .wrap .camera_reverse img {
   width: 45%;
 }
-.inner .wrap .menu_btn {
+.inner .container .wrap .menu_btn {
   position: absolute;
   bottom: 48%;
   right: 2%;
@@ -94,80 +199,96 @@ a {
   border-radius: 50%;
   border: 3px solid #000;
   transition: all 0.2s ease-in-out;
+  outline: 7px solid #fff;
+  animation-name: ring_blink;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
 }
-.inner .wrap .menu_btn #line {
+@keyframes ring_blink {
+  0% {
+    outline-color: #fff;
+  }
+  50% {
+    outline-color: #111;
+  }
+  100% {
+    outline-color: #fff;
+  }
+}
+.inner .container .wrap .menu_btn #line {
   width: 50%;
   height: 2px;
   background: #e5e5e5;
   position: absolute;
   top: 47%;
-  left: 24%;
+  left: 24.6%;
   transition: all 0.1s ease-in-out;
 }
-.inner .wrap .menu_btn #line:first-child {
+.inner .container .wrap .menu_btn #line:first-child {
   transform: rotate(-45deg);
   opacity: 0;
   visibility: hidden;
 }
-.inner .wrap .menu_btn #line:last-child {
+.inner .container .wrap .menu_btn #line:last-child {
   transform: rotate(45deg);
   opacity: 0;
   visibility: hidden;
 }
-.inner .wrap .menu_btn:hover {
+.inner .container .wrap .menu_btn:hover {
   background: #ffd50a;
 }
-.inner .wrap .menu_btn.active #line {
+.inner .container .wrap .menu_btn.showActive #line {
   background: #111;
 }
-.inner .wrap .menu_btn.active #line:first-child {
+.inner .container .wrap .menu_btn.showActive #line:first-child {
   opacity: 1;
   visibility: visible;
 }
-.inner .wrap .menu_btn.active #line:last-child {
+.inner .container .wrap .menu_btn.showActive #line:last-child {
   opacity: 1;
   visibility: visible;
 }
-.inner .wrap .all_menu {
+.inner .container .wrap .all_menu {
   width: 0%;
-  height: 97.1%;
+  height: 98.2%;
   position: absolute;
-  top: 1.3%;
-  right: 0.8%;
+  top: 0.9%;
+  right: 0.42%;
   border-radius: 25px;
   z-index: 30;
   transition: all 0.2s ease-in-out;
   font-family: "Noto Sans KR";
 }
-.inner .wrap .all_menu.active {
-  width: 98.4%;
+.inner .container .wrap .all_menu.showActive {
+  width: 99.2%;
 }
-.inner .wrap .all_menu.active + .menu_text {
+.inner .container .wrap .all_menu.showActive + .menu_text {
   top: 6%;
   opacity: 1;
   visibility: visible;
 }
-.inner .wrap .all_menu.active ~ .custom_card {
+.inner .container .wrap .all_menu.showActive ~ .custom_card {
   opacity: 1;
   visibility: visible;
 }
-.inner .wrap .all_menu #left_area {
+.inner .container .wrap .all_menu #left_area {
   background: #F4F1EA;
   width: 35%;
   height: 100%;
   float: left;
-  border-radius: 25px 0 0 25px;
+  border-radius: 22px 0 0 22px;
 }
-.inner .wrap .all_menu #right_area {
+.inner .container .wrap .all_menu #right_area {
   background: #fff;
   width: 65%;
   height: 100%;
   float: right;
-  border-radius: 0 25px 25px 0;
+  border-radius: 0 22px 22px 0;
 }
-.inner .wrap .menu_text {
+.inner .container .wrap .menu_text {
   width: 60%;
   height: 92.26%;
+  font-family: "Noto Sans KR";
   opacity: 0;
   visibility: hidden;
   transition: all 0.2s ease-in-out;
@@ -176,52 +297,52 @@ a {
   left: 35%;
   z-index: 30;
 }
-.inner .wrap .menu_text #depth_1 {
+.inner .container .wrap .menu_text #depth_1 {
   display: flex;
   flex-direction: column;
   padding: 0 2.7em;
 }
-.inner .wrap .menu_text #depth_1 > li {
+.inner .container .wrap .menu_text #depth_1 > li {
   font-weight: bold;
   font-size: 1.125rem;
   padding: 2.16em 0;
   border-bottom: 1px solid #dfdfdf;
 }
-.inner .wrap .menu_text #depth_1 > li:first-child {
+.inner .container .wrap .menu_text #depth_1 > li:first-child {
   padding-top: 4.31em;
 }
-.inner .wrap .menu_text #depth_1 a {
+.inner .container .wrap .menu_text #depth_1 a {
   width: 20%;
   color: #191919;
   display: block;
   float: left;
   margin-right: 0.3em;
 }
-.inner .wrap .menu_text #depth_1 a:hover {
+.inner .container .wrap .menu_text #depth_1 a:hover {
   color: #0078ff;
 }
-.inner .wrap .menu_text #depth_1 #depth_2 {
+.inner .container .wrap .menu_text #depth_1 #depth_2 {
   display: flex;
   transition: all 0.2s ease-in-out;
   font-size: 1rem;
   flex-wrap: wrap;
   padding-left: 2em;
 }
-.inner .wrap .menu_text #depth_1 #depth_2 > li {
+.inner .container .wrap .menu_text #depth_1 #depth_2 > li {
   font-weight: normal;
   margin-right: 1.6em;
 }
-.inner .wrap .menu_text #depth_1 #depth_2 a {
+.inner .container .wrap .menu_text #depth_1 #depth_2 a {
   color: #333;
   display: block;
   width: 100%;
   padding-bottom: 1em;
   transition: all 0.2s ease-in-out;
 }
-.inner .wrap .menu_text #depth_1 #depth_2 a:hover {
+.inner .container .wrap .menu_text #depth_1 #depth_2 a:hover {
   color: #0078ff;
 }
-.inner .wrap .custom_card {
+.inner .container .wrap .custom_card {
   width: 30%;
   height: 92.26%;
   position: absolute;
@@ -233,20 +354,20 @@ a {
   visibility: hidden;
   transition-delay: 0.1s;
 }
-.inner .wrap .custom_card #custom_title {
+.inner .container .wrap .custom_card #custom_title {
   font-size: 2.5rem;
   font-weight: bold;
   color: #333;
   font-weight: bold;
 }
-.inner .wrap .custom_card #custom_title span {
+.inner .container .wrap .custom_card #custom_title span {
   color: #0078ff;
 }
-.inner .wrap .custom_card #custom_text {
+.inner .container .wrap .custom_card #custom_text {
   font-size: 1.88rem;
   padding-top: 1em;
 }
-.inner .wrap .custom_card #custom_link a {
+.inner .container .wrap .custom_card #custom_link a {
   font-size: 1.56rem;
   margin-top: 3em;
   padding: 0.34em 2em 0.5em;
@@ -258,16 +379,16 @@ a {
   border: 1px solid transparent;
   font-weight: bold;
 }
-.inner .wrap .custom_card #custom_link a:hover {
+.inner .container .wrap .custom_card #custom_link a:hover {
   background: #fff;
   border-color: #0078ff;
   color: #0078ff;
 }
-.inner .wrap .custom_card #custom_img {
+.inner .container .wrap .custom_card #custom_img {
   width: 7%;
   vertical-align: -3px;
 }
-.inner .wrap .pc {
+.inner .container .wrap .pc {
   position: absolute;
   top: 30%;
   right: 18%;
@@ -283,28 +404,29 @@ a {
   font-size: 20px;
   line-height: 34px;
   transition: 0.2s ease-in-out;
+  font-family: "Noto Sans KR";
 }
-.inner .wrap .pc #pc_click {
+.inner .container .wrap .pc #pc_click {
   display: none;
   margin-top: 7px;
   text-shadow: 0 0 2px #000;
 }
-.inner .wrap .pc:hover {
+.inner .container .wrap .pc:hover {
   width: 100px;
   right: 16.4%;
 }
-.inner .wrap .pc:hover::before {
+.inner .container .wrap .pc:hover::before {
   display: none;
 }
-.inner .wrap .pc:hover::after {
+.inner .container .wrap .pc:hover::after {
   right: -110px;
   opacity: 1;
   visibility: visible;
 }
-.inner .wrap .pc:hover #pc_click {
+.inner .container .wrap .pc:hover #pc_click {
   display: block;
 }
-.inner .wrap .pc::before {
+.inner .container .wrap .pc::before {
   content: "";
   position: absolute;
   top: 50%;
@@ -316,7 +438,7 @@ a {
   background: #fff;
   border-radius: 50%;
 }
-.inner .wrap .pc::after {
+.inner .container .wrap .pc::after {
   content: "OTT";
   position: absolute;
   top: 0;
@@ -331,16 +453,16 @@ a {
   transition: all 0.2s ease-in-out;
   color: #333;
 }
-.inner .wrap .pc_swiper {
+.inner .container .wrap .pc_swiper {
   opacity: 0;
   visibility: hidden;
   transition: all 0.2s ease-in-out;
 }
-.inner .wrap .pc.active + .pc_swiper {
+.inner .container .wrap .pc.active + .pc_swiper {
   opacity: 1;
   visibility: visible;
 }
-.inner .wrap .bag {
+.inner .container .wrap .bag {
   position: absolute;
   bottom: 18%;
   left: 30%;
@@ -356,28 +478,29 @@ a {
   font-size: 20px;
   line-height: 35px;
   transition: 0.2s ease-in-out;
+  font-family: "Noto Sans KR";
 }
-.inner .wrap .bag #bag_click {
+.inner .container .wrap .bag #bag_click {
   display: none;
   margin-top: 7px;
   text-shadow: 0 0 2px #000;
 }
-.inner .wrap .bag:hover {
+.inner .container .wrap .bag:hover {
   width: 100px;
   left: 28.6%;
 }
-.inner .wrap .bag:hover::before {
+.inner .container .wrap .bag:hover::before {
   display: none;
 }
-.inner .wrap .bag:hover::after {
+.inner .container .wrap .bag:hover::after {
   right: -170px;
   opacity: 1;
   visibility: visible;
 }
-.inner .wrap .bag:hover #bag_click {
+.inner .container .wrap .bag:hover #bag_click {
   display: block;
 }
-.inner .wrap .bag::before {
+.inner .container .wrap .bag::before {
   content: "";
   position: absolute;
   top: 50%;
@@ -389,7 +512,7 @@ a {
   background: #fff;
   border-radius: 50%;
 }
-.inner .wrap .bag::after {
+.inner .container .wrap .bag::after {
   content: "SHOPPING";
   position: absolute;
   top: 0;
@@ -404,16 +527,16 @@ a {
   transition: all 0.2s ease-in-out;
   color: #333;
 }
-.inner .wrap .bag_swiper {
+.inner .container .wrap .bag_swiper {
   opacity: 0;
   visibility: hidden;
   transition: all 0.2s ease-in-out;
 }
-.inner .wrap .bag.active + .bag_swiper {
+.inner .container .wrap .bag.active + .bag_swiper {
   opacity: 1;
   visibility: visible;
 }
-.inner .wrap .trip {
+.inner .container .wrap .trip {
   position: absolute;
   top: 12%;
   left: 51%;
@@ -429,28 +552,29 @@ a {
   font-size: 20px;
   line-height: 35px;
   transition: 0.2s ease-in-out;
+  font-family: "Noto Sans KR";
 }
-.inner .wrap .trip #trip_click {
+.inner .container .wrap .trip #trip_click {
   display: none;
   margin-top: 7px;
   text-shadow: 0 0 2px #000;
 }
-.inner .wrap .trip:hover {
+.inner .container .wrap .trip:hover {
   width: 100px;
   left: 49.4%;
 }
-.inner .wrap .trip:hover::before {
+.inner .container .wrap .trip:hover::before {
   display: none;
 }
-.inner .wrap .trip:hover::after {
+.inner .container .wrap .trip:hover::after {
   right: -120px;
   opacity: 1;
   visibility: visible;
 }
-.inner .wrap .trip:hover #trip_click {
+.inner .container .wrap .trip:hover #trip_click {
   display: block;
 }
-.inner .wrap .trip::before {
+.inner .container .wrap .trip::before {
   content: "";
   position: absolute;
   top: 50%;
@@ -462,7 +586,7 @@ a {
   background: #fff;
   border-radius: 50%;
 }
-.inner .wrap .trip::after {
+.inner .container .wrap .trip::after {
   content: "TRIP";
   position: absolute;
   top: 0;
@@ -477,16 +601,16 @@ a {
   transition: all 0.2s ease-in-out;
   color: #333;
 }
-.inner .wrap .trip_swiper {
+.inner .container .wrap .trip_swiper {
   opacity: 0;
   visibility: hidden;
   transition: all 0.2s ease-in-out;
 }
-.inner .wrap .trip.active + .trip_swiper {
+.inner .container .wrap .trip.active + .trip_swiper {
   opacity: 1;
   visibility: visible;
 }
-.inner .wrap .movie {
+.inner .container .wrap .movie {
   position: absolute;
   top: 12%;
   left: 72.4%;
@@ -502,28 +626,29 @@ a {
   font-size: 20px;
   line-height: 35px;
   transition: 0.2s ease-in-out;
+  font-family: "Noto Sans KR";
 }
-.inner .wrap .movie #movie_click {
+.inner .container .wrap .movie #movie_click {
   display: none;
   margin-top: 7px;
   text-shadow: 0 0 2px #000;
 }
-.inner .wrap .movie:hover {
+.inner .container .wrap .movie:hover {
   width: 100px;
   left: 70.6%;
 }
-.inner .wrap .movie:hover::before {
+.inner .container .wrap .movie:hover::before {
   display: none;
 }
-.inner .wrap .movie:hover::after {
+.inner .container .wrap .movie:hover::after {
   right: -170px;
   opacity: 1;
   visibility: visible;
 }
-.inner .wrap .movie:hover #movie_click {
+.inner .container .wrap .movie:hover #movie_click {
   display: block;
 }
-.inner .wrap .movie::before {
+.inner .container .wrap .movie::before {
   content: "";
   position: absolute;
   top: 50%;
@@ -535,7 +660,7 @@ a {
   background: #fff;
   border-radius: 50%;
 }
-.inner .wrap .movie::after {
+.inner .container .wrap .movie::after {
   content: "MOVIE";
   position: absolute;
   top: 0;
@@ -550,16 +675,16 @@ a {
   transition: all 0.2s ease-in-out;
   color: #333;
 }
-.inner .wrap .movie_swiper {
+.inner .container .wrap .movie_swiper {
   opacity: 0;
   visibility: hidden;
   transition: all 0.2s ease-in-out;
 }
-.inner .wrap .movie.active + .movie_swiper {
+.inner .container .wrap .movie.active + .movie_swiper {
   opacity: 1;
   visibility: visible;
 }
-.inner .wrap .delievery {
+.inner .container .wrap .delievery {
   position: absolute;
   bottom: 5%;
   right: 47.2%;
@@ -575,28 +700,29 @@ a {
   font-size: 20px;
   line-height: 35px;
   transition: 0.2s ease-in-out;
+  font-family: "Noto Sans KR";
 }
-.inner .wrap .delievery #delievery_click {
+.inner .container .wrap .delievery #delievery_click {
   display: none;
   margin-top: 7px;
   text-shadow: 0 0 2px #000;
 }
-.inner .wrap .delievery:hover {
+.inner .container .wrap .delievery:hover {
   width: 100px;
   right: 45.6%;
 }
-.inner .wrap .delievery:hover::before {
+.inner .container .wrap .delievery:hover::before {
   display: none;
 }
-.inner .wrap .delievery:hover::after {
+.inner .container .wrap .delievery:hover::after {
   right: -190px;
   opacity: 1;
   visibility: visible;
 }
-.inner .wrap .delievery:hover #delievery_click {
+.inner .container .wrap .delievery:hover #delievery_click {
   display: block;
 }
-.inner .wrap .delievery::before {
+.inner .container .wrap .delievery::before {
   content: "";
   position: absolute;
   top: 50%;
@@ -608,7 +734,7 @@ a {
   background: #fff;
   border-radius: 50%;
 }
-.inner .wrap .delievery::after {
+.inner .container .wrap .delievery::after {
   content: "DELIEVERY";
   position: absolute;
   top: 0;
@@ -623,16 +749,16 @@ a {
   transition: all 0.2s ease-in-out;
   color: #333;
 }
-.inner .wrap .delievery_swiper {
+.inner .container .wrap .delievery_swiper {
   opacity: 0;
   visibility: hidden;
   transition: all 0.2s ease-in-out;
 }
-.inner .wrap .delievery.active + .delievery_swiper {
+.inner .container .wrap .delievery.active + .delievery_swiper {
   opacity: 1;
   visibility: visible;
 }
-.inner .wrap .car {
+.inner .container .wrap .car {
   position: absolute;
   top: 6.6%;
   left: 26%;
@@ -648,28 +774,29 @@ a {
   font-size: 20px;
   line-height: 35px;
   transition: 0.2s ease-in-out;
+  font-family: "Noto Sans KR";
 }
-.inner .wrap .car #car_click {
+.inner .container .wrap .car #car_click {
   display: none;
   margin-top: 7px;
   text-shadow: 0 0 2px #000;
 }
-.inner .wrap .car:hover {
+.inner .container .wrap .car:hover {
   width: 100px;
-  left: 24.6%;
+  left: 26%;
 }
-.inner .wrap .car:hover::before {
+.inner .container .wrap .car:hover::before {
   display: none;
 }
-.inner .wrap .car:hover::after {
+.inner .container .wrap .car:hover::after {
   right: -110px;
   opacity: 1;
   visibility: visible;
 }
-.inner .wrap .car:hover #car_click {
+.inner .container .wrap .car:hover #car_click {
   display: block;
 }
-.inner .wrap .car::before {
+.inner .container .wrap .car::before {
   content: "";
   position: absolute;
   top: 50%;
@@ -681,7 +808,7 @@ a {
   background: #fff;
   border-radius: 50%;
 }
-.inner .wrap .car::after {
+.inner .container .wrap .car::after {
   content: "CAR";
   position: absolute;
   top: 0;
@@ -696,19 +823,20 @@ a {
   transition: all 0.2s ease-in-out;
   color: #333;
 }
-.inner .wrap .car_swiper {
+.inner .container .wrap .car_swiper {
   opacity: 0;
   visibility: hidden;
   transition: all 0.2s ease-in-out;
 }
-.inner .wrap .car.active + .car_swiper {
+.inner .container .wrap .car.active + .car_swiper {
   opacity: 1;
   visibility: visible;
 }
-.inner .wrap .tutorial {
+.inner .container .wrap .tutorial {
   width: 24%;
   height: 30%;
   background: #ffffff;
+  font-family: "Noto Sans KR";
   border-radius: 8px;
   position: absolute;
   top: 28%;
@@ -716,28 +844,28 @@ a {
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6666666667);
   padding: 1.6em;
 }
-.inner .wrap .tutorial.active {
+.inner .container .wrap .tutorial.tutoActive {
   display: none;
 }
-.inner .wrap .tutorial #tuto_title {
+.inner .container .wrap .tutorial #tuto_title {
   font-size: 1.25rem;
   display: inline-block;
   font-weight: 500;
 }
-.inner .wrap .tutorial #tuto_text1 {
+.inner .container .wrap .tutorial #tuto_text1 {
   font-size: 0.94rem;
   display: inline-block;
   font-weight: 400;
   padding-top: 1em;
 }
-.inner .wrap .tutorial #tuto_text2 {
+.inner .container .wrap .tutorial #tuto_text2 {
   font-size: 0.94rem;
   display: inline-block;
   font-weight: 400;
   padding-top: 1em;
   display: none;
 }
-.inner .wrap .tutorial #tuto_close {
+.inner .container .wrap .tutorial #tuto_close {
   font-size: 0.94rem;
   display: inline-block;
   padding: 40% 0 0 90%;
@@ -745,9 +873,9 @@ a {
   color: #0033ff;
   text-decoration: none;
 }
-.inner .wrap .tutorial #dot_box {
+.inner .container .wrap .tutorial #dot_box {
   position: absolute;
-  top: 40%;
+  top: 45%;
   left: 45%;
   color: #333;
   width: 50px;
@@ -756,7 +884,7 @@ a {
   border-radius: 8px;
   background: radial-gradient(transparent, rgba(255, 255, 255, 0.7333333333));
 }
-.inner .wrap .tutorial #dot_box::before {
+.inner .container .wrap .tutorial #dot_box::before {
   content: "";
   position: absolute;
   top: 50%;
@@ -768,7 +896,7 @@ a {
   background: #333;
   border-radius: 50%;
 }
-.inner .wrap .tutorial #mouse {
+.inner .container .wrap .tutorial #mouse {
   position: absolute;
   top: 70%;
   left: 84%;
@@ -779,15 +907,17 @@ a {
 }
 @keyframes mouse_move {
   from {
-    top: 62%;
-    left: 82%;
+    top: 56%;
+    left: 54%;
+    transform: scale(1.4);
   }
   to {
-    top: 48%;
-    left: 49%;
+    top: 54%;
+    left: 49.6%;
+    transform: scale(1);
   }
 }
-.inner .wrap .tutorial #touch {
+.inner .container .wrap .tutorial #touch {
   display: none;
   position: absolute;
   top: 55%;
@@ -822,15 +952,37 @@ a {
     transform: scale(1.6);
   }
 }
-.inner .wrap .swiper {
+.inner .container .wrap .swiper {
   width: 40%;
   border-radius: 15px;
   position: absolute;
   top: 29%;
   left: 30%;
   font-family: "Noto Sans KR";
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
-.inner .wrap .swiper-slide {
+.inner .container .wrap .swiper .swiper_close {
+  cursor: pointer;
+}
+.inner .container .wrap .swiper .swiper_close #line {
+  width: 5%;
+  height: 2px;
+  background: #111;
+  z-index: 30;
+  position: absolute;
+  top: 6.6%;
+  right: 2.2%;
+  transition: all 0.1s ease-in-out;
+}
+.inner .container .wrap .swiper .swiper_close #line:first-child {
+  transform: rotate(-45deg);
+}
+.inner .container .wrap .swiper .swiper_close #line:last-child {
+  transform: rotate(45deg);
+}
+.inner .container .wrap .swiper-slide {
   border-radius: 15px;
   text-align: center;
   background: #F4F1EA;
@@ -838,38 +990,39 @@ a {
   align-items: center;
   padding: 3% 8%;
 }
-.inner .wrap .swiper-slide img {
+.inner .container .wrap .swiper-slide img {
   display: block;
   width: 40%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   margin-right: 0.8em;
 }
-.inner .wrap .swiper-slide ul {
+.inner .container .wrap .swiper-slide ul {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.inner .wrap .swiper-slide #sub_title {
+.inner .container .wrap .swiper-slide #sub_title {
   font-size: 1.56rem;
   font-weight: bold;
   line-height: 1.2;
 }
-.inner .wrap .swiper-slide #sub_text1 {
+.inner .container .wrap .swiper-slide #sub_text1 {
   font-size: 1.25rem;
   font-weight: 500;
   margin: 1em 0 2em;
   color: #333;
   line-height: 1.2;
 }
-.inner .wrap .swiper-slide #sub_text2 {
+.inner .container .wrap .swiper-slide #sub_text2 {
   font-size: 1rem;
   font-weight: 300;
   color: #333;
   margin-bottom: 2.6em;
   line-height: 1.2;
 }
-.inner .wrap .swiper-slide #sub_link a {
+.inner .container .wrap .swiper-slide #sub_link a {
   font-size: 1.25rem;
   padding: 0.38em 1.6em 0.5em;
   background: #0078ff;
@@ -880,21 +1033,21 @@ a {
   border: 1px solid transparent;
   font-weight: bold;
 }
-.inner .wrap .swiper-slide #sub_link a:hover {
+.inner .container .wrap .swiper-slide #sub_link a:hover {
   background: #fff;
   border-color: #0078ff;
   color: #0078ff;
 }
-.inner .wrap .button {
+.inner .container .wrap .button {
   color: #333 !important;
   border-radius: 5px;
 }
-.inner .wrap .button:hover {
+.inner .container .wrap .button:hover {
   color: #0078ff !important;
 }
 
 @media (max-width: 1411px) {
-  .inner .wrap .tutorial #tuto_close {
+  .inner .container .wrap .tutorial #tuto_close {
     padding: 7em 0 0 16em;
   }
   @keyframes mouse_move {
@@ -909,155 +1062,401 @@ a {
   }
 }
 @media (max-width: 1350px) {
-  .inner .wrap .menu_text #depth_1 {
+  .inner .container .wrap .menu_text #depth_1 {
     padding: 0 0.8em;
   }
-  .inner .wrap .menu_text #depth_1 > li {
+  .inner .container .wrap .menu_text #depth_1 > li {
     padding: 1.4em 0;
   }
-  .inner .wrap .menu_text #depth_1 > li:first-child {
+  .inner .container .wrap .menu_text #depth_1 > li:first-child {
     padding-top: 3em;
   }
-  .inner .wrap .menu_text #depth_1 a {
+  .inner .container .wrap .menu_text #depth_1 a {
     width: 25%;
   }
-  .inner .wrap .menu_text #depth_1 #depth_2 {
+  .inner .container .wrap .menu_text #depth_1 #depth_2 {
     padding-left: 0;
   }
-  .inner .wrap .menu_text #depth_1 #depth_2 > li {
+  .inner .container .wrap .menu_text #depth_1 #depth_2 > li {
     margin-right: 1em;
   }
-  .inner .wrap .menu_text #depth_1 #depth_2 a {
+  .inner .container .wrap .menu_text #depth_1 #depth_2 a {
     padding-bottom: 0.6em;
   }
 }
 @media (max-width: 1024px) {
-  .inner .wrap .all_menu #left_area {
-    border-radius: 18px 0 0 18px;
+  .inner .logo {
+    display: none;
   }
-  .inner .wrap .all_menu #right_area {
-    border-radius: 0 18px 18px 0;
+  .inner .container .wrap .logo2 {
+    display: block;
   }
-  .inner .wrap .custom_card {
+  .inner .container .wrap .all_menu {
+    top: 0.8%;
+    right: 0.42%;
+  }
+  .inner .container .wrap .all_menu.active {
+    width: 99.3%;
+  }
+  .inner .container .wrap .all_menu #left_area {
+    border-radius: 22px 0 0 22px;
+  }
+  .inner .container .wrap .all_menu #right_area {
+    border-radius: 0 22px 22px 0;
+  }
+  .inner .container .wrap .custom_card {
     left: 4%;
   }
-  .inner .wrap .tutorial {
+  .inner .container .wrap .tutorial {
     left: 39.4%;
     padding: 0.8em;
   }
-  .inner .wrap .tutorial #tuto_text1 {
+  .inner .container .wrap .tutorial #tuto_text1 {
     display: none;
   }
-  .inner .wrap .tutorial #tuto_text2 {
+  .inner .container .wrap .tutorial #tuto_text2 {
     display: block;
     padding-top: 0.5em;
   }
-  .inner .wrap .tutorial #tuto_close {
+  .inner .container .wrap .tutorial #tuto_close {
     padding: 5.6em 0 0 12.4em;
   }
-  .inner .wrap .tutorial #dot_box {
+  .inner .container .wrap .tutorial #dot_box {
     top: 44%;
     left: 44%;
   }
-  .inner .wrap .tutorial #mouse {
+  .inner .container .wrap .tutorial #mouse {
     display: none;
   }
-  .inner .wrap .tutorial #touch {
+  .inner .container .wrap .tutorial #touch {
     display: block;
   }
-  .inner .wrap .swiper {
+  .inner .container .wrap .swiper {
     top: 25%;
     left: 31%;
   }
-  .inner .wrap .swiper .swiper-slide #sub_title {
+  .inner .container .wrap .swiper .swiper-slide #sub_title {
     font-size: 1rem;
   }
-  .inner .wrap .swiper .swiper-slide #sub_text1 {
+  .inner .container .wrap .swiper .swiper-slide #sub_text1 {
     font-size: 0.8rem;
   }
-  .inner .wrap .swiper .swiper-slide #sub_link a {
+  .inner .container .wrap .swiper .swiper-slide #sub_link a {
     font-size: 0.8rem;
     padding: 0.38em 1.4em 0.5em;
   }
-  .inner .wrap .swiper .swiper-slide img {
+  .inner .container .wrap .swiper .swiper-slide img {
     padding-left: 1em;
     margin-right: 0.2em;
   }
-  .inner .wrap .custom_card #custom_title {
+  .inner .container .wrap .custom_card #custom_title {
     font-size: 1.88rem;
   }
-  .inner .wrap .custom_card #custom_text {
+  .inner .container .wrap .custom_card #custom_text {
     font-size: 1.56rem;
   }
-  .inner .wrap .custom_card #custom_link a {
+  .inner .container .wrap .custom_card #custom_link a {
     font-size: 1.2rem;
     padding: 0.34em 1.4em 0.42em;
   }
-  .inner .wrap .pc {
+  .inner .container .wrap .pc {
     top: 28.4%;
     right: 17.4%;
   }
-  .inner .wrap .pc:hover {
+  .inner .container .wrap .pc:hover {
     right: 15%;
   }
-  .inner .wrap .bag {
+  .inner .container .wrap .bag {
     bottom: 18%;
     left: 30%;
   }
-  .inner .wrap .bag:hover {
+  .inner .container .wrap .bag:hover {
     left: 28%;
   }
-  .inner .wrap .trip {
+  .inner .container .wrap .trip {
     top: 12%;
     left: 51%;
   }
-  .inner .wrap .trip:hover {
+  .inner .container .wrap .trip:hover {
     left: 48.6%;
   }
-  .inner .wrap .movie {
+  .inner .container .wrap .movie {
     top: 10%;
     left: 71.6%;
   }
-  .inner .wrap .movie:hover {
+  .inner .container .wrap .movie:hover {
     left: 69.8%;
   }
-  .inner .wrap .delievery {
+  .inner .container .wrap .delievery {
     bottom: 4%;
     right: 46.6%;
   }
-  .inner .wrap .delievery:hover {
+  .inner .container .wrap .delievery:hover {
     right: 44%;
   }
-  .inner .wrap .car {
+  .inner .container .wrap .car {
     top: 5.2%;
     left: 25.2%;
   }
-  .inner .wrap .car:hover {
+  .inner .container .wrap .car:hover {
     left: 23.2%;
   }
-  .inner .wrap .menu_btn {
+  .inner .container .wrap .menu_btn {
     width: 50px;
     height: 50px;
   }
-  .inner .wrap .menu_btn #line {
+  .inner .container .wrap .menu_btn #line {
     top: 47%;
     left: 25.4%;
   }
-  .inner .wrap .camera_ring {
-    width: 61px;
-    height: 61px;
-    bottom: 47.14%;
-    right: 1.42%;
-  }
-  .inner .wrap .camera_zoom {
+  .inner .container .wrap .camera_zoom {
     top: 28%;
   }
-  .inner .wrap .camera_zoom img {
+  .inner .container .wrap .camera_zoom img {
     width: 40%;
   }
 }
-@media (max-height: 880px) {
-  .inner .wrap h1 {
-    top: 2%;
+@media (max-width: 768px) {
+  .inner .container {
+    transform: rotate(90deg);
+    background: rgba(0, 0, 0, 0.6666666667);
   }
-}
+  .inner .container .wrap {
+    transform: rotate(-90deg);
+    cursor: move;
+  }
+  .inner .container .wrap .logo2 {
+    top: 1%;
+    left: 48%;
+  }
+  .inner .container .wrap .tutorial {
+    left: 38%;
+    padding: 0.2em 0.4em;
+  }
+  .inner .container .wrap .tutorial #tuto_title {
+    font-size: 0.7rem;
+  }
+  .inner .container .wrap .tutorial #tuto_text2 {
+    font-size: 0.5rem;
+    padding-top: 0.3em;
+  }
+  .inner .container .wrap .tutorial #tuto_close {
+    font-size: 0.6rem;
+    padding: 7.8em 0 0 15.4em;
+  }
+  .inner .container .wrap .tutorial #dot_box {
+    top: 35%;
+    left: 40%;
+    width: 38px;
+    height: 38px;
+  }
+  .inner .container .wrap .tutorial #dot_box::before {
+    width: 6px;
+    height: 6px;
+    top: 52%;
+    left: 52%;
+  }
+  @keyframes finger_move {
+    0% {
+      top: 43%;
+      left: 54%;
+      transform: scale(1.2);
+    }
+    40% {
+      top: 43%;
+      left: 43.4%;
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      top: 43%;
+      left: 43.4%;
+      transform: scale(1);
+      opacity: 0.1;
+    }
+    60% {
+      top: 43%;
+      left: 43.4%;
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      top: 43%;
+      left: 54%;
+      transform: scale(1.2);
+    }
+  }
+  .inner .container .wrap .pc {
+    top: 28.2%;
+    right: 17.4%;
+    font-size: 0.8rem;
+    width: 35px;
+    height: 35px;
+    line-height: 15px;
+  }
+  .inner .container .wrap .pc #pc_click {
+    margin-top: 9px;
+  }
+  .inner .container .wrap .pc:hover {
+    width: 45px;
+    right: 16%;
+  }
+  .inner .container .wrap .pc::after {
+    width: 60px;
+    height: 35px;
+    top: 110%;
+    left: 0%;
+  }
+  .inner .container .wrap .bag {
+    bottom: 18%;
+    left: 30%;
+    font-size: 0.8rem;
+    width: 35px;
+    height: 35px;
+    line-height: 15px;
+  }
+  .inner .container .wrap .bag:hover {
+    width: 45px;
+    left: 29%;
+  }
+  .inner .container .wrap .bag #bag_click {
+    margin-top: 9px;
+  }
+  .inner .container .wrap .bag::after {
+    width: 80px;
+    height: 35px;
+    top: -1%;
+    left: 110%;
+  }
+  .inner .container .wrap .trip {
+    top: 11%;
+    left: 51%;
+    font-size: 0.8rem;
+    width: 35px;
+    height: 35px;
+    line-height: 15px;
+  }
+  .inner .container .wrap .trip:hover {
+    width: 45px;
+    left: 50%;
+  }
+  .inner .container .wrap .trip #trip_click {
+    margin-top: 9px;
+  }
+  .inner .container .wrap .trip::after {
+    width: 40px;
+    height: 35px;
+    top: 0;
+    left: 110%;
+    line-height: 2.6;
+    border-radius: 8px;
+  }
+  .inner .container .wrap .movie {
+    top: 10%;
+    left: 72.2%;
+    font-size: 0.8rem;
+    width: 35px;
+    height: 35px;
+    line-height: 15px;
+  }
+  .inner .container .wrap .movie:hover {
+    width: 45px;
+    left: 71.2%;
+  }
+  .inner .container .wrap .movie #movie_click {
+    margin-top: 9px;
+  }
+  .inner .container .wrap .movie::after {
+    width: 55px;
+    height: 35px;
+    top: -1.2%;
+    left: 110%;
+  }
+  .inner .container .wrap .delievery {
+    bottom: 2.8%;
+    right: 47%;
+    font-size: 0.8rem;
+    width: 35px;
+    height: 35px;
+    line-height: 15px;
+  }
+  .inner .container .wrap .delievery:hover {
+    width: 45px;
+    right: 46.4%;
+  }
+  .inner .container .wrap .delievery #delievery_click {
+    margin-top: 9px;
+  }
+  .inner .container .wrap .delievery::after {
+    width: 84px;
+    height: 35px;
+    top: -1.2%;
+    left: 110%;
+    line-height: 2.6;
+    border-radius: 8px;
+  }
+  .inner .container .wrap .car {
+    top: 4.2%;
+    left: 25%;
+    font-size: 0.8rem;
+    width: 35px;
+    height: 35px;
+    line-height: 15px;
+  }
+  .inner .container .wrap .car:hover {
+    width: 45px;
+    left: 24.6%;
+  }
+  .inner .container .wrap .car #car_click {
+    margin-top: 9px;
+  }
+  .inner .container .wrap .car::after {
+    width: 45px;
+    height: 35px;
+    top: -1.2%;
+    left: 110%;
+    line-height: 2.6;
+    border-radius: 8px;
+  }
+  .inner .container .wrap .swiper .swiper-slide #sub_title {
+    font-size: 0.5rem;
+  }
+  .inner .container .wrap .swiper .swiper-slide #sub_text1 {
+    font-size: 0.4rem;
+  }
+  .inner .container .wrap .swiper .swiper-slide #sub_text2 {
+    font-size: 0.4rem;
+  }
+  .inner .container .wrap .swiper .swiper-slide #sub_link a {
+    font-size: 0.4rem;
+    padding: 0.5em 1.3em 0.4em;
+  }
+  .inner .container .wrap .swiper .swiper-slide img {
+    padding-left: 1.3em;
+    margin-right: 0.2em;
+  }
+  .inner .container .wrap .camera_zoom {
+    display: none;
+  }
+  .inner .container .wrap .camera_bolt {
+    display: none;
+  }
+  .inner .container .wrap .camera_ring {
+    display: none;
+  }
+  .inner .container .wrap .menu_btn {
+    display: none;
+  }
+  .inner .container .wrap .camera_reverse {
+    display: none;
+  }
+  .inner .container .camera_top {
+    display: block;
+  }
+  .inner .container #lens {
+    display: block;
+  }
+  .inner .container .camera_bottom {
+    display: block;
+  }
+}/*# sourceMappingURL=style.css.map */

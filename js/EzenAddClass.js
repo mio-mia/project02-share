@@ -11,6 +11,7 @@ function EzenAddClass(tag="", options={}){
 		motion:'click',
 		addBtn:'none',
 		remove:'none',
+		afterFun:function(){}		//추가된 부분(태균)
 	};
 
 	//객체(옵션)병합
@@ -42,7 +43,7 @@ function EzenAddClass(tag="", options={}){
 		btns.forEach((item)=>{
 			item.addEventListener(obj.motion , function(e){
 				e.preventDefault();
-
+				obj.afterFun();
 				allClass.forEach((i)=>{
 					i.classList.toggle(obj.class);
 				});
