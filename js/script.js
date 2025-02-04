@@ -1,12 +1,23 @@
+$(function(){
+  $(".open_btn").on("click",function(){
+    $(".open_btn").not(this).removeClass("active");
+    $(this).toggleClass("active");
+  });
+});
 
-var ott = new EzenAddClass(".pc");
-var delievery = new EzenAddClass(".delievery");
-var movie = new EzenAddClass(".movie");
-var shopping = new EzenAddClass(".bag");
-var car = new EzenAddClass(".car");
-var ticket = new EzenAddClass(".trip");
-var tuto_close = new EzenAddClass("#tuto_close");
-var tuto_close = new EzenAddClass(".menu_btn");
+var tuto_close = new EzenAddClass("#tuto_close",{
+  class:"tutoActive",
+});
+
+var menu_btn = new EzenAddClass(".menu_btn",{
+  class:"showActive",
+  afterFun:function(){
+    var allactive = document.querySelectorAll(".active");
+    allactive.forEach(function(x){
+      x.classList.remove("active");
+    });
+  }
+});
 
 var swiper = new Swiper(".swiper", {
   slidesPerView: 1,
@@ -21,3 +32,7 @@ var swiper = new Swiper(".swiper", {
     prevEl: ".swiper-button-prev",
   },
 });
+
+if (matchMedia("screen and (max-width: 768px)").matches) {
+  
+};
