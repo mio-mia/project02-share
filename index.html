@@ -41,9 +41,11 @@
     }
     .search_area img {width: 4%; float: right; }
     .intro_keywords {margin-left: -1%; font-family: 'Noto Sans KR';}
-    .intro_keywords p {display: inline-block; padding: .5% .6% .64%;
-      background-color: #44444433; border-radius: 5px;}
+    .intro_keywords p {display: inline-block; padding: .5% .6% .64%; transition: all .2s ease-in-out;
+      background-color: #44444433; border-radius: 5px; border: 1px solid transparent;}
     .intro_keywords p:first-child {margin-right: .5%;}
+    .intro_keywords p:hover {border-color: #000;}
+    .intro_keywords p a {text-decoration: none; color: #000;}
     .enter {margin: 3% 0 0 -1%;}
     .enter a {text-decoration: none; font-family: 'GmarketSansMedium'; border-radius: 10px;
       font-weight: bold; font-size: 35px; color: #fff; padding: .7% 2.2% .4%; background-color: #0078ff;
@@ -78,8 +80,8 @@
       <img src="images/search_icon.png" alt="인트로화면 검색 아이콘">
     </div><!--end:.sear_area-->
     <div class="intro_keywords">
-      <p>#맞춤형 카드추천</p>
-      <p>#인기카드 TOP10</p>
+      <p><a href="https://mio-mia.github.io/project02-share/html/re.html">#맞춤형 카드추천</a></p>
+      <p><a href="https://mio-mia.github.io/project02-share/html/credit.html">#인기카드 TOP10</a></p>
     </div><!--intrp_keywords-->
     <div class="enter clearfix"> 
         <a id="enter_button" href="main.html"><span id="enter_text">ENTER</span></a>
