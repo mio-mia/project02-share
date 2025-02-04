@@ -144,6 +144,7 @@ header {
 #depth_02 .area.a .title {
   font-size: 2.5vw;
   font-weight: bold;
+  font-family: "Noto Sans KR";
   color: #333;
   font-weight: bold;
   line-height: 1.3;
@@ -154,6 +155,7 @@ header {
 #depth_02 .area.a .text {
   font-size: 1.9vw;
   padding-top: 1em;
+  font-family: "Noto Sans KR";
 }
 #depth_02 .area.a .text img {
   width: 7%;
@@ -170,6 +172,7 @@ header {
   transition: all 0.2s ease-in-out;
   border: 1px solid transparent;
   font-weight: bold;
+  font-family: "Noto Sans KR";
 }
 #depth_02 .area.a li a:hover {
   background: #fff;
@@ -191,7 +194,7 @@ header {
   height: 100%;
   font-size: 1.6vw;
   font-family: "Godo_M";
-  color: #0E3A3E;
+  color: #00408a;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -230,7 +233,7 @@ header {
   font-weight: 600;
 }
 #depth_02 .sub li:hover a {
-  color: #222;
+  color: #0078ff;
 }
 #depth_02 #del {
   position: absolute;
