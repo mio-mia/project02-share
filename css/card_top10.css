@@ -251,12 +251,16 @@ main {
 }
 @media (max-width: 450px) {
   main {
-    width: calc(100% - 16vw);
-    margin-left: 8vw;
-    margin-right: 8vw;
+    width: calc(100% - 8vw);
+    margin-left: 4vw;
+    margin-right: 4vw;
   }
   main .inner {
     margin-top: 10vh !important;
+  }
+  main h2 {
+    font-size: 1.2em;
+    margin-bottom: 15px;
   }
   main .card .top-3 ul {
     justify-content: center;
@@ -265,7 +269,7 @@ main {
   main .card .top-3 li {
     width: 100%;
     height: 110px;
-    margin-top: 12px;
+    margin-top: 15px;
     border-radius: 10px;
     display: flex;
     justify-content: flex-start;
@@ -285,13 +289,13 @@ main {
     font-size: 1.2em;
   }
   main .card .top-3 a .photo {
-    width: 90px;
+    width: 80px;
     height: 100%;
     margin-top: 0;
   }
   main .card .top-3 a img {
     width: auto;
-    height: 60%;
+    height: 70%;
   }
   main .card .top-3 .box {
     width: 60%;
@@ -315,18 +319,18 @@ main {
   }
   main .card .list li {
     height: 100px;
-    margin-top: 12px;
+    margin-top: 15px;
     border-radius: 10px;
   }
   main .card .list a .number {
     font-size: 1.15em;
   }
   main .card .list a .photo {
-    width: 90px;
+    width: 80px;
   }
   main .card .list a img {
     width: auto;
-    height: 60%;
+    height: 70%;
   }
   main .card .list .box {
     width: 60%;

@@ -122,20 +122,20 @@ main{width: 68%; height: fit-content; margin: 10.5% $bg_set 6vw;}
 
 
 @media (max-width: 450px) {
-  main{width: calc(100% - 16vw);
-    margin-left: 8vw; margin-right: 8vw;
+  main{width: calc(100% - 8vw); margin-left: 4vw; margin-right: 4vw;
     .inner{margin-top: 10vh !important;}
+    h2{font-size: 1.2em; margin-bottom: 15px;}
     .card{
       .top-3{
         ul{justify-content: center; flex-direction: column;}
-        li{width: 100%; height: 110px; margin-top: 12px; border-radius: 10px;
+        li{width: 100%; height: 110px; margin-top: 15px; border-radius: 10px;
           display: flex; justify-content: flex-start; align-items: center;
           font-family: $font_ko_content;}
         a{justify-content: flex-start; flex-direction: row;}
         a p{position: static; display: block; width: 1.8em; margin-left: 0.6em;
           text-align: center; font-size: 1.2em;}
-        a .photo{width: 90px; height: 100%; margin-top: 0;}
-        a img{width: auto; height: 60%;}
+        a .photo{width: 80px; height: 100%; margin-top: 0;}
+        a img{width: auto; height: 70%;}
         .box{width: 60%; height: fit-content;
           display: flex; justify-content: space-evenly; align-items: flex-start;
           flex-direction: column;}
@@ -143,10 +143,10 @@ main{width: 68%; height: fit-content; margin: 10.5% $bg_set 6vw;}
         a .tag span{font-size: 0.6em; margin-top: 0.8vh;}
       } // top-3 
       .list{margin-top: 0;
-        li{height: 100px; margin-top: 12px; border-radius: 10px;}
+        li{height: 100px; margin-top: 15px; border-radius: 10px;}
         a .number{font-size: 1.15em;}
-        a .photo{width: 90px;}
-        a img{width: auto; height: 60%;}
+        a .photo{width: 80px;}
+        a img{width: auto; height: 70%;}
         .box{width: 60%;}
         a h4{font-size: 0.9em; line-height: 1.4;}
         a .text{display: none;}
